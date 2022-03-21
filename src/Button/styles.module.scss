@@ -1,0 +1,171 @@
+@import "../styling/alignments.scss";
+@import "../styling/colors.scss";
+@import "../styling/font-sizes.scss";
+@import "../styling/margins.scss";
+@import "../styling/paddings.scss";
+
+.container {
+    @include flex-aligned(center, center);
+    @include marged(all, m);
+
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+
+    &Small {
+        @include padded(horizontal, m);
+        @include padded(vertical, s1);
+    }
+
+    &Medium {
+        @include padded(horizontal, l1);
+        @include padded(vertical, m);
+    }
+
+    &Large {
+        @include padded(horizontal, l3);
+        @include padded(vertical, l1);
+    }
+}
+
+.enabled {
+    cursor: pointer;
+    filter: brightness(90%);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        filter: brightness(100%);
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 10px 10px black;
+    }
+
+    &:active:after {
+        box-shadow: 0 0 0 0 black;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        transition: 0s;
+    }
+
+    &Dark {
+        @extend .enabled;
+        &:after {
+            box-shadow: 0 0 10px 10px $color-grey2;
+        }
+        &:active:after {
+            box-shadow: 0 0 0 0 $color-grey2;
+        }
+    }
+
+    &Light {
+        @extend .enabled;
+        &:after {
+            box-shadow: 0 0 10px 10px $color-grey5;
+        }
+        &:active:after {
+            box-shadow: 0 0 0 0 $color-grey5;
+        }
+    }
+}
+
+.selected {
+    filter: brightness(100%);
+}
+
+.disabled {
+    filter: brightness(50%);
+    cursor: not-allowed;
+
+    &:hover {
+        filter: brightness(50%);
+    }
+}
+
+.rounded {
+    border-radius: 4px;
+
+    &:after {
+        border-radius: 4px;
+    }
+    &:active:after {
+        border-radius: 4px;
+    }
+}
+
+.shadowed {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.children {
+    @include flex-aligned(center, center);
+    @include font-sized(m);
+}
+
+.icon {
+    @include flex-aligned(center, center);
+
+    &Left {
+        @include padded(right, m);
+    }
+
+    &Right {
+        @include padded(left, m);
+    }
+}
+
+.primary {
+    border: none;
+    background-color: $color-blue;
+    color: white;
+    &:hover {
+        background-color: $color-blue;
+    }
+}
+
+.danger {
+    border: none;
+    background-color: $color-red;
+    color: white;
+    &:hover {
+        background-color: $color-red;
+    }
+}
+
+.warning {
+    border: none;
+    background-color: $color-orange;
+    color: white;
+    &:hover {
+        background-color: $color-orange;
+    }
+}
+
+.confirm {
+    border: none;
+    background-color: $color-green;
+    color: white;
+    &:hover {
+        background-color: $color-green;
+    }
+}
+
+.neutral {
+    border: none;
+    background-color: $color-grey3;
+    color: white;
+    &:hover {
+        background-color: $color-grey3;
+    }
+}

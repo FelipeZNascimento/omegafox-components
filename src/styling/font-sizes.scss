@@ -1,0 +1,20 @@
+$font-sizes: (
+    "xxs": 6px,
+    "xs": 8px,
+    "s": 12px,
+    "m": 16px,
+    "m2": 20px,
+    "l": 24px,
+    "xl": 36px,
+    "xxl": 48px,
+);
+
+@each $name, $pixels in $font-sizes {
+    .font-size-#{$name} {
+        font-size: #{$pixels};
+    }
+}
+
+@mixin font-sized($size) {
+    @extend .font-size-#{$size};
+}

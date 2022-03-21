@@ -1,0 +1,21 @@
+// Horizontal most common options 
+// - center
+// - flex-start
+// - flex-end
+// - space-between
+
+// Vertical most common options 
+// - center
+// - flex-start
+// - flex-end
+// - baseline
+
+@mixin flex-aligned($horizontal, $vertical) {
+    display: flex;
+    align-items: $vertical;
+    justify-content: $horizontal;
+}
+
+@mixin aligned($horizontal) {
+    text-align:$horizontal;
+}
