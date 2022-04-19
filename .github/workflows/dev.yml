@@ -34,8 +34,7 @@ jobs:
         run: CI='' npm test
 
       - name: 🔨 Build Static Storybook
-        run: CI='' npm run storybook:export
-
+        run: CI='' export NODE_OPTIONS=--openssl-legacy-provider && npm run storybook:export
 
       - name: 📂 Sync files to server folder
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -45,4 +44,3 @@ jobs:
           password: ${{ secrets.password }}
           local-dir: ./storybook-static/
           server-dir: components.omegafox.me/
-
