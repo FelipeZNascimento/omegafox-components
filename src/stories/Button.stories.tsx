@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import { Button } from "./Button";
-import { ButtonProps } from "./types";
+import { Button } from "../components";
+import { ButtonProps } from "../components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
@@ -24,4 +24,5 @@ Component.args = {
     shape: "squared",
     shadowed: false,
     variant: "primary",
+    onClick: () => alert('Click')
 };

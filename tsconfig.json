@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "rootDir": "src",
     "declaration": true,
     "declarationDir": "build",
@@ -16,9 +17,29 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "paths": {
+      "@src": [
+        "./src/"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@styling": [
+        "./src/styling/"
+      ],
+      "@styling/*": [
+        "./src/styling/*"
+      ],
+      "@components": [
+        "./src/components/"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ]
+    }
   },
   "include": [
-    "src/**/*"
+    "./src/**/*"
   ],
   "exclude": [
     "node_modules",
