@@ -18,6 +18,7 @@ describe("TestComponent", () => {
     size,
     shadowed,
     shape,
+    tooltip,
     variant,
     onClick
   }: Partial<ButtonProps>) =>
@@ -32,6 +33,7 @@ describe("TestComponent", () => {
         size={size}
         shadowed={shadowed}
         shape={shape}
+        tooltip={tooltip}
         variant={variant}
         onClick={onClick}
       />
