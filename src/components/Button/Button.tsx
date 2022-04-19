@@ -15,6 +15,7 @@ export const Button = ({
     shadowed = true,
     shape = 'rounded',
     variant = 'primary',
+    onClick,
     ...props
 }: ButtonProps) => {
     const buttonClass = classNames(
@@ -57,7 +58,7 @@ export const Button = ({
     }
 
     return (
-        <button data-testid="test-button" className={buttonClass} {...props}>
+        <button data-testid="test-button" className={buttonClass} onClick={!isDisabled && onClick} {...props}>
             {icon && leftIcon && renderIcon()}
             {children && renderChildren()}
             {icon && !leftIcon && renderIcon()}

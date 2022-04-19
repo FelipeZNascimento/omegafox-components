@@ -9,4 +9,5 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     shape?: "rounded" | "squared";
     shadowed?: boolean;
     variant?: "primary" | "danger" | "neutral" | "confirm" | "warning";
+    onClick: () => void;
 }
