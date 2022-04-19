@@ -8,6 +8,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     size?: "small" | "medium" | "large";
     shape?: "rounded" | "squared";
     shadowed?: boolean;
+    tooltip?: string;
     variant?: "primary" | "danger" | "neutral" | "confirm" | "warning";
     onClick: () => void;
 }
