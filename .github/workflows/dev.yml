@@ -33,11 +33,8 @@ jobs:
       - name: 🧪 Test
         run: CI='' npm test
 
-      - name: 🔨 Pre Build (Set legacy provider)
-        run: export NODE_OPTIONS=--openssl-legacy-provider
-
       - name: 🔨 Build Static Storybook
-        run: CI='' npm run storybook:export
+        run: CI='' export NODE_OPTIONS=--openssl-legacy-provider && npm run storybook:export
 
       - name: 📂 Sync files to server folder
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
