@@ -6,7 +6,6 @@
 
 .container {
     @include flex-aligned(center, center);
-    @include marged(all, m);
 
     position: relative;
     text-transform: uppercase;
