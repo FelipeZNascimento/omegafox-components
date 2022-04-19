@@ -1,5 +1,5 @@
 import React from "react";
-import { render, within } from "@testing-library/react";
+import { fireEvent, render, within } from "@testing-library/react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
@@ -18,7 +18,8 @@ describe("TestComponent", () => {
     size,
     shadowed,
     shape,
-    variant
+    variant,
+    onClick
   }: Partial<ButtonProps>) =>
     render(
       <Button
@@ -32,6 +33,7 @@ describe("TestComponent", () => {
         shadowed={shadowed}
         shape={shape}
         variant={variant}
+        onClick={onClick}
       />
     );
 
@@ -77,5 +79,17 @@ describe("TestComponent", () => {
 
     expect(buttonIcon).toBeVisible();
     expect(buttonIcon).toHaveClass('iconRight');
+  });
+
+  it("should callback on click", () => {
+    const onClickFn = jest.fn();
+    const buttonText = "Click";
+    const { getByTestId } = renderComponent({
+      children: buttonText,
+      onClick: onClickFn
+    });
+
+    fireEvent.click(getByTestId('test-button'));
+    expect(onClickFn).toHaveBeenCalled();
   });
 });
