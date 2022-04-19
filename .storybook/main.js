@@ -32,6 +32,12 @@ module.exports = {
       }
     });
     config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@src': path.resolve(__dirname, '../src/'),
+      '@components': path.resolve(__dirname, '../src/components/'),
+      '@styling': path.resolve(__dirname, '../src/styling/'),
+    }
 
     return config;
   }

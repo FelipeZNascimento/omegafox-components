@@ -1,0 +1,12 @@
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+    children?: React.ReactNode | null;
+    icon?: React.ReactNode | null;
+    isDisabled?: boolean;
+    isDarkMode?: boolean;
+    isSelected?: boolean;
+    leftIcon?: boolean;
+    size?: "small" | "medium" | "large";
+    shape?: "rounded" | "squared";
+    shadowed?: boolean;
+    variant?: "primary" | "danger" | "neutral" | "confirm" | "warning";
+}
