@@ -14,7 +14,6 @@ export const Button = ({
     size = 'medium',
     shadowed = true,
     shape = 'rounded',
-    tooltip = '',
     variant = 'primary',
     onClick,
     ...props
