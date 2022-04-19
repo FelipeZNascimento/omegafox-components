@@ -15,34 +15,34 @@ jobs:
       matrix:
         node-version: [17.7]
 
-      steps:
-        - name: 🚚 Checkout repository
-          uses: actions/checkout@v2
+    steps:
+      - name: 🚚 Checkout repository
+        uses: actions/checkout@v2
 
-        - name: Set up Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-        - name: Install dependencies
-          run: npm install
+      - name: Install dependencies
+        run: npm install
 
-        - name: 🔨 Build
-          run: CI='' npm run build
+      - name: 🔨 Build
+        run: CI='' npm run build
 
-        - name: 🧪 Test
-          run: CI='' npm test
+      - name: 🧪 Test
+        run: CI='' npm test
 
-        - name: 🔨 Build Static Storybook
-          run: CI='' npm run storybook:export
+      - name: 🔨 Build Static Storybook
+        run: CI='' npm run storybook:export
 
 
-        - name: 📂 Sync files to server folder
-          uses: SamKirkland/FTP-Deploy-Action@4.3.0
-          with:
-            server: ${{ secrets.server }}
-            username: ${{ secrets.username }}
-            password: ${{ secrets.password }}
-            local-dir: ./storybook-static/
-            server-dir: components.omegafox.me/
+      - name: 📂 Sync files to server folder
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.server }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          local-dir: ./storybook-static/
+          server-dir: components.omegafox.me/
 
