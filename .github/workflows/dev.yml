@@ -1,5 +1,4 @@
 name: 🔨 Build & 🧪 Test
-
 on:
   pull_request:
     branches: [master]
@@ -10,31 +9,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [17.7]
-
     steps:
-      - name: 🚚 Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
+
+      - uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-
 
       - name: Install dependencies
         run: npm install
 
-      - name: 🔨 Build
-        run: CI='' npm run build
+      - name: Linting
+        run: npm run lint
 
       - name: 🧪 Test
-        run: CI='' npm test
+        run: CI='' npm run test:ci
 
       - name: 🔨 Build Static Storybook
-        run: CI='' export NODE_OPTIONS=--openssl-legacy-provider && npm run storybook:export
+        run: CI='' npm run build-storybook
 
       - name: 📂 Sync files to server folder
         uses: SamKirkland/FTP-Deploy-Action@4.3.0

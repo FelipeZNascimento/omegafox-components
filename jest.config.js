@@ -1,16 +1,14 @@
 module.exports = {
-  roots: ["src"],
-  setupFilesAfterEnv: ["./jest.setup.ts"],
-  moduleFileExtensions: ["ts", "tsx", "js"],
-  testPathIgnorePatterns: ["node_modules/"],
+  testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['/node_modules/'],
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.ts(x)?', '!src/stories/*', '!src/styling/*', '!src/pages/*', '!**/index.tsx'],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+  modulePaths: ['<rootDir>/src/'],
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    '^.+\\.(js|jsx|ts|tsx)$': "ts-jest"
   },
-  testMatch: ["**/*.test.(ts|tsx)"],
   moduleNameMapper: {
-    // Mocks out all these file formats when tests are run.
-    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-      "identity-obj-proxy",
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    "^.+\\.(css|scss)$": 'identity-obj-proxy'
   }
-};
+}

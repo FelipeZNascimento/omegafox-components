@@ -1,0 +1,25 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react'
+
+import {{pascalCase name}} from './{{pascalCase name}}'
+
+describe('<{{pascalCase name}} />', () => {
+    const renderComponent = ({
+    children,
+    props
+  }: Partial<{{pascalCase name}}Props>) =>
+    render(
+      <{{pascalCase name}}
+        props={props}
+      >
+        {children}
+      </Butt{{pascalCase name}}on>
+    );
+
+  it('should render', () => {
+    const text = 'Click';
+    const { container } = renderComponent({ children: text });
+
+    expect(container).toMatchSnapshot();
+  });
+})
