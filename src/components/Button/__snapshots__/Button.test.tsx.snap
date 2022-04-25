@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonComponent should render 1`] = `
+<div>
+  <button
+    class="container primary containerMedium rounded shadowed enabledLight"
+    data-testid="test-button"
+  >
+    <div
+      class="children"
+      data-testid="test-button__children"
+    >
+      Click
+    </div>
+  </button>
+</div>
+`;
