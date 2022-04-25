@@ -62,7 +62,6 @@
     "@types/node": "^17.0.14",
     "@types/react": "^17.0.44",
     "@types/react-dom": "^18.0.0",
-    "@types/styled-components": "^5.1.21",
     "@types/testing-library__react": "^10.2.0",
     "@typescript-eslint/eslint-plugin": "5.10.2",
     "@typescript-eslint/parser": "5.10.2",
@@ -78,7 +77,6 @@
     "i": "^0.3.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
-    "jest-styled-components": "^7.0.5",
     "lint-staged": "^12.3.3",
     "npm": "^8.7.0",
     "plop": "^3.0.5",
@@ -92,7 +90,6 @@
     "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.2",
     "style-loader": "^3.3.1",
-    "styled-components": "5.3.3",
     "ts-jest": "^27.1.4",
     "typescript": "^4.5.5",
     "webpack": "5.68.0"

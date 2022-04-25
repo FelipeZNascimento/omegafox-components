@@ -39,3 +39,7 @@ This project uses lot of stuff as:
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
+
+## Boilerplate
+
+This project used [this boilerplate](https://github.com/React-Avancado/boilerplate) as a starting point.
