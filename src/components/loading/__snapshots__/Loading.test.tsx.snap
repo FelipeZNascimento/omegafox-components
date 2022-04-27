@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonComponent should render 1`] = `
+<div>
+  <div
+    class="containerRegular"
+    data-testid="test-loading"
+  >
+    <img
+      alt="loading spinner"
+      class="imageRegular"
+      data-testid="test-loading__image"
+      src="./spinner.png"
+    />
+    <p
+      class="text"
+      data-testid="test-loading__text"
+    >
+      Carregando...
+    </p>
+  </div>
+</div>
+`;
