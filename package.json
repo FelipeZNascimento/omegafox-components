@@ -13,8 +13,6 @@
     "generate": "npm plop --plopfile generators/plopfile.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "postinstall": "husky install",
-    "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*.tsx": [
@@ -76,7 +74,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.2",
     "i": "^0.3.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
