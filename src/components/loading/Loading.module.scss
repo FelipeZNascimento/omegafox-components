@@ -23,14 +23,14 @@
 
     &Regular {
         @extend .container;
-        @include padded(all, xl);
+        @include padded(all, l3);
     }
 }
 
 .image {
     @extend .drop-shadowed;
-    @include padded(left, xl);
-    @include padded(right, xl);
+    @include padded(left, l3);
+    @include padded(right, l3);
 
     animation: headbutt 3s ease-in infinite;
     width: auto;

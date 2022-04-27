@@ -1,5 +1,6 @@
 $paddings: (
     "none": 0px,
+    "zero": 0px,
     "s3": 2px,
     "s2": 4px,
     "s1": 8px,
@@ -35,7 +36,7 @@ $paddings: (
 }
 
 @each $name, $pixels in $paddings {
-    .padding-#{$name} {
+    .all-padding-#{$name} {
         padding: #{$pixels};
     }
 }
@@ -55,7 +56,7 @@ $paddings: (
     } @else if $direction == horizontal {
         @extend .left-padding-#{$size};
         @extend .right-padding-#{$size};
-    } @else {
-        @extend .padding-#{$size};
+    } @else if $direction == all {
+        @extend .all-padding-#{$size};
     }
 }
