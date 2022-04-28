@@ -1,7 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import { LoadingProps } from './types';
+import classNames from 'classnames';
 import styles from './Loading.module.scss';
 
 export const loadingText = 'Carregando...';

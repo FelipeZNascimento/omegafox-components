@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "target": "es5",
-    "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
@@ -19,7 +19,7 @@
       "hooks": ["src/hooks/*"],
       "utils": ["src/utils/*"]
     },
-
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -27,7 +27,8 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": [
     "node_modules",
@@ -39,6 +40,11 @@
     "webpack",
     "jest"
   ],
-  "include": ["./declaration.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.scss"],
+  "include": [
+    "./declaration.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.scss"
+  ],
   "types": ["typePatches"]
 }

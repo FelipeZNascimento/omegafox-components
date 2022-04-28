@@ -1,7 +1,7 @@
 import React from 'react';
 
-import classNames from 'classnames';
 import { ButtonProps } from './types';
+import classNames from 'classnames';
 import styles from './Button.module.scss';
 
 export const Button = ({
