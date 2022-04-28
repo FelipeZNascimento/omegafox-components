@@ -1,10 +1,7 @@
 import React from 'react';
-import { Story } from '@storybook/react';
 import { Button } from '../components/';
-import { ButtonProps } from '../components/Button/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faChevronLeft,
   faCoffee,
   faTriangleExclamation
 } from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +12,7 @@ export default {
 };
 
 export const Primary = () => (
-  <Button onClick={() => alert('Click!')}>
-    Primary
-  </Button>
+  <Button onClick={() => alert('Click!')}>Primary</Button>
 );
 
 export const Confirm = () => (
