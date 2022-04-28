@@ -8,7 +8,7 @@ exports[`LoadingComponent should render 1`] = `
   >
     <img
       alt="loading spinner"
-      class="imageRegular"
+      class="imageRegular imageSpin"
       data-testid="test-loading__image"
       src="./spinner.png"
     />
