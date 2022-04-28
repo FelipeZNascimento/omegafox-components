@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.14.2
 
       - uses: actions/cache@v3
         id: npm-cache
@@ -39,7 +39,7 @@ jobs:
         run: CI='' npm run test:ci
 
       - name: 🔨 Build Static Storybook
-        run: CI='' npm run build-storybook
+        run: npm run build-storybook
 
       - name: 📂 Sync files to server folder
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
