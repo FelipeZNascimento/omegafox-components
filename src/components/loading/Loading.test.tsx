@@ -5,7 +5,7 @@ import { LoadingProps } from './types';
 
 const spinnerUrl = './spinner.png';
 
-describe('ButtonComponent', () => {
+describe('LoadingComponent', () => {
   const renderComponent = ({
     size,
     overlay,

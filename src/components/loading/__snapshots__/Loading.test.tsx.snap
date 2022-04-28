@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonComponent should render 1`] = `
+exports[`LoadingComponent should render 1`] = `
 <div>
   <div
     class="containerRegular"

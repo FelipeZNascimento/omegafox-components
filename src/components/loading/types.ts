@@ -1,5 +1,6 @@
 export interface LoadingProps {
-  size?: 'small' | 'regular';
-  overlay?: boolean;
   image: string;
+  overlay?: boolean;
+  size?: 'small' | 'regular';
+  style?: 'spin' | 'headbutt';
 }
