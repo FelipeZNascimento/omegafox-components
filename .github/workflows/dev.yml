@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.14.2
 
       - uses: actions/cache@v3
         id: npm-cache
@@ -38,14 +38,14 @@ jobs:
       - name: 🧪 Test
         run: CI='' npm run test:ci
 
-      - name: 🔨 Build Static Storybook
-        run: CI='' npm run build-storybook
+      # - name: 🔨 Build Static Storybook
+      #   run: npm run build-storybook
 
-      - name: 📂 Sync files to server folder
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.server }}
-          username: ${{ secrets.username }}
-          password: ${{ secrets.password }}
-          local-dir: ./storybook-static/
-          server-dir: components.omegafox.me/
+      # - name: 📂 Sync files to server folder
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ${{ secrets.server }}
+      #     username: ${{ secrets.username }}
+      #     password: ${{ secrets.password }}
+      #     local-dir: ./storybook-static/
+      #     server-dir: components.omegafox.me/

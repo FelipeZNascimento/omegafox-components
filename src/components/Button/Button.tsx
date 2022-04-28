@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classNames from 'classnames';
 import { ButtonProps } from './types';
-import styles from './styles.module.scss';
+import classNames from 'classnames';
+import styles from './Button.module.scss';
 
 export const Button = ({
   children = null,
