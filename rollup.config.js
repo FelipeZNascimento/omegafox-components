@@ -24,6 +24,7 @@ export default {
       tsconfig: './tsconfig.build.json',
       declaration: true,
       declarationDir: 'dist',
+      resolveJsonModule: true
     }),
     postcss(),
     terser(),
