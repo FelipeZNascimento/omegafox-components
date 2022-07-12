@@ -12,14 +12,19 @@ export default {
     dir: 'dist',
     format: 'esm',
     preserveModules: true,
+    preserveModulesRoot: 'src',
+    sourcemap: true
   },
   plugins: [
     resolve(),
+    commonjs(),
     typescript({
       tsconfig: './tsconfig.build.json',
+      declaration: true,
+      declarationDir: 'dist',
+      resolveJsonModule: true,
       clean: true,
     }),
-    commonjs(),
     postcss(),
     terser(),
     visualizer({

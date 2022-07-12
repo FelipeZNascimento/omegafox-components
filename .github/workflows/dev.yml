@@ -41,7 +41,7 @@ jobs:
       - name: 🔨 Build Static Storybook
         run: npm run build-storybook
 
-      - name: 📂 Sync files to server folder
+      - name: 📂 Sync files to server (components.omegafox.me)
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.server }}
