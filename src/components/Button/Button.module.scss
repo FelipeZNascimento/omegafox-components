@@ -12,16 +12,19 @@
   width: 100%;
 
   &Small {
+    @include font-sized(m);
     @include padded(horizontal, m);
     @include padded(vertical, s1);
   }
 
   &Medium {
+    @include font-sized(m);
     @include padded(horizontal, l1);
     @include padded(vertical, m);
   }
 
   &Large {
+    @include font-sized(l);
     @include padded(horizontal, l3);
     @include padded(vertical, l1);
   }
@@ -109,7 +112,6 @@
 
 .children {
   @include flex-aligned(center, center);
-  @include font-sized(s1);
 }
 
 .icon {
@@ -125,46 +127,51 @@
 }
 
 .primary {
+  @include bg-colored($color-blue);
+  @include font-colored($color-white);
+
   border: none;
-  background-color: $color-blue;
-  color: white;
-  &:hover {
-    background-color: $color-blue;
-  }
+  // &:hover {
+  //   background-color: $color-blue;
+  // }
 }
 
 .danger {
+  @include bg-colored($color-red);
+  @include font-colored($color-white);
+
   border: none;
-  background-color: $color-red;
-  color: white;
-  &:hover {
-    background-color: $color-red;
-  }
+  // &:hover {
+  //   background-color: $color-red;
+  // }
 }
 
 .warning {
+  @include bg-colored($color-orange);
+  @include font-colored($color-white);
+
   border: none;
-  background-color: $color-orange;
-  color: white;
-  &:hover {
-    background-color: $color-orange;
-  }
+  // &:hover {
+  //   background-color: $color-orange;
+  // }
 }
 
 .confirm {
+  @include bg-colored($color-green);
+  @include font-colored($color-white);
+
   border: none;
-  background-color: $color-green;
-  color: white;
-  &:hover {
-    background-color: $color-green;
-  }
+  // &:hover {
+  //   @include bg-colored($color-green);
+  // }
 }
 
 .neutral {
+  @include bg-colored($color-grey3);
+  @include font-colored($color-white);
   border: none;
-  background-color: $color-grey3;
-  color: white;
-  &:hover {
-    background-color: $color-grey3;
-  }
+
+  // &:hover {
+  //   @include bg-colored($color-grey3);
+  // }
 }
