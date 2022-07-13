@@ -14,10 +14,9 @@ const Template: Story<LoadingProps> = (args) => <Component {...args} />;
 export const Loading = Template.bind({});
 Loading.args = {
   image: spinner,
+  overlay: false,
+  shadowed: false,
   size: 'regular',
   style: 'spin',
-  overlay: false
+  text: 'Carregando...'
 };
-// const LoadingComponent: Story<LoadingProps> = (args) => <Loading {...args} />;
-
-// LoadingSpinner = () => <LoadingComponent image={spinner} />;

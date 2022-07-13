@@ -8,8 +8,10 @@ export const loadingText = 'Carregando...';
 export const Loading = ({
   image,
   overlay = false,
+  shadowed = false,
   size = 'regular',
-  style = 'spin'
+  style = 'spin',
+  text = loadingText
 }: LoadingProps) => {
   const containerClass = classNames({
     [styles.containerRegular]: size === 'regular',
@@ -21,11 +23,13 @@ export const Loading = ({
     [styles.imageRegular]: size === 'regular',
     [styles.imageSmall]: size === 'small',
     [styles.imageHeadbutt]: style === 'headbutt',
-    [styles.imageSpin]: style === 'spin'
+    [styles.imageSpin]: style === 'spin',
+    [styles.imageShadowed]: shadowed
   });
 
   const textClass = classNames(styles.text, {
-    [styles.textHeadbutt]: style === 'headbutt'
+    [styles.textHeadbutt]: style === 'headbutt',
+    [styles.textShadowed]: shadowed
   });
 
   return (
@@ -38,7 +42,7 @@ export const Loading = ({
       />
       {size === 'regular' && (
         <p data-testid="test-loading__text" className={textClass}>
-          {loadingText}
+          {text}
         </p>
       )}
     </div>
