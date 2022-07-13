@@ -28,11 +28,14 @@
 }
 
 .image {
-  @extend .drop-shadowed;
   @include padded(left, l3);
   @include padded(right, l3);
 
   width: auto;
+
+  &Shadowed {
+    @extend .drop-shadowed;
+  }
 
   &Regular {
     @extend .image;
@@ -54,11 +57,14 @@
 }
 
 .text {
-  @extend .drop-shadowed;
   @include font-colored($color-grey2);
   @include font-sized(xl);
   @include padded(all, none);
   @include marged(all, none);
+
+  &Shadowed {
+    @extend .drop-shadowed;
+  }
 
   &Headbutt {
     animation: headbuttText 3s ease-in-out infinite;
