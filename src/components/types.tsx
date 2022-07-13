@@ -1,3 +1,3 @@
-export type { ButtonProps } from './Button/types';
-export type { LoadingProps } from './Loading/types';
-export type { NavbarProps } from './Navbar/types';
+export type { IButtonProps } from './Button/types';
+export type { ILoadingProps } from './Loading/types';
+export type { INavbarProps, TNavbarButton } from './Navbar/types';

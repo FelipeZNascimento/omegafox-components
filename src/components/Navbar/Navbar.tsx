@@ -1,19 +1,26 @@
 import { useState } from 'react';
 
-import { NavbarProps } from './types';
+import { INavbarProps } from './types';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
 
-export const Navbar = ({ navbarButtons, platform, logo }: NavbarProps) => {
+export const Navbar = ({
+  isSticky = true,
+  navbarButtons,
+  platform,
+  logo,
+  onClick
+}: INavbarProps) => {
   const [selectedNavId, setSelectedNavId] = useState<number>(0);
 
-  const containerClass = classNames(styles.container, {
+  const containerClass = classNames({
     [styles.containerCopa]: platform === 'copa',
+    [styles.containerSticky]: isSticky
     // [styles.containerNfl]: platform === 'nfl'
   });
 
   const buttonContainerClass = classNames({
-    [styles.buttonContainerCopa]: platform === 'copa',
+    [styles.buttonContainerCopa]: platform === 'copa'
     // [styles.buttonContainerNfl]: platform === 'Nfl'
   });
 
@@ -23,16 +30,16 @@ export const Navbar = ({ navbarButtons, platform, logo }: NavbarProps) => {
         [styles.navButtonSelected]: selectedNavId === item.id
       });
 
-      const onClick = () => {
+      const onButtonClick = () => {
         setSelectedNavId(item.id);
-        item.onClick();
+        onClick(item);
       };
 
       return (
         <button
           key={item.id}
           className={buttonContainerClass}
-          onClick={onClick}
+          onClick={onButtonClick}
         >
           {item.text}
         </button>

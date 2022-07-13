@@ -1,4 +1,4 @@
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode | null;
   icon?: React.ReactNode | null;
   isDisabled?: boolean;

@@ -14,11 +14,18 @@
   display: flex;
 
   &Copa {
+    @extend .container;
     @include bg-colored($color-grey1);
   }
 
   &NFL {
+    @extend .container;
     @include bg-colored($color-navy);
+  }
+
+  &Sticky {
+    position: sticky;
+    top: 0;
   }
 }
 

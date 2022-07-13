@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProps } from './types';
+import { IButtonProps } from './types';
 import classNames from 'classnames';
 import styles from './Button.module.scss';
 
@@ -17,7 +17,7 @@ export const Button = ({
   variant = 'primary',
   onClick,
   ...props
-}: ButtonProps) => {
+}: IButtonProps) => {
   const buttonClass = classNames(styles.container, {
     [styles.primary]: variant === 'primary',
     [styles.danger]: variant === 'danger',
