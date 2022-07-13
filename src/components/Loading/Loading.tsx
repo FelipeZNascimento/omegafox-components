@@ -30,7 +30,6 @@ export const Loading = ({
   const textClass = classNames(styles.text, {
     [styles.textHeadbutt]: style === 'headbutt',
     [styles.textShadowed]: shadowed
-
   });
 
   return (
