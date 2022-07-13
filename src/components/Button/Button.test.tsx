@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from './Button';
-import { ButtonProps } from './types';
+import { IButtonProps } from './types';
 
 describe('ButtonComponent', () => {
   const renderComponent = ({
@@ -20,7 +20,7 @@ describe('ButtonComponent', () => {
     shape,
     tooltip,
     variant
-  }: Partial<ButtonProps>) =>
+  }: Partial<IButtonProps>) =>
     render(
       <Button
         icon={icon}

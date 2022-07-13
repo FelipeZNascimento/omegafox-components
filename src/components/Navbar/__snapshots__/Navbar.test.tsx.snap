@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavbarComponent should render 1`] = `
+<div>
+  <nav
+    class="containerCopa containerSticky"
+  >
+    <img
+      class="logo"
+      src="any"
+    />
+    <div
+      class="buttonContainerCopa"
+    >
+      <button
+        class="navButton navButtonSelected"
+      >
+        Início
+      </button>
+      <button
+        class="navButton"
+      >
+        Resultados
+      </button>
+      <button
+        class="navButton"
+      >
+        Apostar
+      </button>
+      <button
+        class="navButton"
+      >
+        Regras
+      </button>
+      <button
+        class="navButton"
+      >
+        Prêmios
+      </button>
+      <button
+        class="navButton"
+      >
+        Extras
+      </button>
+      <button
+        class="navButton"
+      >
+        Blog
+      </button>
+    </div>
+  </nav>
+</div>
+`;
