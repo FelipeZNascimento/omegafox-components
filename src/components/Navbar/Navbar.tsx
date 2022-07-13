@@ -8,11 +8,13 @@ export const Navbar = ({ navbarButtons, platform, logo }: NavbarProps) => {
   const [selectedNavId, setSelectedNavId] = useState<number>(0);
 
   const containerClass = classNames(styles.container, {
-    [styles.containerCopa]: platform === 'copa'
+    [styles.containerCopa]: platform === 'copa',
+    // [styles.containerNfl]: platform === 'nfl'
   });
 
   const buttonContainerClass = classNames({
-    [styles.buttonContainerCopa]: platform === 'copa'
+    [styles.buttonContainerCopa]: platform === 'copa',
+    // [styles.buttonContainerNfl]: platform === 'Nfl'
   });
 
   const renderButtons = () => {
