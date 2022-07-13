@@ -1,6 +1,6 @@
 {
   "name": "@omegafox/components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Omegafox component library using Rollup, TypeScript, Sass and Storybook",
   "main": "dist/index.js",
   "typings": "dist/src/index",
@@ -48,6 +48,7 @@
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.4",
     "@semantic-release/npm": "^9.0.1",
     "@storybook/addon-essentials": "6.4.17",
