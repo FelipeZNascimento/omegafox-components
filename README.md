@@ -10,8 +10,8 @@ Learn more in [Storybook tutorials](https://storybook.js.org/tutorials/).
 
 ## Commit Tags
 
-I'm using `semantic-release` to perform releases and changelog. It's using `eslint` as a parser.
-These are the release tags and what they do:
+I'm using `semantic-release` to perform releases and changelog. It's using `eslint` as a parser ([more info here](https://github.com/conventional-changelog-archived-repos/conventional-changelog-eslint/blob/master/convention.md))
+These are the release tags and what they do (capital letters are important):
 
     tag: 'Breaking', release: 'major'
     tag: 'Fix', release: 'patch'
