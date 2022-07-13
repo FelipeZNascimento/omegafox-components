@@ -1,22 +1,22 @@
 import React from 'react';
 
-import { LoadingProps } from './types';
+import { ILoadingProps } from './types';
 import classNames from 'classnames';
 import styles from './Loading.module.scss';
 
 export const loadingText = 'Carregando...';
 export const Loading = ({
   image,
-  overlay = false,
-  shadowed = false,
+  isOverlay = false,
+  isShadowed = false,
   size = 'regular',
   style = 'spin',
   text = loadingText
-}: LoadingProps) => {
+}: ILoadingProps) => {
   const containerClass = classNames({
     [styles.containerRegular]: size === 'regular',
     [styles.container]: size === 'small',
-    [styles.overlay]: overlay
+    [styles.overlay]: isOverlay
   });
 
   const imageClass = classNames({
@@ -24,12 +24,12 @@ export const Loading = ({
     [styles.imageSmall]: size === 'small',
     [styles.imageHeadbutt]: style === 'headbutt',
     [styles.imageSpin]: style === 'spin',
-    [styles.imageShadowed]: shadowed
+    [styles.imageShadowed]: isShadowed
   });
 
   const textClass = classNames(styles.text, {
     [styles.textHeadbutt]: style === 'headbutt',
-    [styles.textShadowed]: shadowed
+    [styles.textShadowed]: isShadowed
   });
 
   return (

@@ -1,7 +1,7 @@
-export interface LoadingProps {
+export interface ILoadingProps {
   image: string;
-  overlay?: boolean;
-  shadowed?: boolean;
+  isOverlay?: boolean;
+  isShadowed?: boolean;
   size?: 'small' | 'regular' | 'big';
   style?: 'spin' | 'headbutt';
   text?: string;

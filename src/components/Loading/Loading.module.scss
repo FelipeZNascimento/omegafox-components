@@ -52,13 +52,13 @@
   }
 
   &Spin {
-    animation: spin 2s linear infinite;
+    animation: spin 2s ease-in-out infinite;
   }
 }
 
 .text {
   @include font-colored($color-grey2);
-  @include font-sized(xl);
+  @include font-sized(l3);
   @include padded(all, none);
   @include marged(all, none);
 

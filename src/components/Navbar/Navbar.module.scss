@@ -1,0 +1,83 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include font-sized(l2);
+  @include marged(all, zero);
+  @include padded(vertical, s);
+  @include padded(horizontal, s);
+
+  height: 64px;
+  display: flex;
+
+  &Copa {
+    @extend .container;
+    @include bg-colored($color-grey1);
+  }
+
+  &NFL {
+    @extend .container;
+    @include bg-colored($color-navy);
+  }
+
+  &Sticky {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.logo {
+  @include padded(horizontal, s);
+
+  flex: 0;
+  height: 100%;
+  width: auto;
+}
+
+.buttonContainer {
+  @include padded(horizontal, s);
+  @include flex-aligned(flex-start, center);
+
+  display: flex;
+  flex: 1;
+
+  button {
+    @include padded(horizontal, m);
+    @include marged(horizontal, s3);
+    @include bg-colored($color-grey1);
+
+    border-radius: 16px;
+    height: 100%;
+    transition: all 0.4s;
+  }
+
+  button,
+  input[type="submit"],
+  input[type="reset"] {
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  &Copa {
+    @extend .buttonContainer;
+    @include font-colored($color-grey4);
+
+    .navButton {
+      &Selected {
+        @include font-colored($color-qatar-red);
+      }
+
+      &:hover {
+        @include bg-colored($color-grey2);
+
+        transition: all 0.4s;
+      }
+    }
+  }
+}

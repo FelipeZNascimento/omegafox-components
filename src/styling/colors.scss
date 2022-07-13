@@ -19,6 +19,12 @@ $color-grey3: #9da4a7;
 $color-grey4: #757a7c;
 $color-grey5: #545859;
 
+// Qatar World Cup Colors
+$color-qatar-red: #9a1032; // Dark Scarlet
+$color-qatar-blue: #1077C3; // Ocean Boat Blue
+$color-qatar-lightblue: #49BCE3; // Picton Blue
+$color-qatar-yellow: #FEC310; // Mikado Yellow
+
 $colors: (
     "color-black": $color-black,
     "color-white": $color-white,
@@ -37,6 +43,10 @@ $colors: (
     "color-grey3": $color-grey3,
     "color-grey4": $color-grey4,
     "color-grey5": $color-grey5,
+    "color-qatar-red": $color-qatar-red,
+    "color-qatar-blue": $color-qatar-blue,
+    "color-qatar-lightblue": $color-qatar-lightblue,
+    "color-qatar-yellow": $color-qatar-yellow,
 );
 
 @each $name, $hexa in $colors {

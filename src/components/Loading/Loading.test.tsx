@@ -1,17 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Loading, loadingText } from './Loading';
-import { LoadingProps } from './types';
+import { ILoadingProps } from './types';
 
 const spinnerUrl = './spinner.png';
 
 describe('LoadingComponent', () => {
   const renderComponent = ({
     size,
-    overlay,
+    isOverlay,
     image = spinnerUrl
-  }: Partial<LoadingProps>) =>
-    render(<Loading size={size} overlay={overlay} image={image} />);
+  }: Partial<ILoadingProps>) =>
+    render(<Loading size={size} isOverlay={isOverlay} image={image} />);
 
   it('should render', () => {
     const { container } = renderComponent({});
@@ -36,7 +36,7 @@ describe('LoadingComponent', () => {
   it('should render correctly (small size)', () => {
     const { getByTestId, queryByTestId } = renderComponent({
       size: 'small',
-      overlay: true
+      isOverlay: true
     });
 
     const loading = getByTestId('test-loading');
