@@ -13,10 +13,10 @@ Learn more in [Storybook tutorials](https://storybook.js.org/tutorials/).
 I'm using `semantic-release` to perform releases and changelog. It's using `eslint` as a parser ([more info here](https://github.com/conventional-changelog-archived-repos/conventional-changelog-eslint/blob/master/convention.md))
 These are the release tags and what they do (capital letters are important):
 
-    tag: 'Breaking', release: 'major'
-    tag: 'Fix', release: 'patch'
-    tag: 'Update', release: 'minor'
-    tag: 'New', release: 'minor'
+    tag: 'Breaking', release: 'major' (X.0.0)
+    tag: 'Update', release: 'minor' (0.X.0)
+    tag: 'New', release: 'minor' (0.X.0)
+    tag: 'Fix', release: 'patch' (0.0.X)
 
 ## Commands
 
