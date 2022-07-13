@@ -1,10 +1,10 @@
-// Horizontal most common options 
+// Horizontal most common options
 // - center
 // - flex-start
 // - flex-end
 // - space-between
 
-// Vertical most common options 
+// Vertical most common options
 // - center
 // - flex-start
 // - flex-end
@@ -17,5 +17,5 @@
 }
 
 @mixin aligned($horizontal) {
-    text-align:$horizontal;
+    text-align: $horizontal;
 }

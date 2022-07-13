@@ -1,21 +1,23 @@
 $font-sizes: (
-    "xxs": 6px,
-    "xs": 8px,
-    "s": 12px,
-    "s1": 14px,
-    "m": 16px,
-    "m2": 20px,
-    "l": 24px,
-    "xl": 36px,
-    "xxl": 48px,
+  "s3": 6px,
+  "s2": 8px,
+  "s1": 12px,
+  "s": 12px,
+  "m": 14px,
+  "l": 16px,
+  "l1": 16px,
+  "l2": 20px,
+  "l3": 24px,
+  "l4": 36px,
+  "l5": 48px,
 );
 
 @each $name, $pixels in $font-sizes {
-    .font-size-#{$name} {
-        font-size: #{$pixels};
-    }
+  .font-size-#{$name} {
+    font-size: #{$pixels};
+  }
 }
 
 @mixin font-sized($size) {
-    @extend .font-size-#{$size};
+  @extend .font-size-#{$size};
 }
