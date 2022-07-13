@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Navbar as Component } from '../components/';
-import { INavbarProps, TNavbarButton } from '../components/types';
+import { INavbarProps } from '../components/types';
 import { navbarButtons } from '../components/mocks';
 
 export default {

@@ -6,17 +6,12 @@ import { INavbarProps } from './types';
 import { navbarButtons } from './mocks';
 
 describe('NavbarComponent', () => {
-  const renderComponent = ({
-    navbarButtons,
-    platform,
-    logo,
-    onClick
-  }: INavbarProps) =>
+  const renderComponent = ({ navbarButtons, platform, logo }: INavbarProps) =>
     render(
       <Navbar
         navbarButtons={navbarButtons}
-        platform="copa"
-        logo="any"
+        platform={platform}
+        logo={logo}
         onClick={jest.fn}
       />
     );
