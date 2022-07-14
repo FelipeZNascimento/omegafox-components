@@ -2,52 +2,56 @@
 
 exports[`NavbarComponent should render 1`] = `
 <div>
-  <nav
-    class="containerCopa containerSticky"
+  <div
+    class="navContainer navContainerSticky"
   >
-    <img
-      class="logo"
-      src="any"
-    />
-    <div
-      class="buttonContainerCopa"
+    <nav
+      class="containerCopa"
     >
-      <button
-        class="navButton navButtonSelected"
+      <img
+        class="logo"
+        src="any"
+      />
+      <div
+        class="buttonContainerCopa"
       >
-        Início
-      </button>
-      <button
-        class="navButton"
-      >
-        Resultados
-      </button>
-      <button
-        class="navButton"
-      >
-        Apostar
-      </button>
-      <button
-        class="navButton"
-      >
-        Regras
-      </button>
-      <button
-        class="navButton"
-      >
-        Prêmios
-      </button>
-      <button
-        class="navButton"
-      >
-        Extras
-      </button>
-      <button
-        class="navButton"
-      >
-        Blog
-      </button>
-    </div>
-  </nav>
+        <button
+          class="navButton navButtonSelected"
+        >
+          Início
+        </button>
+        <button
+          class="navButton"
+        >
+          Resultados
+        </button>
+        <button
+          class="navButton"
+        >
+          Apostar
+        </button>
+        <button
+          class="navButton"
+        >
+          Regras
+        </button>
+        <button
+          class="navButton"
+        >
+          Prêmios
+        </button>
+        <button
+          class="navButton"
+        >
+          Extras
+        </button>
+        <button
+          class="navButton"
+        >
+          Blog
+        </button>
+      </div>
+    </nav>
+  </div>
 </div>
 `;

@@ -4,29 +4,37 @@
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
-.container {
-  @include font-sized(l2);
-  @include marged(all, zero);
+.navContainer {
   @include padded(vertical, s);
   @include padded(horizontal, s);
 
   height: 64px;
-  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  z-index: $always-on-top;
+
+  &Sticky {
+    align-self: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
 
   &Copa {
-    @extend .container;
     @include bg-colored($color-grey1);
   }
 
   &NFL {
-    @extend .container;
     @include bg-colored($color-navy);
   }
+}
 
-  &Sticky {
-    position: sticky;
-    top: 0;
-  }
+.container {
+  @include font-sized(l2);
+  @include marged(all, zero);
+
+  display: flex;
+  height: 100%;
 }
 
 .logo {
@@ -39,7 +47,6 @@
 
 .buttonContainer {
   @include padded(horizontal, s);
-  @include flex-aligned(flex-start, center);
 
   display: flex;
   flex: 1;
@@ -51,7 +58,7 @@
 
     border-radius: 16px;
     height: 100%;
-    transition: all 0.4s;
+    transition: all $transition-time;
   }
 
   button,
@@ -62,6 +69,14 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+  }
+
+  &Left {
+    @include flex-aligned(flex-start, center);
+  }
+
+  &Right {
+    @include flex-aligned(flex-end, center);
   }
 
   &Copa {
@@ -76,7 +91,7 @@
       &:hover {
         @include bg-colored($color-grey2);
 
-        transition: all 0.4s;
+        transition: all $transition-time;
       }
     }
   }

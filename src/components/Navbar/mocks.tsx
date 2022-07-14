@@ -32,7 +32,10 @@ export const navbarButtons: TNavbarButton[] = [
   },
   {
     id: 6,
-    text: 'Blog',
-    url: ''
+    text: '',
+    url: '',
+    renderingFunction: () => {
+      return <a href=''>link</a>;
+    }
   }
 ];
