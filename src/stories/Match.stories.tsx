@@ -14,5 +14,8 @@ const Template: Story<IMatchProps> = (args) => <Component {...args} />;
 export const Match = Template.bind({});
 
 Match.args = {
-  timestamp: matchInfo.timestamp
+  timestamp: matchInfo.timestamp,
+  location: matchInfo.location,
+  stadium: matchInfo.stadium,
+  teams: matchInfo.teams
 };

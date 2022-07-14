@@ -1,4 +1,6 @@
-export const teamLeft = {
+import { IMatchProps, TTeam } from './types';
+
+export const teamLeft: TTeam = {
   id: 0,
   align: 'left',
   colors: ['#FFDC02', '#193375'],
@@ -8,7 +10,7 @@ export const teamLeft = {
   score: 4
 };
 
-export const teamRight = {
+export const teamRight: TTeam = {
   id: 1,
   align: 'right',
   colors: ['#FFFFFF', '#43A1D5'],
@@ -18,9 +20,9 @@ export const teamRight = {
   score: 0
 };
 
-export const matchInfo = {
+export const matchInfo: IMatchProps = {
   timestamp: 1662682800,
-  location: 'Qatar',
-  stadium: 'Lusail Stadium',
+  location: 'Curitiba, Paraná',
+  stadium: 'Vila Capanema',
   teams: [teamLeft, teamRight]
 };

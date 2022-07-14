@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MatchComponent should render 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="matchContainer"
+    >
+      <div
+        class="toggle"
+      >
+        +
+      </div>
+      <div
+        class="dateContainer"
+        style="background: rgb(236, 239, 241) url();"
+      >
+        01h20
+      </div>
+      <div
+        class="teamContainerLeft"
+        style="color: rgb(255, 220, 2); background: rgb(25, 51, 117) url();"
+      >
+        <div
+          class="logoContainer"
+        >
+          <img
+            alt="logo"
+            class="logoLeft"
+            src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png"
+          />
+        </div>
+        <div
+          class="nameContainer"
+          style="text-shadow: -1px 0 #193375, 0 1px #193375, 1px 0 #193375, 0 -1px #193375;"
+        >
+          Brasil
+        </div>
+        <div
+          class="scoreContainer"
+        >
+          4
+        </div>
+      </div>
+      <div
+        class="teamContainerRight"
+        style="color: rgb(255, 255, 255); background: rgb(67, 161, 213) url();"
+      >
+        <div
+          class="scoreContainer"
+        >
+          0
+        </div>
+        <div
+          class="nameContainer"
+          style="text-shadow: -1px 0 #43A1D5, 0 1px #43A1D5, 1px 0 #43A1D5, 0 -1px #43A1D5;"
+        >
+          Argentina
+        </div>
+        <div
+          class="logoContainer"
+        >
+          <img
+            alt="logo"
+            class="logoRight"
+            src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Argentina-National-Football-Team-Logo-192x300.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="expandedContainer expandedContainerClosed"
+    >
+      Estádio: 
+      Vila Capanema
+      <br />
+      Localização: 
+      Curitiba, Paraná
+    </div>
+  </div>
+</div>
+`;

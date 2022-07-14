@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { DateTime } from 'luxon';
 import { isMobile } from 'react-device-detect';
 
-import { IMatchProps } from './types';
+import { IMatchProps, TTeam } from './types';
 import classNames from 'classnames';
 import styles from './Match.module.scss';
-import { matchInfo } from './mocks';
-import matchLayer from './img/match_layer.png';
+import matchLayer from '../../img/match_layer.png';
 
-export const Match = ({ timestamp }: IMatchProps) => {
+export const Match = ({ timestamp, location, stadium, teams }: IMatchProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const expandedContainerClass = classNames(styles.expandedContainer, {
@@ -16,11 +15,11 @@ export const Match = ({ timestamp }: IMatchProps) => {
     [styles.expandedContainerClosed]: !isExpanded
   });
 
-  const formattedDate = DateTime.fromSeconds(matchInfo.timestamp)
+  const formattedDate = DateTime.fromSeconds(timestamp)
     .setLocale('pt-Br')
     .toFormat("HH'h'mm");
 
-  const renderLogoLeft = (team: any) => {
+  const renderLogoLeft = (team: TTeam) => {
     return (
       <div
         key={team.id}
@@ -45,7 +44,7 @@ export const Match = ({ timestamp }: IMatchProps) => {
       </div>
     );
   };
-  const renderLogoRight = (team: any) => {
+  const renderLogoRight = (team: TTeam) => {
     return (
       <div
         key={team.id}
@@ -81,19 +80,19 @@ export const Match = ({ timestamp }: IMatchProps) => {
         <div
           className={styles.dateContainer}
           style={{
-            background: `url(${matchLayer}) #cfd8dc`
+            background: `url(${matchLayer}) #eceff1`
           }}
         >
           {formattedDate}
         </div>
-        {matchInfo.teams.map((item) =>
+        {teams.map((item) =>
           item.align === 'left' ? renderLogoLeft(item) : renderLogoRight(item)
         )}
       </div>
       <div className={expandedContainerClass}>
-        Estádio: Vila Capanema
+        Estádio: {stadium}
         <br />
-        Localização: Curitiba, Paraná
+        Localização: {location}
       </div>
     </div>
   );
