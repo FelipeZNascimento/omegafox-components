@@ -1,4 +1,5 @@
 import { TNavbarButton } from './types';
+
 export const navbarButtons: TNavbarButton[] = [
   {
     id: 0,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Loading as Component } from '../components';
-import { LoadingProps } from '../components/types';
+import { ILoadingProps } from '../components/types';
 import spinner from '../img/spinner.png';
 
 export default {
@@ -9,13 +9,13 @@ export default {
   component: Component
 };
 
-const Template: Story<LoadingProps> = (args) => <Component {...args} />;
+const Template: Story<ILoadingProps> = (args) => <Component {...args} />;
 
 export const Loading = Template.bind({});
 Loading.args = {
   image: spinner,
-  overlay: false,
-  shadowed: false,
+  isOverlay: false,
+  isShadowed: false,
   size: 'regular',
   style: 'spin',
   text: 'Carregando...'

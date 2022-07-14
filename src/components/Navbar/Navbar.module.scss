@@ -7,9 +7,9 @@
 .navContainer {
   @include padded(vertical, s);
   @include padded(horizontal, s);
+  @include shadowed(0.2);
 
   height: 64px;
-  width: 100vw;
   overflow: hidden;
   z-index: $always-on-top;
 
