@@ -1,0 +1,135 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+}
+
+.matchContainer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: $match-container-height;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    filter: brightness(90%);
+    transition: filter $transition-time;
+  }
+}
+
+.dateContainer {
+  @include flex-aligned(center, flex-start);
+  @include font-colored($color-grey4);
+  @include padded(all, m);
+
+  flex: 0;
+}
+
+.teamContainer {
+  @include font-sized(l);
+
+  flex: 1;
+  height: $match-container-height;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &Left {
+    @extend .teamContainer;
+    @include flex-aligned(flex-start, center);
+  }
+  &Right {
+    @extend .teamContainer;
+    @include flex-aligned(flex-end, center);
+  }
+}
+
+.logoContainer {
+  flex: 1;
+
+  .logo {
+    filter: drop-shadow(0px 0px 10px #222);
+    position: absolute;
+    top: 50%;
+    z-index: $hidden-z;
+    height: 90px;
+    width: auto;
+
+    &Left {
+      @extend .logo;
+      left: 15%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &Right {
+      @extend .logo;
+      transform: translateX(50%) translateY(-50%);
+      right: 15%;
+    }
+  }
+}
+
+.scoreContainer {
+  @include bg-rgba-colored($color-black, 0.2);
+  @include flex-aligned(center, center);
+  @include font-sized(l3);
+  @include padded(all, m);
+
+  flex: 0;
+  height: 100%;
+}
+
+.nameContainer {
+  @include font-sized(l2);
+  @include padded(horizontal, m);
+}
+
+.toggle {
+  @include bg-rgba-colored($color-black, 0.3);
+  @include font-colored($color-grey1);
+  @include font-sized(l2);
+  @include flex-aligned(center, center);
+
+  height: 24px;
+  width: 24px;
+  // border-radius: 20px;
+  bottom: 0px;
+  position: absolute;
+  left: 0px;
+  z-index: $always-on-top;
+
+  transition: filter $transition-time;
+}
+
+.expandedContainer {
+  @include bg-rgba-colored($color-grey1, 0.5);
+  @include flex-aligned(flex-start, center);
+  @include aligned(center);
+
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  flex-direction: column;
+
+  &Open {
+    @include padded(all, m);
+
+    max-height: 500px;
+    transition: max-height $transition-time ease-in, padding $transition-time ease-in;
+  }
+
+  &Closed {
+    @include padded(all, none);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-time ease-out, padding $transition-time ease-out;
+  }
+}
