@@ -3,17 +3,17 @@
 exports[`NavbarComponent should render 1`] = `
 <div>
   <div
-    class="navContainer navContainerSticky"
+    class="navContainer navContainerSticky navContainerCopa"
   >
     <nav
-      class="containerCopa"
+      class="container"
     >
       <img
         class="logo"
         src="any"
       />
       <div
-        class="buttonContainerCopa"
+        class="buttonContainerLeft buttonContainerCopa"
       >
         <button
           class="navButton navButtonSelected"
@@ -48,7 +48,11 @@ exports[`NavbarComponent should render 1`] = `
         <button
           class="navButton"
         >
-          Blog
+          <a
+            href="#"
+          >
+            link
+          </a>
         </button>
       </div>
     </nav>
