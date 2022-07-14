@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { INavbarProps } from './types';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
-import { isMobile } from 'react-device-detect';
 
 export const Navbar = ({
   align = 'left',

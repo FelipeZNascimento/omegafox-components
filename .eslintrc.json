@@ -31,7 +31,6 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "warn",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "endOfLine": "auto"
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
