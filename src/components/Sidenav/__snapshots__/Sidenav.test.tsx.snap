@@ -1,19 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavbarComponent should render 1`] = `
+exports[`SidebarComponent should render 1`] = `
 <div>
   <div
-    class="navContainer navContainerSticky navContainerCopa"
+    class="darkBackground darkBackgroundOpen"
   >
-    <nav
-      class="container"
+    <div
+      class="container containerOpen"
     >
-      <img
-        class="logo"
-        src="any"
-      />
       <div
-        class="buttonContainerLeft buttonContainerCopa"
+        class="logoContainer"
+      >
+        <img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png"
+        />
+      </div>
+      <nav
+        class="nav"
       >
         <button
           class="navButton navButtonSelected"
@@ -54,8 +58,8 @@ exports[`NavbarComponent should render 1`] = `
             link
           </a>
         </button>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
 </div>
 `;
