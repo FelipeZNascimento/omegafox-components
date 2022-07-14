@@ -17,7 +17,7 @@ exports[`MatchComponent should render 1`] = `
         class="dateContainer"
         style="background: rgb(236, 239, 241) url();"
       >
-        01h20
+        00h20
       </div>
       <div
         class="teamContainerLeft"
