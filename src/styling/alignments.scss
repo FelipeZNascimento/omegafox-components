@@ -1,3 +1,8 @@
+$border-radius: 16px;
+$transition-time: 0.4s;
+$hidden-z: -1;
+$always-on-top: 10;
+
 // Horizontal most common options
 // - center
 // - flex-start
@@ -11,11 +16,11 @@
 // - baseline
 
 @mixin flex-aligned($horizontal, $vertical) {
-    display: flex;
-    align-items: $vertical;
-    justify-content: $horizontal;
+  display: flex;
+  align-items: $vertical;
+  justify-content: $horizontal;
 }
 
 @mixin aligned($horizontal) {
-    text-align: $horizontal;
+  text-align: $horizontal;
 }

@@ -1,0 +1,102 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.darkBackground {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: $always-on-top + 1;
+
+  &Open {
+    @include bg-rgba-colored($color-black, 0.2);
+
+    left: 0;
+    transition: background-color $transition-time, left $transition-time;
+  }
+
+  &Closed {
+    @include bg-rgba-colored($color-black, 0);
+
+    left: -100vw;
+    transition: background-color $transition-time, left $transition-time;
+  }
+}
+.container {
+  @include shadowed(0.2);
+  @include bg-colored($color-grey1);
+  @include font-sized(l2);
+  @include flex-aligned(center, center);
+
+  flex: 1 0 auto;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: $always-on-top + 1;
+
+  &Open {
+    margin-left: 0;
+    transition: margin $transition-time;
+  }
+
+  &Closed {
+    margin-left: -50%;
+    transition: margin $transition-time;
+  }
+}
+
+.logoContainer {
+  @include flex-aligned(center, flex-start);
+  @include padded(vertical, s);
+
+  flex: 0;
+  max-width: 100px;
+  max-height: 100px;
+
+  .logo {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.nav {
+  @include padded(vertical, l);
+  @include padded(horizontal, l);
+  @include flex-aligned(center, flex-start);
+  flex: 1;
+  flex-direction: column;
+
+  button,
+  input[type="submit"],
+  input[type="reset"] {
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .navButton {
+    @include padded(all, m);
+    @include marged(vertical, s3);
+    @include bg-colored($color-grey1);
+
+    border-radius: 16px;
+    transition: all $transition-time;
+    width: 100%;
+
+    &Selected {
+      @include font-colored($color-qatar-red);
+    }
+
+    &:hover {
+      @include bg-colored($color-grey2);
+
+      transition: all $transition-time;
+    }
+  }
+}
