@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClockComponent should render 1`] = `
+<div>
+  <div
+    class="dateContainer"
+    style="background: rgb(236, 239, 241) url();"
+  >
+    <div
+      class="toggle toggleNeutral"
+    >
+      +
+    </div>
+    <div
+      class="info infoClock infoClockAnimated"
+    >
+      <span
+        class="infoClockStatus"
+      >
+        1T
+      </span>
+      <span
+        class="clockAnimated"
+      >
+        45
+        '
+      </span>
+    </div>
+  </div>
+</div>
+`;

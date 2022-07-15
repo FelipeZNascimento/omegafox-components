@@ -1,0 +1,85 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.dateContainer {
+  @include padded(horizontal, s2);
+  @include marged(right, s2);
+
+  height: $match-container-height;
+  border-radius: $border-radius;
+  border-bottom-left-radius: 0;
+  position: relative;
+  width: 54px;
+
+  .info {
+    @include flex-aligned(center, center);
+    height: 36px; //Without grey area
+
+    &Date {
+      @include font-colored($color-grey5);
+      @include font-sized(m);
+    }
+
+    &Clock {
+      @include font-sized(m);
+      flex-direction: column;
+
+      &Status {
+        @include font-sized(s);
+      }
+
+      &Animated {
+        @include font-colored($color-qatar-red);
+        @include font-sized(l);
+        animation: pulse 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+.toggle {
+  @include font-colored($color-white);
+  @include font-sized(l2);
+  @include flex-aligned(center, center);
+
+  height: 24px;
+  width: 24px;
+  bottom: 0px;
+  position: absolute;
+  left: 0px;
+
+  transition: filter $transition-time;
+
+  &Neutral {
+    @include bg-rgba-colored($color-black, 0.5);
+  }
+
+  &Green {
+    @include bg-rgba-colored($color-mint, 0.6);
+  }
+
+  &Yellow {
+    @include bg-rgba-colored($color-gold, 0.6);
+  }
+
+  &Red {
+    @include bg-rgba-colored($color-red, 0.6);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    filter: brightness(80%);
+  }
+
+  50% {
+    filter: brightness(150%);
+  }
+
+  100% {
+    filter: brightness(80%);
+  }
+}
