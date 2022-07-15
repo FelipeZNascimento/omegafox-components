@@ -2,7 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { Match as Component } from '../components';
 import { IMatchProps } from '../components/types';
-import { matchInfo } from '../components/mocks';
+import { footballClock, matchInfo } from '../components/mocks';
 
 export default {
   title: 'Match',
@@ -14,6 +14,9 @@ const Template: Story<IMatchProps> = (args) => <Component {...args} />;
 export const Match = Template.bind({});
 
 Match.args = {
+  betStatus: 'neutral',
+  clock: footballClock,
+  isForceMobile: false,
   timestamp: matchInfo.timestamp,
   location: matchInfo.location,
   stadium: matchInfo.stadium,

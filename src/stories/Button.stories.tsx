@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Button as Component } from '../components/';
-import { ButtonProps } from '../components/types';
+import { IButtonProps } from '../components/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,7 +10,7 @@ export default {
   component: Component
 };
 
-const Template: Story<ButtonProps> = (args) => <Component {...args} />;
+const Template: Story<IButtonProps> = (args) => <Component {...args} />;
 
 export const Button = Template.bind({});
 Button.args = {
