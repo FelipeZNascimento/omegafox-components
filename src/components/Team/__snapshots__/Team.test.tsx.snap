@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamComponent should render 1`] = `
+<div>
+  <div
+    class="containerLeft"
+    style="color: rgb(255, 220, 2); background: rgb(25, 51, 117) url();"
+  >
+    <div
+      class="logoContainer"
+    >
+      <img
+        alt="logo"
+        class="logoLeft"
+        src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png"
+      />
+    </div>
+    <div
+      class="nameContainer"
+      style="text-shadow: -1px 0 #193375, 0 1px #193375, 1px 0 #193375, 0 -1px #193375;"
+    >
+      Brasil
+    </div>
+    <div
+      class="scoreContainer"
+    >
+      4
+    </div>
+  </div>
+</div>
+`;

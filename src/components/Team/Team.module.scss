@@ -1,0 +1,65 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include font-sized(l);
+
+  border-radius: $border-radius;
+  flex: 1;
+  height: $match-container-height;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &Left {
+    @extend .container;
+    @include flex-aligned(flex-start, center);
+  }
+  &Right {
+    @extend .container;
+    @include flex-aligned(flex-end, center);
+  }
+}
+
+.logoContainer {
+  flex: 1;
+
+  .logo {
+    filter: drop-shadow(0px 0px 10px #222);
+    position: absolute;
+    top: 50%;
+    z-index: $hidden-z;
+    height: 90px;
+    width: auto;
+
+    &Left {
+      @extend .logo;
+      left: 15%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &Right {
+      @extend .logo;
+      transform: translateX(50%) translateY(-50%);
+      right: 15%;
+    }
+  }
+}
+
+.scoreContainer {
+  @include bg-rgba-colored($color-black, 0.2);
+  @include flex-aligned(center, center);
+  @include font-sized(l3);
+  @include padded(all, m);
+
+  flex: 0;
+  height: 100%;
+}
+
+.nameContainer {
+  @include font-sized(l2);
+  @include padded(horizontal, m);
+}
