@@ -44,14 +44,12 @@
     @include marged(top, s2);
 
     max-height: 500px;
-    transition: max-height $transition-time ease-in;
+    transition: max-height $transition-time ease-in, margin $transition-time ease-in;
   }
 
   &Closed {
-    @include marged(top, s2);
-
     max-height: 0;
     overflow: hidden;
-    transition: max-height $transition-time ease-out;
+    transition: max-height $transition-time ease-out, margin $transition-time ease-out;
   }
 }
