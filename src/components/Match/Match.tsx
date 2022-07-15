@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 import { Clock, Team } from '../index';
 import { footballClock } from './mocks';
@@ -9,14 +10,18 @@ import styles from './Match.module.scss';
 export const Match = ({
   betStatus = 'neutral',
   clock = footballClock,
+  isEditable = true,
+  isExpandable = false,
   isForceMobile = false,
   timestamp,
-  location,
-  stadium,
-  teams
+  teams,
+  expandableContent
 }: IMatchProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+  const matchContainerClass = classNames(styles.matchContainer, {
+    [styles.matchContainerExpandable]: isExpandable
+  });
   const expandedContainerClass = classNames(styles.expandedContainer, {
     [styles.expandedContainerOpen]: isExpanded,
     [styles.expandedContainerClosed]: !isExpanded
@@ -25,21 +30,26 @@ export const Match = ({
   return (
     <div className={styles.container}>
       <div
-        className={styles.matchContainer}
+        className={matchContainerClass}
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <Clock
-          betStatus={betStatus}
-          clock={clock}
-          isExpanded={isExpanded}
-          timestamp={timestamp}
-        />
+        {!isMobile && (
+          <Clock
+            betStatus={betStatus}
+            clock={clock}
+            isMatchEditable={isEditable}
+            isExpandable={isExpandable}
+            isExpanded={isExpanded}
+            timestamp={timestamp}
+          />
+        )}
         {teams.map((item) => (
           <Team
             key={item.id}
             align={item.align}
             colors={item.colors}
             id={item.id}
+            isEditable={isEditable}
             isForceMobile={isForceMobile}
             logo={item.logo}
             name={item.name}
@@ -48,11 +58,9 @@ export const Match = ({
           />
         ))}
       </div>
-      <div className={expandedContainerClass}>
-        Estádio: {stadium}
-        <br />
-        Localização: {location}
-      </div>
+      {isExpandable && expandableContent && (
+        <div className={expandedContainerClass}>{expandableContent()}</div>
+      )}
     </div>
   );
 };

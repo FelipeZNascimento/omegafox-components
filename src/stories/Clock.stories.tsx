@@ -16,6 +16,7 @@ export const Clock = Template.bind({});
 Clock.args = {
   betStatus: 'neutral',
   clock: footballClock,
+  isExpandable: false,
   isExpanded: false,
   timestamp: matchInfo.timestamp
 };

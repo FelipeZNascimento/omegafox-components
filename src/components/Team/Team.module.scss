@@ -6,6 +6,7 @@
 
 .container {
   @include font-sized(l);
+  @include marged(horizontal, s3);
 
   border-radius: $border-radius;
   flex: 1;
@@ -53,13 +54,34 @@
   @include bg-rgba-colored($color-black, 0.2);
   @include flex-aligned(center, center);
   @include font-sized(l3);
-  @include padded(all, m);
 
-  flex: 0;
   height: 100%;
+  transition: background-color $transition-time;
+  width: 50px;
+
+  &Null {
+    @extend .scoreContainer;
+    @include bg-rgba-colored($color-black, 0.5);
+    transition: background-color $transition-time;
+  }
 }
 
 .nameContainer {
   @include font-sized(l2);
   @include padded(horizontal, m);
+}
+
+.form {
+  @include padded(horizontal, s3);
+}
+
+input {
+  all: unset;
+  @include aligned(center);
+  border-bottom: 2px solid white;
+  width: 36px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

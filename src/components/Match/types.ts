@@ -6,10 +6,11 @@ export type TBetStatus = 'full' | 'half' | 'miss' | 'neutral';
 export interface IMatchProps {
   betStatus?: TBetStatus;
   clock: TClockFootball | TClockAmericanFootball;
+  expandableContent?: () => JSX.Element;
+  isEditable?: boolean;
+  isExpandable?: boolean;
   isForceMobile?: boolean;
-  location: string;
   sport?: TSport;
-  stadium: string;
   teams: ITeamProps[];
   timestamp: number;
 }

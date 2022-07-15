@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { INavbarProps } from './types';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
@@ -9,11 +7,10 @@ export const Navbar = ({
   isSticky = true,
   navbarButtons,
   platform,
+  selectedId,
   logo,
   onClick
 }: INavbarProps) => {
-  const [selectedNavId, setSelectedNavId] = useState<number>(0);
-
   const navContainerClass = classNames(styles.navContainer, {
     [styles.navContainerSticky]: isSticky,
     [styles.navContainerCopa]: platform === 'copa'
@@ -30,7 +27,6 @@ export const Navbar = ({
   const renderButtons = () => {
     return navbarButtons.map((item) => {
       const onButtonClick = () => {
-        setSelectedNavId(item.id);
         onClick(item);
       };
 
@@ -47,7 +43,7 @@ export const Navbar = ({
       }
 
       const buttonClass = classNames(styles.navButton, {
-        [styles.navButtonSelected]: selectedNavId === item.id
+        [styles.navButtonSelected]: selectedId === item.id
       });
 
       return (

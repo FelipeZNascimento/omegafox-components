@@ -5,6 +5,7 @@ export const teamLeft: ITeamProps = {
   id: 0,
   align: 'left',
   colors: ['#FFDC02', '#19AE47'],
+  isEditable: false,
   isForceMobile: false,
   logo: 'https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png',
   name: 'Brasil',
@@ -16,11 +17,22 @@ export const teamRight: ITeamProps = {
   id: 1,
   align: 'right',
   colors: ['#FFFFFF', '#43A1D5'],
+  isEditable: false,
   isForceMobile: false,
   logo: 'https://teamcolorcodes.com/wp-content/uploads/2021/12/Argentina-National-Football-Team-Logo-192x300.png',
   name: 'Argentina',
   nameShort: 'ARG',
   score: 0
+};
+
+export const teamLeftNoBet: ITeamProps = {
+  ...teamLeft,
+  score: null
+};
+
+export const teamRightNoBet: ITeamProps = {
+  ...teamRight,
+  score: null
 };
 
 export const footballClock: TClockFootball = {
@@ -29,10 +41,17 @@ export const footballClock: TClockFootball = {
 };
 
 export const matchInfo: IMatchProps = {
+  isExpandable: false,
   clock: footballClock,
-  timestamp: 1662682800,
-  location: 'Curitiba, Paraná',
+  expandableContent: () => {
+    return <p>Vila Capanema</p>;
+  },
   sport: 'football',
-  stadium: 'Vila Capanema',
-  teams: [teamLeft, teamRight]
+  teams: [teamLeft, teamRight],
+  timestamp: 1662682800
+};
+
+export const matchInfoNoBets: IMatchProps = {
+  ...matchInfo,
+  teams: [teamLeftNoBet, teamRightNoBet]
 };

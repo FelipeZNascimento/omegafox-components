@@ -9,8 +9,9 @@ export type TNavbarButton = {
 export interface INavbarProps {
   align?: 'left' | 'right';
   isSticky?: boolean;
+  logo: string;
   navbarButtons: TNavbarButton[];
   platform: 'copa' | 'nfl';
-  logo: string;
+  selectedId: number;
   onClick: (navbarButton: TNavbarButton) => void;
 }
