@@ -1,16 +1,15 @@
-export type TTeam = {
-  id: number;
-  align: 'left' | 'right';
-  colors: string[];
-  logo: string;
-  name: string;
-  nameShort: string;
-  score: number;
-};
+import { TClockAmericanFootball, TClockFootball, ITeamProps } from '../types';
+
+export type TSport = 'football' | 'am_football';
+export type TBetStatus = 'full' | 'half' | 'miss' | 'neutral';
 
 export interface IMatchProps {
-  timestamp: number;
+  betStatus?: TBetStatus;
+  clock: TClockFootball | TClockAmericanFootball;
+  isForceMobile?: boolean;
   location: string;
+  sport?: TSport;
   stadium: string;
-  teams: TTeam[];
+  teams: ITeamProps[];
+  timestamp: number;
 }

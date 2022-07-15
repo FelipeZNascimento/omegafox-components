@@ -9,18 +9,32 @@ exports[`MatchComponent should render 1`] = `
       class="matchContainer"
     >
       <div
-        class="toggle"
-      >
-        +
-      </div>
-      <div
         class="dateContainer"
         style="background: rgb(236, 239, 241) url();"
       >
-        00h20
+        <div
+          class="toggle toggleNeutral"
+        >
+          +
+        </div>
+        <div
+          class="info infoClock infoClockAnimated"
+        >
+          <span
+            class="infoClockStatus"
+          >
+            1T
+          </span>
+          <span
+            class="clockAnimated"
+          >
+            45
+            '
+          </span>
+        </div>
       </div>
       <div
-        class="teamContainerLeft"
+        class="containerLeft"
         style="color: rgb(255, 220, 2); background: rgb(25, 51, 117) url();"
       >
         <div
@@ -45,7 +59,7 @@ exports[`MatchComponent should render 1`] = `
         </div>
       </div>
       <div
-        class="teamContainerRight"
+        class="containerRight"
         style="color: rgb(255, 255, 255); background: rgb(67, 161, 213) url();"
       >
         <div

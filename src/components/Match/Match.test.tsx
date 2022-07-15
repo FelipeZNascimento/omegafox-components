@@ -2,30 +2,36 @@ import { render } from '@testing-library/react';
 
 import { Match } from './Match';
 import { IMatchProps } from './types';
-import { matchInfo } from './mocks';
+import { footballClock, matchInfo } from './mocks';
 
 describe('MatchComponent', () => {
   const renderComponent = ({
+    clock,
     timestamp,
     teams,
     location,
+    sport,
     stadium
   }: IMatchProps) =>
     render(
       <Match
+        clock={clock}
         timestamp={timestamp}
         teams={teams}
         location={location}
+        sport={sport}
         stadium={stadium}
       />
     );
 
   it('should render', () => {
     const { container } = renderComponent({
-      timestamp: matchInfo.timestamp,
-      stadium: matchInfo.stadium,
+      clock: footballClock,
       location: matchInfo.location,
-      teams: matchInfo.teams
+      sport: matchInfo.sport,
+      stadium: matchInfo.stadium,
+      teams: matchInfo.teams,
+      timestamp: matchInfo.timestamp
     });
 
     expect(container).toMatchSnapshot();
