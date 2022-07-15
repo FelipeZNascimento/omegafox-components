@@ -13,10 +13,8 @@ exports[`MatchComponent should render 1`] = `
         style="background: rgb(236, 239, 241) url();"
       >
         <div
-          class="toggle toggleNeutral"
-        >
-          +
-        </div>
+          class="toggle"
+        />
         <div
           class="info infoClock"
         >
@@ -54,7 +52,16 @@ exports[`MatchComponent should render 1`] = `
         <div
           class="scoreContainer"
         >
-          4
+          <form
+            class="form"
+          >
+            <input
+              max="15"
+              min="0"
+              type="number"
+              value="4"
+            />
+          </form>
         </div>
       </div>
       <div
@@ -64,7 +71,16 @@ exports[`MatchComponent should render 1`] = `
         <div
           class="scoreContainer"
         >
-          0
+          <form
+            class="form"
+          >
+            <input
+              max="15"
+              min="0"
+              type="number"
+              value="0"
+            />
+          </form>
         </div>
         <div
           class="nameContainer"
@@ -82,15 +98,6 @@ exports[`MatchComponent should render 1`] = `
           />
         </div>
       </div>
-    </div>
-    <div
-      class="expandedContainer expandedContainerClosed"
-    >
-      Estádio: 
-      Vila Capanema
-      <br />
-      Localização: 
-      Curitiba, Paraná
     </div>
   </div>
 </div>

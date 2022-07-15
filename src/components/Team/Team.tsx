@@ -23,7 +23,7 @@ export const Team = ({
     if (score !== null && score !== editedScore) {
       setEditedScore(score);
     }
-  }, [score]);
+  }, [editedScore, score]);
 
   const renderScore = () => {
     if (!isEditable) {

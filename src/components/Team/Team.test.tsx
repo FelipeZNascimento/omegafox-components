@@ -9,6 +9,7 @@ describe('TeamComponent', () => {
     align,
     colors,
     id,
+    isEditable,
     logo,
     name,
     nameShort,
@@ -19,6 +20,7 @@ describe('TeamComponent', () => {
         align={align}
         colors={colors}
         id={id}
+        isEditable={isEditable}
         logo={logo}
         name={name}
         nameShort={nameShort}
@@ -31,6 +33,7 @@ describe('TeamComponent', () => {
       align: teamLeft.align,
       colors: teamLeft.colors,
       id: teamLeft.id,
+      isEditable: false,
       logo: teamLeft.logo,
       name: teamLeft.name,
       nameShort: teamLeft.nameShort,
