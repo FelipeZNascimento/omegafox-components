@@ -12,7 +12,7 @@ exports[`ClockComponent should render 1`] = `
       +
     </div>
     <div
-      class="info infoClock infoClockAnimated"
+      class="info infoClock"
     >
       <span
         class="infoClockStatus"
@@ -20,10 +20,9 @@ exports[`ClockComponent should render 1`] = `
         1T
       </span>
       <span
-        class="clockAnimated"
+        class="infoClockAnimated"
       >
-        45
-        '
+        45'
       </span>
     </div>
   </div>

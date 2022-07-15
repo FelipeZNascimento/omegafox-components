@@ -18,7 +18,7 @@ exports[`MatchComponent should render 1`] = `
           +
         </div>
         <div
-          class="info infoClock infoClockAnimated"
+          class="info infoClock"
         >
           <span
             class="infoClockStatus"
@@ -26,16 +26,15 @@ exports[`MatchComponent should render 1`] = `
             1T
           </span>
           <span
-            class="clockAnimated"
+            class="infoClockAnimated"
           >
-            45
-            '
+            45'
           </span>
         </div>
       </div>
       <div
         class="containerLeft"
-        style="color: rgb(255, 220, 2); background: rgb(25, 51, 117) url();"
+        style="color: rgb(255, 220, 2); background: rgb(25, 174, 71) url();"
       >
         <div
           class="logoContainer"
@@ -48,7 +47,7 @@ exports[`MatchComponent should render 1`] = `
         </div>
         <div
           class="nameContainer"
-          style="text-shadow: -1px 0 #193375, 0 1px #193375, 1px 0 #193375, 0 -1px #193375;"
+          style="text-shadow: -1px 0 #19AE47, 0 1px #19AE47, 1px 0 #19AE47, 0 -1px #19AE47;"
         >
           Brasil
         </div>
