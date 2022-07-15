@@ -10,6 +10,7 @@ describe('SidebarComponent', () => {
     render(
       <Sidenav
         isOpen={isOpen}
+        selectedId={sidenavButtons[0].id}
         sidenavButtons={sidenavButtons}
         onClick={jest.fn}
         onClose={jest.fn}
@@ -19,6 +20,7 @@ describe('SidebarComponent', () => {
   it('should render', () => {
     const { container } = renderComponent({
       isOpen: true,
+      selectedId: sidenavButtons[0].id,
       sidenavButtons: sidenavButtons,
       onClick: jest.fn,
       onClose: jest.fn

@@ -21,6 +21,8 @@ export type TClockAmericanFootball = TClock & {
 export interface IClockProps {
   betStatus: TBetStatus;
   clock: TClockAmericanFootball | TClockFootball;
+  isExpandable: boolean;
   isExpanded: boolean;
+  isMatchEditable: boolean;
   timestamp: number;
 }

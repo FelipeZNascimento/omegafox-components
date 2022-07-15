@@ -1,2 +1,8 @@
 export { navbarButtons } from './Navbar/mocks';
-export { teamLeft, teamRight, matchInfo, footballClock } from './Match/mocks';
+export {
+  footballClock,
+  matchInfoNoBets,
+  matchInfo,
+  teamLeft,
+  teamRight
+} from './Match/mocks';

@@ -17,5 +17,6 @@ Navbar.args = {
   logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png',
   navbarButtons: navbarButtons,
   platform: 'copa',
+  selectedId: navbarButtons[0].id,
   onClick: () => null
 };

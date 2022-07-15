@@ -1,7 +1,7 @@
 import React from 'react';
 import { Match } from '../components';
 import { FOOTBALL_MATCH_STATUS } from '../index';
-import { footballClock, matchInfo } from '../components/mocks';
+import { footballClock, matchInfo, matchInfoNoBets } from '../components/mocks';
 import { cloneDeep } from 'lodash';
 
 export default {
@@ -9,25 +9,27 @@ export default {
   component: Match
 };
 
-export const MatchNotStarted = () => (
+export const MatchNotStartedEditable = () => (
   <Match
+    isEditable
     clock={{ time: 0, status: FOOTBALL_MATCH_STATUS.NOT_STARTED }}
     timestamp={matchInfo.timestamp}
-    location={matchInfo.location}
     sport={matchInfo.sport}
-    stadium={matchInfo.stadium}
-    teams={matchInfo.teams}
+    teams={matchInfoNoBets.teams}
   />
 );
 
-export const MatchStarted = () => (
+export const MatchStartedExpandable = () => (
   <Match
+    isExpandable
+    isEditable={false}
     betStatus="full"
     clock={footballClock}
+    expandableContent={() => {
+      return <p>Vila Capanema</p>;
+    }}
     timestamp={matchInfo.timestamp}
-    location={matchInfo.location}
     sport={matchInfo.sport}
-    stadium={matchInfo.stadium}
     teams={matchInfo.teams}
   />
 );
@@ -38,12 +40,15 @@ invertedTeams[1].align = 'left';
 
 export const MatchWithInvertedTeams = () => (
   <Match
+    isExpandable
+    isEditable={false}
     betStatus="half"
     clock={{ time: 39, status: FOOTBALL_MATCH_STATUS.SECOND_HALF_OVERTIME }}
-    timestamp={matchInfo.timestamp}
-    location={matchInfo.location}
+    expandableContent={() => {
+      return <p>Vila Capanema</p>;
+    }}
     sport={matchInfo.sport}
-    stadium={matchInfo.stadium}
     teams={invertedTeams}
+    timestamp={matchInfo.timestamp}
   />
 );

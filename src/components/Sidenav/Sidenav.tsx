@@ -1,17 +1,16 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import classNames from 'classnames';
 
 import { ISidenavProps } from './types';
-import classNames from 'classnames';
 import styles from './Sidenav.module.scss';
 
 export const Sidenav = ({
   isOpen,
+  selectedId,
   sidenavButtons,
   onClick,
   onClose
 }: ISidenavProps) => {
-  const [selectedNavId, setSelectedNavId] = useState<number>(0);
-
   const backgroundClass = classNames(styles.darkBackground, {
     [styles.darkBackgroundOpen]: isOpen,
     [styles.darkBackgroundClosed]: !isOpen
@@ -51,11 +50,10 @@ export const Sidenav = ({
       }
 
       const buttonClass = classNames(styles.navButton, {
-        [styles.navButtonSelected]: selectedNavId === item.id
+        [styles.navButtonSelected]: selectedId === item.id
       });
 
       const onButtonClick = () => {
-        setSelectedNavId(item.id);
         onClick(item);
       };
 

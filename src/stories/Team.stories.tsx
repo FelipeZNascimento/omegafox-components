@@ -17,6 +17,7 @@ Team.args = {
   align: teamLeft.align,
   colors: teamLeft.colors,
   id: teamLeft.id,
+  isEditable: true,
   isForceMobile: false,
   logo: teamLeft.logo,
   name: teamLeft.name,

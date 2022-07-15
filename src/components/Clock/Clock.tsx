@@ -15,19 +15,34 @@ import matchLayer from '../../img/match_layer.png';
 export const Clock = ({
   betStatus,
   clock,
+  isExpandable = false,
   isExpanded,
+  isMatchEditable = false,
   timestamp
 }: IClockProps) => {
   const formattedDate = DateTime.fromSeconds(timestamp)
     .setLocale('pt-Br')
     .toFormat("HH'h'mm");
 
+  const errorFlagClass = classNames(styles.toggle, {});
   const toggleClass = classNames(styles.toggle, {
     [styles.toggleGreen]: betStatus === 'full',
     [styles.toggleYellow]: betStatus === 'half',
     [styles.toggleRed]: betStatus === 'miss',
     [styles.toggleNeutral]: betStatus === 'neutral'
   });
+
+  const renderCorner = () => {
+    if (isExpandable) {
+      return <div className={toggleClass}>{isExpanded ? '-' : '+'}</div>;
+    }
+
+    if (isMatchEditable) {
+      return <div className={errorFlagClass} />;
+    }
+
+    return null;
+  };
 
   const dateClass = classNames(styles.info, {
     [styles.infoDate]: clock.status === MATCH_STATUS.NOT_STARTED,
@@ -71,7 +86,7 @@ export const Clock = ({
         background: `url(${matchLayer}) #eceff1`
       }}
     >
-      <div className={toggleClass}>{isExpanded ? '-' : '+'}</div>
+      {renderCorner()}
       <div className={dateClass}>{renderDate()}</div>
     </div>
   );

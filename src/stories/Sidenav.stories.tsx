@@ -15,6 +15,7 @@ export const Sidenav = Template.bind({});
 
 Sidenav.args = {
   isOpen: true,
+  selectedId: sidenavButtons[0].id,
   sidenavButtons: sidenavButtons,
   onClick: () => console.log('onClick'),
   onClose: () => console.log('onClose')

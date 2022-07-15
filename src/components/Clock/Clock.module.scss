@@ -6,7 +6,7 @@
 
 .dateContainer {
   @include padded(horizontal, s2);
-  @include marged(right, s2);
+  @include marged(right, s3);
 
   height: $match-container-height;
   border-radius: $border-radius;
@@ -45,13 +45,13 @@
   @include font-sized(l2);
   @include flex-aligned(center, center);
 
-  height: 24px;
-  width: 24px;
+  border-bottom-right-radius: $border-radius;
   bottom: 0px;
-  position: absolute;
+  height: 24px;
   left: 0px;
-
+  position: absolute;
   transition: filter $transition-time;
+  width: 100%;
 
   &Neutral {
     @include bg-rgba-colored($color-black, 0.5);
