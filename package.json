@@ -1,6 +1,6 @@
 {
   "name": "@omegafox/components",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Omegafox component library using Rollup, TypeScript, Sass and Storybook",
   "main": "dist/index.js",
   "typings": "dist/src/index",
@@ -11,7 +11,7 @@
     "test": "set TZ=Europe/Lisbon && jest --maxWorkers=50%",
     "test:watch": "set TZ=Europe/Lisbon && jest --watch --maxWorkers=25%",
     "test:ci": "set TZ=Europe/Lisbon && jest --runInBand",
-    "generate": "npm plop --plopfile generators/plopfile.js",
+    "generate": "plop",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "link": "npm link ../bolaocopa22/node_modules/react"
@@ -81,7 +81,7 @@
     "jest": "^27.4.7",
     "lint-staged": "^12.3.3",
     "npm": "^8.7.0",
-    "plop": "^3.0.5",
+    "plop": "^3.1.1",
     "prettier": "^2.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

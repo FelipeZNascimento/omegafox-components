@@ -1,24 +1,15 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react'
-
-import {{pascalCase name}} from './{{pascalCase name}}'
+import { render } from '@testing-library/react'
+import {{{pascalCase name}}} from './{{pascalCase name}}'
+import { I{{pascalCase name}}Props } from './types';
 
 describe('<{{pascalCase name}} />', () => {
-    const renderComponent = ({
-    children,
-    props
-  }: Partial<{{pascalCase name}}Props>) =>
-    render(
-      <{{pascalCase name}}
-        props={props}
-      >
-        {children}
-      </Butt{{pascalCase name}}on>
-    );
+    const renderComponent = ({ props }: I{{pascalCase name}}Props) =>
+    render(<{{pascalCase name}} props={props}/>);
 
   it('should render', () => {
     const text = 'Click';
-    const { container } = renderComponent({ children: text });
+    const { container } = renderComponent({ props: text });
 
     expect(container).toMatchSnapshot();
   });

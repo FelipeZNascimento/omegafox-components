@@ -1,11 +1,17 @@
 import React from 'react';
 
 import classNames from 'classnames';
-import { {{pascalCase name}}Props } from './types';
-import styles from './styles.module.scss';
+import { I{{pascalCase name}}Props } from './types';
+import styles from './{{pascalCase name}}.module.scss';
 
-export const {{pascalCase name}} = () => (
-  <container>
-    <h1>{{pascalCase name}}</h1>
-  </container>
-);
+export const {{pascalCase name}} = ({ props }: I{{pascalCase name}}Props) => {
+  const containerClass = classNames({
+    [styles.container]: true
+  });
+
+  return (
+    <div className={containerClass}>
+      <h1>{{pascalCase name}}</h1>
+    </div>
+  )
+};

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { {{pascalCase name}} } from '../components/';
-import { {{pascalCase name}}Props } from '../components/';
+import { {{pascalCase name}} as Component } from '../components/';
+import { I{{pascalCase name}}Props } from '../components/types';
 
 export default {
-  title: '{{pascalCase name}}',
-  component: {{pascalCase name}}
+  props: '',
+  component: Component
 };
 
-const {{pascalCase name}}Component: Story<{{pascalCase name}}Props> = (args) => <{{pascalCase name}} {...args} />;
+const Template: Story<I{{pascalCase name}}Props> = (args) => <Component {...args} />;
 
-export const {{pascalCase name}} = () => (
-  <{{pascalCase name}}Component>
-    Children
-  </{{pascalCase name}}Component>
-);
+export const {{pascalCase name}} = Template.bind({});
+
+{{pascalCase name}}.args = {
+  props: ''
+};
