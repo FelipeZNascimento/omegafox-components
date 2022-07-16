@@ -16,6 +16,10 @@ $match-container-height: 60px;
 // - flex-end
 // - baseline
 
+@mixin flexed($size) {
+  flex: #{$size};
+}
+
 @mixin flex-aligned($horizontal, $vertical) {
   display: flex;
   align-items: $vertical;
