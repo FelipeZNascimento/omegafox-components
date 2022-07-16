@@ -1,6 +1,6 @@
 {
   "name": "@omegafox/components",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Omegafox component library using Rollup, TypeScript, Sass and Storybook",
   "main": "dist/index.js",
   "typings": "dist/src/index",
