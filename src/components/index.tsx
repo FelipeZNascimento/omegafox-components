@@ -3,6 +3,7 @@ export { Clock } from './Clock/Clock';
 export { Loading } from './Loading/Loading';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
+export { Ranking } from './Ranking/Ranking';
 export { Sidenav } from './Sidenav/Sidenav';
 export { Team } from './Team/Team';
 
@@ -15,6 +16,12 @@ export type {
 export type { ILoadingProps } from './Loading/types';
 export type { TBetStatus, IMatchProps, TSport } from './Match/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
+export type {
+  IRankingProps,
+  TRankingColumn,
+  TRankingRow,
+  TRankingRowColumn
+} from './Ranking/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
 

@@ -1,0 +1,104 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include shadowed(0.3);
+  @include padded(all, l);
+  @include flex-aligned(flex-start, flex-start);
+  @include bg-rgba-colored($color-grey1, 0.5);
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  border-radius: $border-radius;
+  border-bottom-right-radius: 0;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+
+  .table,
+  h1 {
+    width: 100%;
+  }
+}
+
+.table {
+  &Header {
+    @extend .table;
+    @include flex-aligned(center, center);
+    @include padded(vertical, s);
+  }
+}
+
+.aligned {
+  &Left {
+    @include aligned(left);
+  }
+
+  &Center {
+    @include aligned(center);
+  }
+
+  &Right {
+    @include aligned(right);
+  }
+}
+
+.flexed {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  & * {
+    @extend .flexed;
+  }
+
+  &0 {
+    @extend .flexed;
+    @include flexed(0);
+  }
+  &1 {
+    @extend .flexed;
+    @include flexed(1);
+  }
+  &2 {
+    @extend .flexed;
+    @include flexed(2);
+  }
+  &3 {
+    @extend .flexed;
+    @include flexed(3);
+  }
+  &4 {
+    @extend .flexed;
+    @include flexed(4);
+  }
+  &5 {
+    @extend .flexed;
+    @include flexed(5);
+  }
+  &6 {
+    @extend .flexed;
+    @include flexed(6);
+  }
+  &7 {
+    @extend .flexed;
+    @include flexed(7);
+  }
+  &8 {
+    @extend .flexed;
+    @include flexed(8);
+  }
+  &9 {
+    @extend .flexed;
+    @include flexed(9);
+  }
+  &10 {
+    @extend .flexed;
+    @include flexed(10);
+  }
+}

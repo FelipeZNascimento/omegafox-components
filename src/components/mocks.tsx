@@ -6,3 +6,4 @@ export {
   teamLeft,
   teamRight
 } from './Match/mocks';
+export { tableConfig } from './Ranking/mocks';
