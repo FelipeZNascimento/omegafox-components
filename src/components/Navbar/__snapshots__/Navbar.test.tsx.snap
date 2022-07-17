@@ -45,15 +45,6 @@ exports[`NavbarComponent should render 1`] = `
         >
           Extras
         </button>
-        <button
-          class="navButton"
-        >
-          <a
-            href="#"
-          >
-            link
-          </a>
-        </button>
       </div>
     </nav>
   </div>

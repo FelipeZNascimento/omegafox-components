@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { IRankingProps, TRankingRow, TRankingRowColumn } from './types';
+import { IRankingProps, TRankingRowColumn } from './types';
 import styles from './Ranking.module.scss';
 
 export const Ranking = ({
@@ -12,10 +12,10 @@ export const Ranking = ({
 }: IRankingProps) => {
   const numOfCols = columns.length;
 
-  const renderHeader = (rows: TRankingRow) => {
+  const renderHeader = (rowColumns: TRankingRowColumn[], index: number) => {
     return (
-      <div className={styles.tableHeader}>
-        {rows.map((item: TRankingRowColumn, index: number) => {
+      <div key={index} className={styles.tableHeader}>
+        {rowColumns.map((item: TRankingRowColumn, index: number) => {
           //Avoid breaking table by rendering more columns than it should
           if (index >= numOfCols) {
             return null;
@@ -47,8 +47,8 @@ export const Ranking = ({
         backgroundImage: `url(${backgroundImage})`
       }}
     >
-      {isHeader && renderHeader(columns)}
-      {rows.map((row) => renderHeader(row))}
+      {isHeader && renderHeader(columns, 0)}
+      {rows.map((rowColumns, index) => renderHeader(rowColumns, index))}
     </div>
   );
 };
