@@ -1,0 +1,77 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.darkBackground {
+  @include flex-aligned(center, center);
+  position: fixed;
+  z-index: $always-on-top + 1;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  &Open {
+    @include bg-rgba-colored($color-black, 0.3);
+    transition: background-color $transition-time;
+  }
+
+  &Closed {
+    @include bg-rgba-colored($color-black, 0);
+    transition: background-color $transition-time;
+  }
+}
+
+.modal {
+  @include bg-colored($color-grey1);
+  @include padded(horizontal, l2);
+  @include padded(vertical, l);
+  @include shadowed(0.2);
+
+  position: relative;
+  border-radius: $border-radius;
+  border-top-right-radius: 0;
+  height: 400px;
+  width: 400px;
+
+  .closeIcon {
+    @include bg-rgba-colored($color-black, 0.5);
+    @include font-colored($color-grey1);
+    @include padded(all, m);
+
+    border-bottom-left-radius: $border-radius;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all $transition-time;
+
+    &:hover {
+      @include bg-rgba-colored($color-qatar-red, 1);
+    }
+  }
+}
+
+h1,
+h2 {
+  @include aligned(center);
+
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h1 {
+  @include font-sized(l4);
+  @include padded(all, none);
+  @include marged(all, none);
+}
+
+h2 {
+  @include font-sized(l2);
+  @include padded(all, none);
+  @include marged(all, none);
+}

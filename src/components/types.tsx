@@ -6,6 +6,7 @@ export type {
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
 export type { TBetStatus, IMatchProps, TSport } from './Match/types';
+export type { IModalProps } from './Modal/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
 export type {
   IRankingProps,
