@@ -10,9 +10,9 @@ export const Button = ({
   isDarkMode = false,
   isDisabled = false,
   isSelected = false,
-  leftIcon = true,
+  isShadowed = true,
+  isLeftIcon = true,
   size = 'medium',
-  shadowed = true,
   shape = 'rounded',
   variant = 'primary',
   onClick,
@@ -28,7 +28,7 @@ export const Button = ({
     [styles.containerMedium]: size === 'medium',
     [styles.containerLarge]: size === 'large',
     [styles.rounded]: shape === 'rounded',
-    [styles.shadowed]: shadowed && !isDisabled,
+    [styles.shadowed]: isShadowed && !isDisabled,
     [styles.selected]: isSelected,
     [styles.enabledLight]: !isDisabled && !isDarkMode,
     [styles.enabledDark]: !isDisabled && isDarkMode,
@@ -41,11 +41,11 @@ export const Button = ({
     }
 
     const iconClass = classNames(styles.icon, {
-      [styles.iconLeft]: children && leftIcon,
-      [styles.iconRight]: children && !leftIcon
+      [styles.iconLeft]: children && isLeftIcon,
+      [styles.iconRight]: children && !isLeftIcon
     });
 
-    const testId = `test-button__icon-${leftIcon ? 'left' : 'right'}`;
+    const testId = `test-button__icon-${isLeftIcon ? 'left' : 'right'}`;
     return (
       <div data-testid={testId} className={iconClass}>
         {icon}
@@ -74,9 +74,9 @@ export const Button = ({
       onClick={checkOnClick}
       {...props}
     >
-      {icon && leftIcon && renderIcon()}
+      {icon && isLeftIcon && renderIcon()}
       {children && renderChildren()}
-      {icon && !leftIcon && renderIcon()}
+      {icon && !isLeftIcon && renderIcon()}
     </button>
   );
 };

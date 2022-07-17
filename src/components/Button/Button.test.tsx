@@ -13,10 +13,10 @@ describe('ButtonComponent', () => {
     icon,
     isDarkMode,
     isDisabled,
+    isLeftIcon,
     isSelected,
-    leftIcon,
+    isShadowed,
     size,
-    shadowed,
     shape,
     tooltip,
     variant
@@ -26,10 +26,10 @@ describe('ButtonComponent', () => {
         icon={icon}
         isDarkMode={isDarkMode}
         isDisabled={isDisabled}
+        isLeftIcon={isLeftIcon}
         isSelected={isSelected}
-        leftIcon={leftIcon}
+        isShadowed={isShadowed}
         size={size}
-        shadowed={shadowed}
         shape={shape}
         tooltip={tooltip}
         variant={variant}
@@ -70,7 +70,7 @@ describe('ButtonComponent', () => {
     const buttonText = 'Click';
     const { getByTestId } = renderComponent({
       children: buttonText,
-      leftIcon: true,
+      isLeftIcon: true,
       icon: <FontAwesomeIcon icon={faChevronLeft} size="lg" />
     });
     const buttonIcon = getByTestId('test-button__icon-left');
@@ -83,7 +83,7 @@ describe('ButtonComponent', () => {
     const buttonText = 'Click';
     const { getByTestId } = renderComponent({
       children: buttonText,
-      leftIcon: false,
+      isLeftIcon: false,
       icon: <FontAwesomeIcon icon={faChevronLeft} size="lg" />
     });
     const buttonIcon = getByTestId('test-button__icon-right');
