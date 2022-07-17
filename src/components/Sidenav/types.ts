@@ -8,6 +8,7 @@ export type TSidenavButton = {
 
 export interface ISidenavProps {
   isOpen: boolean;
+  renderBottom?: () => JSX.Element;
   selectedId: number;
   sidenavButtons: TSidenavButton[];
   onClick: (navbarButton: TSidenavButton) => void;
