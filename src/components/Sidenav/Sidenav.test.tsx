@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { Sidenav } from './Sidenav';
 import { ISidenavProps } from '../types';
-import { navbarButtons as sidenavButtons } from '../mocks';
+import { navbarButtonsLeft as sidenavButtons } from '../mocks';
 
 describe('SidebarComponent', () => {
   const renderComponent = ({ isOpen, sidenavButtons }: ISidenavProps) =>

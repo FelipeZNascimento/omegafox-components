@@ -3,11 +3,11 @@ export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode | null;
   isDisabled?: boolean;
   isDarkMode?: boolean;
+  isLeftIcon?: boolean;
   isSelected?: boolean;
-  leftIcon?: boolean;
+  isShadowed?: boolean;
   size?: 'small' | 'medium' | 'large';
   shape?: 'rounded' | 'squared';
-  shadowed?: boolean;
   tooltip?: string;
   variant?: 'primary' | 'danger' | 'neutral' | 'confirm' | 'warning';
   onClick: () => void;

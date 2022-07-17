@@ -49,15 +49,6 @@ exports[`SidebarComponent should render 1`] = `
         >
           Extras
         </button>
-        <button
-          class="navButton"
-        >
-          <a
-            href="#"
-          >
-            link
-          </a>
-        </button>
       </nav>
     </div>
   </div>

@@ -51,22 +51,21 @@
   display: flex;
   flex: 1;
 
-  button {
-    @include padded(horizontal, m);
-    @include marged(horizontal, s3);
-    @include bg-colored($color-grey1);
+  // button {
+  //   @include padded(horizontal, m);
+  //   @include marged(horizontal, s3);
+  //   // @include bg-colored($color-grey1);
 
-    border-radius: 16px;
-    height: 100%;
-    transition: all $transition-time;
-  }
+  //   border-radius: 16px;
+  //   height: 100%;
+  //   transition: all $transition-time;
+  // }
 
   button,
   input[type="submit"],
   input[type="reset"] {
-    color: inherit;
+    // color: inherit;
     border: none;
-    font: inherit;
     cursor: pointer;
     outline: inherit;
   }
@@ -81,9 +80,17 @@
 
   &Copa {
     @extend .buttonContainer;
-    @include font-colored($color-grey4);
 
     .navButton {
+      @include font-colored($color-grey4);
+      @include padded(horizontal, m);
+      @include marged(horizontal, s3);
+
+      font: inherit;
+      border-radius: 16px;
+      height: 100%;
+      transition: all $transition-time;
+
       &Selected {
         @include font-colored($color-qatar-red);
       }

@@ -6,6 +6,7 @@ import styles from './Sidenav.module.scss';
 
 export const Sidenav = ({
   isOpen,
+  renderBottom,
   selectedId,
   sidenavButtons,
   onClick,
@@ -78,6 +79,7 @@ export const Sidenav = ({
           />
         </div>
         <nav className={styles.nav}>{renderButtons()}</nav>
+        {renderBottom && <div className={styles.bottom}>{renderBottom()}</div>}
       </div>
     </div>
   );
