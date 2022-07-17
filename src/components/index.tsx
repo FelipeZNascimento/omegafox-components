@@ -1,6 +1,7 @@
 export { Button } from './Button/Button';
 export { Clock } from './Clock/Clock';
 export { Loading } from './Loading/Loading';
+export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
 export { Ranking } from './Ranking/Ranking';

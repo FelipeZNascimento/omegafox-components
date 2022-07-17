@@ -1,6 +1,7 @@
 import { TNavbarButton } from './types';
+import { Button } from '../index';
 
-export const navbarButtons: TNavbarButton[] = [
+export const navbarButtonsLeft: TNavbarButton[] = [
   {
     id: 0,
     text: 'Início',
@@ -30,13 +31,26 @@ export const navbarButtons: TNavbarButton[] = [
     id: 5,
     text: 'Extras',
     url: ''
-  },
+  }
+];
+
+export const navbarRenderButton = () => {
+  return (
+    <Button
+      isShadowed={false}
+      variant="primary"
+      onClick={() => console.log('Button click')}
+    >
+      Entrar
+    </Button>
+  );
+};
+
+export const navbarButtonsRight: TNavbarButton[] = [
   {
-    id: 6,
+    id: 0,
     text: '',
     url: '',
-    renderingFunction: () => {
-      return <a href="#">link</a>;
-    }
+    renderingFunction: navbarRenderButton
   }
 ];

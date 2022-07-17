@@ -1,4 +1,8 @@
-export { navbarButtons } from './Navbar/mocks';
+export {
+  navbarButtonsLeft,
+  navbarButtonsRight,
+  navbarRenderButton
+} from './Navbar/mocks';
 export {
   footballClock,
   matchInfoNoBets,
