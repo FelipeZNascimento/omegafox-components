@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
 
+import { Backdrop } from '../index';
 import { ISidenavProps } from './types';
 import styles from './Sidenav.module.scss';
 
@@ -12,11 +13,6 @@ export const Sidenav = ({
   onClick,
   onClose
 }: ISidenavProps) => {
-  const backgroundClass = classNames(styles.darkBackground, {
-    [styles.darkBackgroundOpen]: isOpen,
-    [styles.darkBackgroundClosed]: !isOpen
-  });
-
   const containerClass = classNames(styles.container, {
     [styles.containerOpen]: isOpen,
     [styles.containerClosed]: !isOpen
@@ -70,7 +66,7 @@ export const Sidenav = ({
   useOutsideAlerter(wrapperRef);
 
   return (
-    <div className={backgroundClass}>
+    <Backdrop align="left" isOpen={isOpen}>
       <div className={containerClass} ref={wrapperRef}>
         <div className={styles.logoContainer}>
           <img
@@ -81,6 +77,6 @@ export const Sidenav = ({
         <nav className={styles.nav}>{renderButtons()}</nav>
         {renderBottom && <div className={styles.bottom}>{renderBottom()}</div>}
       </div>
-    </div>
+    </Backdrop>
   );
 };

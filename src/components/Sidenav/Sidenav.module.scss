@@ -4,27 +4,6 @@
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
-.darkBackground {
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  z-index: $always-on-top + 1;
-
-  &Open {
-    @include bg-rgba-colored($color-black, 0.2);
-
-    left: 0;
-    transition: background-color $transition-time, left $transition-time;
-  }
-
-  &Closed {
-    @include bg-rgba-colored($color-black, 0);
-
-    left: -100vw;
-    transition: background-color $transition-time, left $transition-time;
-  }
-}
 .container {
   @include shadowed(0.2);
   @include bg-colored($color-grey1);
