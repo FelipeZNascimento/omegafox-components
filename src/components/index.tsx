@@ -1,3 +1,4 @@
+export { Backdrop } from './Backdrop/Backdrop';
 export { Button } from './Button/Button';
 export { Clock } from './Clock/Clock';
 export { Loading } from './Loading/Loading';
@@ -8,6 +9,7 @@ export { Ranking } from './Ranking/Ranking';
 export { Sidenav } from './Sidenav/Sidenav';
 export { Team } from './Team/Team';
 
+export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
 export type {
   IClockProps,

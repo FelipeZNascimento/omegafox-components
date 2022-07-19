@@ -3,10 +3,11 @@
 exports[`SidebarComponent should render 1`] = `
 <div>
   <div
-    class="darkBackground darkBackgroundOpen"
+    class="container containerLeft containerOpen"
   >
     <div
       class="container containerOpen"
+      data-testid="test-sidenav__container"
     >
       <div
         class="logoContainer"

@@ -1,3 +1,4 @@
+export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
 export type {
   IClockProps,
