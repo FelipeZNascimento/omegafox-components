@@ -21,7 +21,7 @@ export const Backdrop = ({
         setIsContentOpen(false);
       }, 200);
     }
-  }, [isOpen]);
+  }, [isContentOpen, isOpen]);
 
   const backgroundClass = classNames(styles.container, {
     [styles.containerLeft]: align === 'left',

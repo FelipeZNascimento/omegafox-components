@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Modal /> should render 1`] = `
+exports[`<Backdrop /> should render 1`] = `
 <div>
   <div
     class="container containerCenter"

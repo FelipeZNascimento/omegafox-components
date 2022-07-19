@@ -67,7 +67,11 @@ export const Sidenav = ({
 
   return (
     <Backdrop align="left" isOpen={isOpen}>
-      <div className={containerClass} ref={wrapperRef}>
+      <div
+        className={containerClass}
+        ref={wrapperRef}
+        data-testid="test-sidenav__container"
+      >
         <div className={styles.logoContainer}>
           <img
             className={styles.logo}
