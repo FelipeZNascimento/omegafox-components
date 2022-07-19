@@ -33,15 +33,15 @@ export const Clock = ({
   });
 
   const renderCorner = () => {
-    if (isExpandable) {
-      return <div className={toggleClass}>{isExpanded ? '-' : '+'}</div>;
-    }
-
     if (isMatchEditable) {
       return <div className={errorFlagClass} />;
     }
 
-    return null;
+    if (isExpandable) {
+      return <div className={toggleClass}>{isExpanded ? '-' : '+'}</div>;
+    }
+
+    return <div className={toggleClass} />;
   };
 
   const dateClass = classNames(styles.info, {
