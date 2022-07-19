@@ -15,12 +15,12 @@ const Template: Story<IButtonProps> = (args) => <Component {...args} />;
 export const Button = Template.bind({});
 Button.args = {
   children: 'Coffee',
-  leftIcon: true,
   icon: <FontAwesomeIcon icon={faCoffee} size="lg" />,
   isDisabled: false,
   isDarkMode: false,
+  isLeftIcon: true,
   isSelected: false,
-  shadowed: false,
+  isShadowed: false,
   size: 'medium',
   shape: 'squared',
   variant: 'confirm',
