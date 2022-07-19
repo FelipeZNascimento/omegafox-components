@@ -12,7 +12,7 @@ export const Backdrop = ({
   const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isOpen && !isContentOpen) {
+    if (isOpen) {
       setTimeout(function () {
         setIsContentOpen(true);
       }, 200);
@@ -21,7 +21,7 @@ export const Backdrop = ({
         setIsContentOpen(false);
       }, 200);
     }
-  }, [isContentOpen, isOpen]);
+  }, [isOpen]);
 
   const backgroundClass = classNames(styles.container, {
     [styles.containerLeft]: align === 'left',
