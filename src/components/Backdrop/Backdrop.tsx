@@ -30,6 +30,10 @@ export const Backdrop = ({
     [styles.containerOpen]: isOpen && isContentOpen
   });
 
+  if (!isOpen && !isContentOpen) {
+    return null;
+  }
+
   return (
     <div className={backgroundClass}>{isOpen && isContentOpen && children}</div>
   );
