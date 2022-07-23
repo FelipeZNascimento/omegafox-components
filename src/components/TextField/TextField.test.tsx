@@ -10,7 +10,7 @@ describe('<InputField />', () => {
         inputName={inputName}
         placeholder={placeholder}
         type={type}
-        onchange={jest.fn()}
+        onChange={jest.fn()}
       />
     );
 
@@ -20,7 +20,7 @@ describe('<InputField />', () => {
       isError: false,
       inputName: 'inputName',
       placeholder: 'Placeholder',
-      onchange: jest.fn
+      onChange: jest.fn
     });
 
     expect(container).toMatchSnapshot();
