@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
-
 import classNames from 'classnames';
+
 import { ITeamProps } from './types';
 import styles from './Team.module.scss';
 import matchLayer from '../../img/match_layer.png';
@@ -58,6 +58,7 @@ export const Team = ({
         <form className={styles.form}>
           <input
             type="number"
+            className={styles.scoreInput}
             defaultValue={score === null ? '' : score}
             min="0"
             max="15"
