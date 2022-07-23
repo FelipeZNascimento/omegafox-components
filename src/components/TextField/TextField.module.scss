@@ -1,0 +1,125 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/global.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include font-sized(m);
+  @include marged(all, none);
+  @include padded(top, none);
+  @include padded(bottom, l);
+
+  border: 0;
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+
+  &:focus-within label {
+    @extend .filled;
+  }
+  &:focus-within legend {
+    @extend .hidden;
+  }
+
+  label {
+    @include padded(all, none);
+    @include font-colored($color-grey4);
+
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(20px, 20px) scale(1);
+    transform-origin: top left;
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .filled {
+    @include font-colored($color-grey3);
+    @include font-sized(m);
+
+    background-color: inherit;
+    max-width: 3000px;
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    transform: translate(18px, -8px);
+  }
+}
+
+.inputContainer {
+  align-items: center;
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+
+  &:hover fieldset {
+    border-width: 2px;
+  }
+
+  input {
+    @include marged(all, none);
+    @include padded(all, l2);
+
+    width: 100%;
+    border: 0;
+    display: block;
+    min-width: 0;
+    box-sizing: content-box;
+  }
+
+  fieldset {
+    @include marged(all, none);
+    @include padded(vertical, none);
+    @include padded(horizontal, s);
+
+    border: 1px solid $color-grey3;
+    border-radius: $border-radius;
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    position: absolute;
+    pointer-events: none;
+
+    legend {
+      @include padded(all, none);
+      @include aligned(left);
+
+      height: 11px;
+      display: block;
+      font-size: 0.75em;
+      max-width: 0.01px;
+      transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      visibility: hidden;
+      width: auto;
+    }
+
+    .hidden {
+      @include font-sized(m);
+      @include padded(horizontal, s);
+      max-height: 16px;
+      max-width: 3000px;
+    }
+  }
+
+  .error {
+    border: 2px solid $color-qatar-red;
+  }
+}
+
+.description {
+  @include font-colored($color-grey4);
+  @include font-sized(s);
+  @include padded(top, s3);
+  @include padded(horizontal, l2);
+
+}

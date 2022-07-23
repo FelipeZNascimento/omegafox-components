@@ -1,5 +1,7 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
+import { isMobile } from 'react-device-detect';
+import classNames from 'classnames';
 
 import { Backdrop } from '../index';
 import { IModalProps } from './types';
@@ -9,9 +11,16 @@ export const Modal = ({
   children,
   isOpen,
   title,
+  size = 'small',
   subtitle,
   onClose
 }: IModalProps) => {
+  const modalContentClass = classNames(styles.modalContent, {
+    [styles.modalContentMobile]: isMobile,
+    [styles.modalContentSmall]: !isMobile && size === 'small',
+    [styles.modalContentBig]: !isMobile && size === 'big'
+  });
+
   function useOutsideAlerter(ref: React.RefObject<HTMLDivElement>) {
     useEffect(() => {
       // Alert if clicked on outside of element
@@ -40,7 +49,7 @@ export const Modal = ({
         </div>
         {title && <h1>{title}</h1>}
         {subtitle && <h2>{subtitle}</h2>}
-        {children}
+        <div className={modalContentClass}>{children}</div>
       </div>
     </Backdrop>
   );

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputField /> should render 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <label
+      class=""
+      for="inputName"
+    >
+      Placeholder
+    </label>
+    <div
+      class="inputContainer"
+    >
+      <input
+        id="inputName"
+        name="inputName"
+        type="text"
+        value=""
+      />
+      <fieldset
+        class=""
+      >
+        <legend
+          class=""
+        >
+          Placeholder
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 @import "../../styling/alignments.scss";
 @import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
+@import "../../styling/global.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
@@ -75,13 +76,10 @@
   @include padded(horizontal, s3);
 }
 
-input {
-  all: unset;
+.scoreInput {
   @include aligned(center);
-  border-bottom: 2px solid white;
+
+  border-bottom: 2px solid $color-white;
   width: 36px;
 }
 
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}

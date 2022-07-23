@@ -87,8 +87,9 @@
 }
 
 .disabled {
-  filter: brightness(50%);
   cursor: not-allowed;
+  filter: brightness(50%);
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     filter: brightness(50%);

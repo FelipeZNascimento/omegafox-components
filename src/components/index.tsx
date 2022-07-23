@@ -8,6 +8,7 @@ export { Navbar } from './Navbar/Navbar';
 export { Ranking } from './Ranking/Ranking';
 export { Sidenav } from './Sidenav/Sidenav';
 export { Team } from './Team/Team';
+export { TextField } from './TextField/TextField';
 
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
@@ -27,6 +28,7 @@ export type {
 } from './Ranking/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
+export type { ITextFieldProps } from './TextField/types';
 
 export {
   AMERICAN_FOOTBALL_MATCH_STATUS,
