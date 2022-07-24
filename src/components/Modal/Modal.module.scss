@@ -20,18 +20,19 @@
 
     &Big {
       height: auto;
-      max-height: 600px;
+      max-height: 700px;
       width: 700px;
     }
 
     &Small {
       height: auto;
-      max-height: 400px;
+      max-height: 600px;
       width: 500px;
     }
 
     &Mobile {
-      height: 80vh;
+      height: auto;
+      max-height: 80vh;
       width: 80vw;
     }
   }
