@@ -7,4 +7,5 @@ export interface ITextFieldProps {
   type?: 'password' | 'email' | 'text';
   onBlur?: null | ((e: React.FocusEvent<HTMLInputElement>) => void);
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onEnter?: null | (() => void);
 }
