@@ -11,8 +11,9 @@ export const TextField = ({
   isError = false,
   placeholder,
   type = 'text',
-  onBlur,
-  onChange
+  onBlur = null,
+  onChange,
+  onEnter = null
 }: ITextFieldProps) => {
   const [value, setValue] = useState('');
 
@@ -43,6 +44,12 @@ export const TextField = ({
     onChange(e);
   };
 
+  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && onEnter) {
+      onEnter();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <label className={filledClass} htmlFor={inputName}>
@@ -56,6 +63,7 @@ export const TextField = ({
           type={type}
           onBlur={handleBlur}
           onChange={handleChange}
+          onKeyDown={handleOnKeyDown}
         />
         <fieldset className={fieldsetClass}>
           <legend className={legendClass}>{placeholder}</legend>
