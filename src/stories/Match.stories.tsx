@@ -20,8 +20,10 @@ Match.args = {
     return <p>Vila Capanema</p>;
   },
   isEditable: true,
+  isError: false,
   isExpandable: false,
   isForceMobile: false,
+  isLoading: false,
   timestamp: matchInfo.timestamp,
   teams: matchInfo.teams
 };

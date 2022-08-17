@@ -14,6 +14,7 @@ export const TextField = Template.bind({});
 
 TextField.args = {
   defaultValue: '',
+  isDisabled: false,
   isError: false,
   inputName: 'inputName',
   placeholder: 'Placeholder',

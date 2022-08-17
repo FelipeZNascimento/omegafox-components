@@ -34,7 +34,7 @@
     left: 0;
     position: absolute;
     top: 0;
-    transform: translate(20px, 20px) scale(1);
+    transform: translate(20px, 16px) scale(1);
     transform-origin: top left;
     transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     pointer-events: none;
@@ -55,10 +55,15 @@
 .inputContainer {
   align-items: center;
   box-sizing: border-box;
+  border-radius: $border-radius;
   cursor: text;
   display: inline-flex;
   position: relative;
   width: 100%;
+
+  &Disabled {
+    @include bg-rgba-colored($color-grey2, 0.5);
+  }
 
   &:hover fieldset {
     border-width: 2px;
@@ -66,7 +71,8 @@
 
   input {
     @include marged(all, none);
-    @include padded(all, l2);
+    @include padded(vertical, l);
+    @include padded(horizontal, l2);
 
     width: 100%;
     border: 0;
@@ -121,5 +127,4 @@
   @include font-sized(s);
   @include padded(top, s3);
   @include padded(horizontal, l2);
-
 }

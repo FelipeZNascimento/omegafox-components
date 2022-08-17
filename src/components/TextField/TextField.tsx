@@ -8,6 +8,7 @@ export const TextField = ({
   defaultValue = '',
   description = '',
   inputName,
+  isDisabled = false,
   isError = false,
   placeholder,
   type = 'text',
@@ -15,22 +16,26 @@ export const TextField = ({
   onChange,
   onEnter = null
 }: ITextFieldProps) => {
-  const [value, setValue] = useState('');
+  const [newValue, setNewValue] = useState('');
 
   useEffect(() => {
-    setValue(defaultValue);
+    setNewValue(defaultValue);
   }, [defaultValue]);
 
   const legendClass = classNames({
-    [styles.hidden]: value !== ''
+    [styles.hidden]: newValue !== ''
   });
 
   const filledClass = classNames({
-    [styles.filled]: value !== ''
+    [styles.filled]: newValue !== ''
   });
 
   const fieldsetClass = classNames({
     [styles.error]: isError
+  });
+
+  const inputContainerClass = classNames(styles.inputContainer, {
+    [styles.inputContainerDisabled]: isDisabled
   });
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -40,7 +45,7 @@ export const TextField = ({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+    setNewValue(e.target.value);
     onChange(e);
   };
 
@@ -55,9 +60,10 @@ export const TextField = ({
       <label className={filledClass} htmlFor={inputName}>
         {placeholder}
       </label>
-      <div className={styles.inputContainer}>
+      <div className={inputContainerClass}>
         <input
           defaultValue={defaultValue}
+          disabled={isDisabled}
           id={inputName}
           name={inputName}
           type={type}

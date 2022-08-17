@@ -8,4 +8,5 @@ export interface ITeamProps {
   name: string;
   nameShort: string;
   score: number | null;
+  onChange?: ((score: number | null, teamId: number) => void) | null;
 }

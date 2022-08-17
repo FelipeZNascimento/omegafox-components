@@ -2,6 +2,7 @@ export interface ITextFieldProps {
   defaultValue?: string;
   description?: string;
   inputName: string;
+  isDisabled?: boolean;
   isError?: boolean;
   placeholder: string;
   type?: 'password' | 'email' | 'text';
