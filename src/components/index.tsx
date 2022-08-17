@@ -18,7 +18,7 @@ export type {
   TClockFootball
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
-export type { TBetStatus, IMatchProps, TSport } from './Match/types';
+export type { TBetStatus, IMatchProps, TSport, IScoreId } from './Match/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
 export type {
   IRankingProps,

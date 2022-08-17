@@ -8,9 +8,24 @@ export interface IMatchProps {
   clock: TClockFootball | TClockAmericanFootball;
   expandableContent?: () => JSX.Element;
   isEditable?: boolean;
+  isError?: boolean;
   isExpandable?: boolean;
   isForceMobile?: boolean;
+  isLoading?: boolean;
   sport?: TSport;
   teams: ITeamProps[];
   timestamp: number;
+  onChange?: ((score: IScoreId[]) => void) | null;
+}
+
+export interface IMatchStatusProps {
+  isBetEmpty: boolean;
+  isError?: boolean;
+  isMobile: boolean;
+  isLoading: boolean;
+}
+
+export interface IScoreId {
+  id: number;
+  score: number | null;
 }
