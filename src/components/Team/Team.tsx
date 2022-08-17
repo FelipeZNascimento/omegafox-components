@@ -15,15 +15,14 @@ export const Team = ({
   logo,
   name,
   nameShort,
-  score
+  score,
+  onChange = null
 }: ITeamProps) => {
   const [editedScore, setEditedScore] = useState<number | null>(null);
 
   useEffect(() => {
-    if (score !== null && score !== editedScore) {
-      setEditedScore(score);
-    }
-  }, [editedScore, score]);
+    setEditedScore(score);
+  }, [score]);
 
   const renderScore = () => {
     if (!isEditable) {
@@ -31,21 +30,20 @@ export const Team = ({
     }
 
     const handleScoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target.valueAsNumber);
-      setEditedScore(e.target.valueAsNumber || null);
+      const newScore = isNaN(e.target.valueAsNumber)
+        ? null
+        : e.target.valueAsNumber;
+
+      setEditedScore(newScore);
+      if (onChange) {
+        onChange(newScore, id);
+      }
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {
       if (!/[0-9]/.test(e.key)) {
         e.preventDefault();
       }
-    };
-
-    const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-      console.log(e.target.valueAsNumber);
-      setEditedScore(
-        isNaN(e.target.valueAsNumber) ? null : e.target.valueAsNumber
-      );
     };
 
     const scoreContainerClass = classNames({
@@ -59,10 +57,7 @@ export const Team = ({
           <input
             type="number"
             className={styles.scoreInput}
-            defaultValue={score === null ? '' : score}
-            min="0"
-            max="15"
-            onBlur={handleOnBlur}
+            value={score === null ? '' : score}
             onChange={handleScoreChange}
             onKeyPress={handleKeyPress}
             onWheel={(e) => (e.target as HTMLElement).blur()}

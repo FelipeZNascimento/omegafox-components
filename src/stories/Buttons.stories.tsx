@@ -41,7 +41,7 @@ export const Neutral = () => (
 
 export const LeftIconed = () => (
   <Button
-    leftIcon
+    isLeftIcon
     icon={<FontAwesomeIcon icon={faCoffee} size="lg" />}
     onClick={() => alert('Click!')}
   >
@@ -52,7 +52,7 @@ export const LeftIconed = () => (
 export const RightIconed = () => (
   <Button
     icon={<FontAwesomeIcon icon={faCoffee} size="lg" />}
-    leftIcon={false}
+    isLeftIcon={false}
     onClick={() => alert('Click!')}
   >
     Iconed
@@ -61,7 +61,7 @@ export const RightIconed = () => (
 
 export const NoText = () => (
   <Button
-    leftIcon
+    isLeftIcon
     icon={<FontAwesomeIcon icon={faTriangleExclamation} size="lg" />}
     onClick={() => alert('Click!')}
   />
@@ -69,7 +69,7 @@ export const NoText = () => (
 
 export const Small = () => (
   <Button
-    leftIcon
+    isLeftIcon
     icon={<FontAwesomeIcon icon={faCoffee} size="lg" />}
     size="small"
     onClick={() => alert('Click!')}
@@ -80,7 +80,7 @@ export const Small = () => (
 
 export const Medium = () => (
   <Button
-    leftIcon
+    isLeftIcon
     icon={<FontAwesomeIcon icon={faCoffee} size="lg" />}
     size="medium"
     onClick={() => alert('Click!')}
@@ -91,7 +91,7 @@ export const Medium = () => (
 
 export const Large = () => (
   <Button
-    leftIcon
+    isLeftIcon
     icon={<FontAwesomeIcon icon={faCoffee} size="lg" />}
     size="large"
     onClick={() => alert('Click!')}
