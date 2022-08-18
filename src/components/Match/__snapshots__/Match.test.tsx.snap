@@ -69,7 +69,7 @@ exports[`MatchComponent should render 1`] = `
           Brasil
         </div>
         <div
-          class="scoreContainer"
+          class="scoreContainerHoverable scoreContainer"
         >
           <form
             class="form"
@@ -87,7 +87,7 @@ exports[`MatchComponent should render 1`] = `
         style="color: rgb(255, 255, 255); background: rgb(67, 161, 213) url();"
       >
         <div
-          class="scoreContainer"
+          class="scoreContainerHoverable scoreContainer"
         >
           <form
             class="form"

@@ -8,5 +8,10 @@ input {
 }
 
 input[type="number"]::-webkit-inner-spin-button {
+  // For all decent browsers
   -webkit-appearance: none;
+}
+input[type="number"] {
+  // For the little snow flake of a Firefox
+  -moz-appearance: textfield;
 }
