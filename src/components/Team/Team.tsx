@@ -46,7 +46,7 @@ export const Team = ({
       }
     };
 
-    const scoreContainerClass = classNames({
+    const scoreContainerClass = classNames(styles.scoreContainerHoverable, {
       [styles.scoreContainerNull]: editedScore === null,
       [styles.scoreContainer]: editedScore !== null
     });

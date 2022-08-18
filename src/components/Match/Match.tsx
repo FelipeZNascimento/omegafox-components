@@ -35,6 +35,7 @@ export const Match = ({
   }, [teams]);
 
   const matchContainerClass = classNames(styles.matchContainer, {
+    [styles.matchContainerHoverable]: !isEditable,
     [styles.matchContainerExpandable]: isExpandable
   });
 
