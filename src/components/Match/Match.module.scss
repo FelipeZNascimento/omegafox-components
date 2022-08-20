@@ -61,7 +61,8 @@
   position: absolute;
   right: 50%;
   transform: translate(50%, 20%);
-  z-index: $always-on-top;
+  transition: color $transition-time;
+  z-index: $absolute-visible;
 
   &Loading {
     @include font-colored($color-grey5);
@@ -94,9 +95,9 @@
 
   bottom: 2px;
   position: absolute;
-  z-index: $always-on-top;
-  width: $clock-width;
   transition: color $transition-time;
+  width: $clock-width;
+  z-index: $absolute-visible;
 
   &Loading {
     @include font-colored($color-grey5);

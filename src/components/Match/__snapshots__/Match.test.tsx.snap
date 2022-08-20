@@ -85,7 +85,7 @@ exports[`MatchComponent should render 1`] = `
           >
             <input
               class="scoreInput"
-              id="scoreInputId0"
+              id="scoreInputId00"
               type="number"
               value="4"
             />
@@ -104,7 +104,7 @@ exports[`MatchComponent should render 1`] = `
           >
             <input
               class="scoreInput"
-              id="scoreInputId1"
+              id="scoreInputId01"
               type="number"
               value="0"
             />
