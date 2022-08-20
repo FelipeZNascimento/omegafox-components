@@ -5,6 +5,7 @@ export interface ITeamProps {
   isEditable: boolean;
   isForceMobile?: boolean;
   logo: string;
+  matchId: number;
   name: string;
   nameShort: string;
   score: number | null;

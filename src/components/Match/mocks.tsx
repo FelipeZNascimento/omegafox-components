@@ -1,6 +1,7 @@
 import { IMatchProps, ITeamProps, TClockFootball } from '../types';
 import { FOOTBALL_MATCH_STATUS } from '../Clock/constants';
 
+const matchId = 0;
 export const teamLeft: ITeamProps = {
   id: 0,
   align: 'left',
@@ -8,6 +9,7 @@ export const teamLeft: ITeamProps = {
   isEditable: false,
   isForceMobile: false,
   logo: 'https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png',
+  matchId: matchId,
   name: 'Brasil',
   nameShort: 'BRA',
   score: 4
@@ -20,6 +22,7 @@ export const teamRight: ITeamProps = {
   isEditable: false,
   isForceMobile: false,
   logo: 'https://teamcolorcodes.com/wp-content/uploads/2021/12/Argentina-National-Football-Team-Logo-192x300.png',
+  matchId: matchId,
   name: 'Argentina',
   nameShort: 'ARG',
   score: 0
@@ -41,6 +44,7 @@ export const footballClock: TClockFootball = {
 };
 
 export const matchInfo: IMatchProps = {
+  id: matchId,
   isExpandable: false,
   clock: footballClock,
   expandableContent: () => {
