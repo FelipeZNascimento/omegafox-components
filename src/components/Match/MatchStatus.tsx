@@ -9,6 +9,7 @@ import {
 import classNames from 'classnames';
 import styles from './Match.module.scss';
 import { IMatchStatusProps } from '../types';
+import { Tooltip } from 'components/Tooltip/Tooltip';
 
 export const MatchStatus = ({
   isBetEmpty,
@@ -30,6 +31,20 @@ export const MatchStatus = ({
     [styles.matchStatusError]: !isLoading && isError
   });
 
+  const renderTooltipText = () => {
+    if (isLoading) {
+      return 'Carregando...';
+    } else {
+      if (isError) {
+        return 'Erro. Recarregue a página.';
+      } else if (isBetEmpty) {
+        return 'Aposta incompleta.';
+      } else {
+        return 'Aposta completa.';
+      }
+    }
+  };
+
   const renderStatusIcon = () => {
     if (isLoading) {
       return faCircleNotch;
@@ -46,7 +61,9 @@ export const MatchStatus = ({
 
   return (
     <div className={isMobile ? matchStatusClassMobile : matchStatusClass}>
-      <FontAwesomeIcon icon={renderStatusIcon()} />
+      <Tooltip position="bottom" text={renderTooltipText()}>
+        <FontAwesomeIcon icon={renderStatusIcon()} />
+      </Tooltip>
     </div>
   );
 };
