@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> should render 1`] = `
+<div>
+  <div
+    class="tooltip"
+  >
+    <span
+      class="tooltipText tooltipTextTop"
+    >
+      Tooltip text
+    </span>
+  </div>
+</div>
+`;

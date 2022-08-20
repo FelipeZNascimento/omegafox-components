@@ -7,6 +7,7 @@ export interface IMatchProps {
   betStatus?: TBetStatus;
   clock: TClockFootball | TClockAmericanFootball;
   expandableContent?: () => JSX.Element;
+  id: number;
   isEditable?: boolean;
   isError?: boolean;
   isExpandable?: boolean;

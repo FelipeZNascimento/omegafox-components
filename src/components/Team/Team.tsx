@@ -13,6 +13,7 @@ export const Team = ({
   isEditable,
   isForceMobile,
   logo,
+  matchId,
   name,
   nameShort,
   score,
@@ -52,9 +53,16 @@ export const Team = ({
     });
 
     return (
-      <div className={scoreContainerClass}>
+      <div
+        className={scoreContainerClass}
+        onClick={() => {
+          const input = document.getElementById(`scoreInputId${matchId}${id}`);
+          input?.focus();
+        }}
+      >
         <form className={styles.form}>
           <input
+            id={`scoreInputId${matchId}${id}`}
             type="number"
             className={styles.scoreInput}
             value={score === null ? '' : score}

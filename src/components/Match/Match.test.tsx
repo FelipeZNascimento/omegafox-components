@@ -5,14 +5,27 @@ import { IMatchProps } from './types';
 import { footballClock, matchInfo } from './mocks';
 
 describe('MatchComponent', () => {
-  const renderComponent = ({ clock, timestamp, teams, sport }: IMatchProps) =>
+  const renderComponent = ({
+    clock,
+    id,
+    timestamp,
+    teams,
+    sport
+  }: IMatchProps) =>
     render(
-      <Match clock={clock} timestamp={timestamp} teams={teams} sport={sport} />
+      <Match
+        clock={clock}
+        id={id}
+        timestamp={timestamp}
+        teams={teams}
+        sport={sport}
+      />
     );
 
   it('should render', () => {
     const { container } = renderComponent({
       clock: footballClock,
+      id: matchInfo.id,
       sport: matchInfo.sport,
       teams: matchInfo.teams,
       timestamp: matchInfo.timestamp

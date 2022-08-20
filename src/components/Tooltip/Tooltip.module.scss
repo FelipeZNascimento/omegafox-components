@@ -1,0 +1,60 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/global.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.tooltip {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+
+  &:hover .tooltipText {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.tooltipText {
+  @include aligned(center);
+  @include bg-rgba-colored($color-black, 0.6);
+  @include font-colored($color-white);
+  @include font-sized(s);
+  @include padded(all, s2);
+
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity $transition-time;
+  width: 120px;
+  z-index: 1;
+
+  &Top {
+    bottom: 105%;
+    border-radius: $border-radius;
+    border-bottom-left-radius: 0;
+    left: 50%;
+  }
+
+  &Right {
+    border-radius: $border-radius;
+    border-bottom-left-radius: 0;
+    left: 105%;
+    top: -40%;
+  }
+
+  &Bottom {
+    border-radius: $border-radius;
+    border-top-left-radius: 0;
+    left: 50%;
+    top: 105%;
+  }
+
+  &Left {
+    border-radius: $border-radius;
+    border-bottom-right-radius: 0;
+    top: -40%;
+    right: 105%;
+  }
+}

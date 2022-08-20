@@ -12,6 +12,7 @@ import { IScoreId } from './types';
 export const Match = ({
   betStatus = 'neutral',
   clock = footballClock,
+  id,
   isEditable = true,
   isError = false,
   isExpandable = false,
@@ -99,6 +100,7 @@ export const Match = ({
               isEditable={isEditable}
               isForceMobile={isForceMobile}
               logo={team.logo}
+              matchId={id}
               name={team.name}
               nameShort={team.nameShort}
               score={score === undefined ? null : score}

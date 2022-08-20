@@ -11,6 +11,7 @@ describe('TeamComponent', () => {
     id,
     isEditable,
     logo,
+    matchId,
     name,
     nameShort,
     score
@@ -22,6 +23,7 @@ describe('TeamComponent', () => {
         id={id}
         isEditable={isEditable}
         logo={logo}
+        matchId={matchId}
         name={name}
         nameShort={nameShort}
         score={score}
@@ -35,6 +37,7 @@ describe('TeamComponent', () => {
       id: teamLeft.id,
       isEditable: false,
       logo: teamLeft.logo,
+      matchId: teamLeft.matchId,
       name: teamLeft.name,
       nameShort: teamLeft.nameShort,
       score: teamLeft.score

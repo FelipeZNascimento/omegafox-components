@@ -24,3 +24,4 @@ export type {
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
 export type { ITextFieldProps } from './TextField/types';
+export type { ITooltipProps } from './Tooltip/types';
