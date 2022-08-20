@@ -52,9 +52,16 @@ export const Team = ({
     });
 
     return (
-      <div className={scoreContainerClass}>
+      <div
+        className={scoreContainerClass}
+        onClick={() => {
+          const input = document.getElementById(`scoreInputId${id}`);
+          input?.focus();
+        }}
+      >
         <form className={styles.form}>
           <input
+            id={`scoreInputId${id}`}
             type="number"
             className={styles.scoreInput}
             value={score === null ? '' : score}
