@@ -19,6 +19,7 @@ Match.args = {
   expandableContent: () => {
     return <p>Vila Capanema</p>;
   },
+  isBigLogo: true,
   isEditable: true,
   isError: false,
   isExpandable: false,

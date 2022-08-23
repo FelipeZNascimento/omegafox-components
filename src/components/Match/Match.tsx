@@ -13,6 +13,7 @@ export const Match = ({
   betStatus = 'neutral',
   clock = footballClock,
   id,
+  isBigLogo = false,
   isEditable = true,
   isError = false,
   isExpandable = false,
@@ -97,6 +98,7 @@ export const Match = ({
               align={team.align}
               colors={team.colors}
               id={team.id}
+              isBigLogo={isBigLogo}
               isEditable={isEditable}
               isForceMobile={isForceMobile}
               logo={team.logo}

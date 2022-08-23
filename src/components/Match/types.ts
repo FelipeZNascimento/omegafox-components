@@ -8,6 +8,7 @@ export interface IMatchProps {
   clock: TClockFootball | TClockAmericanFootball;
   expandableContent?: () => JSX.Element;
   id: number;
+  isBigLogo?: boolean;
   isEditable?: boolean;
   isError?: boolean;
   isExpandable?: boolean;

@@ -67,7 +67,7 @@ exports[`MatchComponent should render 1`] = `
         >
           <img
             alt="logo"
-            class="logoLeft"
+            class="logo logoLeft logoSmall"
             src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png"
           />
         </div>
@@ -93,7 +93,7 @@ exports[`MatchComponent should render 1`] = `
         </div>
       </div>
       <div
-        class="containerRight"
+        class="containerLeft"
         style="color: rgb(255, 255, 255); background: rgb(67, 161, 213) url();"
       >
         <div
@@ -121,7 +121,7 @@ exports[`MatchComponent should render 1`] = `
         >
           <img
             alt="logo"
-            class="logoRight"
+            class="logo logoRight logoSmall"
             src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Argentina-National-Football-Team-Logo-192x300.png"
           />
         </div>

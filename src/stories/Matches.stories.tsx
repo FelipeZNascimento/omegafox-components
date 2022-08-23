@@ -12,6 +12,7 @@ export default {
 export const MatchNotStartedEditable = () => (
   <Match
     isEditable
+    id={matchInfo.id}
     clock={{ time: 0, status: FOOTBALL_MATCH_STATUS.NOT_STARTED }}
     timestamp={matchInfo.timestamp}
     sport={matchInfo.sport}
@@ -22,6 +23,7 @@ export const MatchNotStartedEditable = () => (
 export const MatchStartedExpandable = () => (
   <Match
     isExpandable
+    id={matchInfo.id}
     isEditable={false}
     betStatus="full"
     clock={footballClock}
@@ -41,9 +43,10 @@ invertedTeams[1].align = 'left';
 export const MatchWithInvertedTeams = () => (
   <Match
     isExpandable
+    id={matchInfo.id}
     isEditable={false}
     betStatus="half"
-    clock={{ time: 39, status: FOOTBALL_MATCH_STATUS.SECOND_HALF_OVERTIME }}
+    clock={{ time: 39, status: FOOTBALL_MATCH_STATUS.SECOND_EXTRA_TIME }}
     expandableContent={() => {
       return <p>Vila Capanema</p>;
     }}

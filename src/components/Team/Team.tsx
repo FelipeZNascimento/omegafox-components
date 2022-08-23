@@ -10,6 +10,7 @@ export const Team = ({
   id,
   align = 'left',
   colors,
+  isBigLogo = false,
   isEditable,
   isForceMobile,
   logo,
@@ -75,61 +76,41 @@ export const Team = ({
     );
   };
 
-  const renderLeftLogo = () => {
-    return (
-      <div
-        className={styles.containerLeft}
-        style={{
-          color: colors[0],
-          background: `url(${matchLayer}) ${colors[1]}`
-        }}
-      >
-        <div className={styles.logoContainer}>
-          <img className={styles.logoLeft} alt="logo" src={logo} />
-        </div>
-        <div
-          className={styles.nameContainer}
-          style={{
-            textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
-          }}
-        >
-          {isMobile || isForceMobile ? nameShort : name}
-        </div>
-        {renderScore()}
-      </div>
-    );
-  };
+  const renderLogo = () => {
+    const logoClass = classNames(styles.logo, {
+      [styles.logoLeft]: align === 'left',
+      [styles.logoRight]: align === 'right',
+      [styles.logoBig]: isBigLogo,
+      [styles.logoSmall]: !isBigLogo
+    });
 
-  const renderRightLogo = () => {
     return (
-      <div
-        key={id}
-        className={styles.containerRight}
-        style={{
-          color: colors[0],
-          background: `url(${matchLayer}) ${colors[1]}`
-        }}
-      >
-        {renderScore()}
-        <div
-          className={styles.nameContainer}
-          style={{
-            textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
-          }}
-        >
-          {isMobile || isForceMobile ? nameShort : name}
-        </div>
-        <div className={styles.logoContainer}>
-          <img className={styles.logoRight} alt="logo" src={logo} />
-        </div>
+      <div className={styles.logoContainer}>
+        <img className={logoClass} alt="logo" src={logo} />
       </div>
     );
   };
 
   return (
-    <>
-      {align === 'left' && renderLeftLogo()}
-      {align === 'right' && renderRightLogo()}
-    </>
+    <div
+      className={styles.containerLeft}
+      style={{
+        color: colors[0],
+        background: `url(${matchLayer}) ${colors[1]}`
+      }}
+    >
+      {align === 'left' && renderLogo()}
+      {align === 'right' && renderScore()}
+      <div
+        className={styles.nameContainer}
+        style={{
+          textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
+        }}
+      >
+        {isMobile || isForceMobile ? nameShort : name}
+      </div>
+      {align === 'right' && renderLogo()}
+      {align === 'left' && renderScore()}
+    </div>
   );
 };

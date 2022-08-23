@@ -11,7 +11,7 @@ exports[`TeamComponent should render 1`] = `
     >
       <img
         alt="logo"
-        class="logoLeft"
+        class="logo logoLeft logoSmall"
         src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png"
       />
     </div>
