@@ -9,6 +9,7 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
+  width: 100%;
 
   &:hover .tooltipText {
     opacity: 1;
