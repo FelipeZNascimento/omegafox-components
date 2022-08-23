@@ -32,20 +32,25 @@
     filter: drop-shadow(0px 0px 10px #222);
     position: absolute;
     top: 50%;
-    z-index: $hidden-z;
-    height: 90px;
-    width: auto;
 
     &Left {
-      @extend .logo;
       left: 15%;
       transform: translateX(-50%) translateY(-50%);
     }
 
     &Right {
-      @extend .logo;
       transform: translateX(50%) translateY(-50%);
       right: 15%;
+    }
+
+    &Big {
+      max-height: 90px;
+      max-width: 90px;
+    }
+
+    &Small {
+      max-height: 60px;
+      max-width: 60px;
     }
   }
 }
@@ -75,6 +80,8 @@
 .nameContainer {
   @include font-sized(l2);
   @include padded(horizontal, m);
+
+  z-index: $absolute-visible;
 }
 
 .form {

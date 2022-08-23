@@ -2,6 +2,7 @@ export interface ITeamProps {
   id: number;
   align: 'left' | 'right';
   colors: string[];
+  isBigLogo?: boolean;
   isEditable: boolean;
   isForceMobile?: boolean;
   logo: string;
