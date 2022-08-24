@@ -1,5 +1,6 @@
 export { Backdrop } from './Backdrop/Backdrop';
 export { Button } from './Button/Button';
+export { Card } from './Card/Card';
 export { Clock } from './Clock/Clock';
 export { Loading } from './Loading/Loading';
 export { Modal } from './Modal/Modal';
@@ -8,11 +9,13 @@ export { Navbar } from './Navbar/Navbar';
 export { Ranking } from './Ranking/Ranking';
 export { Sidenav } from './Sidenav/Sidenav';
 export { Team } from './Team/Team';
+export { TeamButton } from './TeamButton/TeamButton';
 export { TextField } from './TextField/TextField';
 export { Tooltip } from './Tooltip/Tooltip';
 
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
+export type { ICardProps } from './Card/types';
 export type {
   IClockProps,
   TClockAmericanFootball,
@@ -29,6 +32,7 @@ export type {
 } from './Ranking/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
+export type { ITeamButtonProps } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITooltipProps } from './Tooltip/types';
 

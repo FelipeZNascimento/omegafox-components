@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should render 1`] = `
+<div>
+  <div
+    class="cardContainer cardContainerSelected"
+  >
+    <div
+      class="card cardSelected"
+    >
+      <p
+        class="title titleDesktop"
+      >
+        Title
+        <span
+          class="subtitle"
+        >
+          Subtitle
+        </span>
+      </p>
+    </div>
+    <div
+      class="status"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,59 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/global.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include font-sized(l);
+  @include marged(horizontal, s3);
+  @include flex-aligned(flex-start, center);
+
+  border-radius: $border-radius;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  transition: filter $transition-time;
+
+  &Selected {
+    @include shadowed(1);
+  }
+
+  &Hoverable {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  &Big {
+    height: 60px;
+  }
+
+  &Small {
+    height: 30px;
+  }
+}
+
+.logoContainer {
+  flex: 1;
+
+  .logo {
+    filter: drop-shadow(0px 0px 10px #222);
+    left: 15%;
+    max-height: 50px;
+    max-width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.nameContainer {
+  @include font-sized(l2);
+  @include padded(horizontal, m);
+
+  z-index: $absolute-visible;
+}
