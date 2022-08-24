@@ -1,5 +1,5 @@
 export interface ITooltipProps {
-  children?: React.ReactNode | null;
+  children: JSX.Element;
   position: 'top' | 'right' | 'bottom' | 'left';
   text: string;
 }

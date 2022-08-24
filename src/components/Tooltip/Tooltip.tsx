@@ -1,10 +1,14 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import classNames from 'classnames';
 import { ITooltipProps } from './types';
 import styles from './Tooltip.module.scss';
 
-export const Tooltip = ({ children = null, position, text }: ITooltipProps) => {
+export const Tooltip = ({ children, position, text }: ITooltipProps) => {
+  if (isMobile) {
+    return children;
+  }
   const tooltipTextClass = classNames(styles.tooltipText, {
     [styles.tooltipTextTop]: position === 'top',
     [styles.tooltipTextRight]: position === 'right',

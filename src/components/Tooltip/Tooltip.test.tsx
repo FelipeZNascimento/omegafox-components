@@ -4,13 +4,18 @@ import { Tooltip } from './Tooltip';
 import { ITooltipProps } from './types';
 
 describe('<Tooltip />', () => {
-  const renderComponent = ({ position, text }: ITooltipProps) =>
-    render(<Tooltip position={position} text={text} />);
+  const renderComponent = ({ children, position, text }: ITooltipProps) =>
+    render(
+      <Tooltip position={position} text={text}>
+        {children}
+      </Tooltip>
+    );
 
   it('should render', () => {
     const { container } = renderComponent({
       position: 'top',
-      text: 'Tooltip text'
+      text: 'Tooltip text',
+      children: <span>Hover to see tooltip</span>
     });
 
     expect(container).toMatchSnapshot();
