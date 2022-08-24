@@ -1,0 +1,85 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.cardContainer {
+  @include flex-aligned(center, center);
+
+  border-radius: $border-radius;
+  border-bottom-left-radius: 0px;
+
+  -webkit-box-shadow: inset 0px 0px 0px 2px $color-grey4;
+  box-shadow: inset 0px 0px 0px 2px $color-grey4;
+  cursor: pointer;
+  flex-direction: column;
+  transition: filter $transition-time, background-color $transition-time, box-shadow $transition-time;
+  width: $card-width;
+
+  &Mobile {
+    width: $card-width-mobile;
+  }
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &Selected {
+    -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+    box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+  }
+}
+
+.card {
+  @include bg-rgba-colored($color-grey4, 1);
+  @include font-colored($color-white);
+
+  @include flex-aligned(center, center);
+
+  border-radius: $border-radius;
+  border-bottom-left-radius: 0px;
+  height: 80px;
+  transition: filter $transition-time, background-color $transition-time;
+  width: 100%;
+
+  .title {
+    @include flex-aligned(center, center);
+    @include marged(all, none);
+
+    flex: 1;
+    flex-direction: column;
+
+    &Mobile {
+      @include font-sized(l);
+    }
+
+    &Desktop {
+      @include font-sized(l3);
+    }
+  }
+
+  .subtitle {
+    @include font-sized(s);
+    @include marged(vertical, s2);
+  }
+
+  &Selected {
+    @include bg-rgba-colored($color-qatar-red, 1);
+    @include font-colored($color-white);
+
+    .subtitle {
+      @include font-colored($color-grey1);
+    }
+  }
+}
+
+.status {
+  @include flex-aligned(center, center);
+  @include padded(vertical, s2);
+
+  border-bottom-right-radius: $border-radius;
+  flex: 0;
+  min-height: 40px;
+  width: 100%;
+}

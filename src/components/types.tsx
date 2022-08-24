@@ -1,5 +1,6 @@
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
+export type { ICardProps } from './Card/types';
 export type {
   IClockProps,
   TClockAmericanFootball,
@@ -23,5 +24,6 @@ export type {
 } from './Ranking/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
+export type { ITeamButtonProps } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITooltipProps } from './Tooltip/types';
