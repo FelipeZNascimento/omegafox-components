@@ -5,6 +5,9 @@ exports[`<Tooltip /> should render 1`] = `
   <div
     class="tooltip"
   >
+    <span>
+      Hover to see tooltip
+    </span>
     <span
       class="tooltipText tooltipTextTop"
     >
