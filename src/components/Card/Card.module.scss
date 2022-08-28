@@ -32,7 +32,7 @@
 }
 
 .card {
-  @include bg-rgba-colored($color-grey4, 1);
+  @include bg-rgba-colored($color-grey4, 0.6);
   @include font-colored($color-white);
 
   @include flex-aligned(center, center);
