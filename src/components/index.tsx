@@ -7,6 +7,7 @@ export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
 export { Ranking } from './Ranking/Ranking';
+export { Selector } from './Selector/Selector';
 export { Sidenav } from './Sidenav/Sidenav';
 export { Team } from './Team/Team';
 export { TeamButton } from './TeamButton/TeamButton';
@@ -30,6 +31,7 @@ export type {
   TRankingRow,
   TRankingRowColumn
 } from './Ranking/types';
+export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps } from './TeamButton/types';

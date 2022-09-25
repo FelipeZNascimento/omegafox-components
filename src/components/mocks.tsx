@@ -11,3 +11,4 @@ export {
   teamRight
 } from './Match/mocks';
 export { tableConfig } from './Ranking/mocks';
+export { selectorItems } from './Selector/mocks';

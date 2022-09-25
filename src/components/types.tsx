@@ -22,6 +22,7 @@ export type {
   TRankingRow,
   TRankingRowColumn
 } from './Ranking/types';
+export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps } from './TeamButton/types';
