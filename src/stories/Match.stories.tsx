@@ -14,7 +14,7 @@ const Template: Story<IMatchProps> = (args) => <Component {...args} />;
 export const Match = Template.bind({});
 
 Match.args = {
-  betStatus: 'neutral',
+  betStatus: 'minimun',
   clock: footballClock,
   expandableContent: () => {
     return <p>Vila Capanema</p>;
