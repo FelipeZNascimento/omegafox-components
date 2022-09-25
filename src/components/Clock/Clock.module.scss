@@ -61,12 +61,20 @@
     @include bg-rgba-colored($color-mint, 0.6);
   }
 
+  &Blue {
+    @include bg-rgba-colored($color-qatar-blue, 0.6);
+  }
+
+  &LightBlue {
+    @include bg-rgba-colored($color-qatar-lightblue, 0.6);
+  }
+
   &Yellow {
     @include bg-rgba-colored($color-gold, 0.6);
   }
 
   &Red {
-    @include bg-rgba-colored($color-red, 0.6);
+    @include bg-rgba-colored($color-qatar-red, 0.6);
   }
 }
 

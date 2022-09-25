@@ -3,11 +3,14 @@ import classNames from 'classnames';
 
 import { IRankingProps, TRankingRowColumn } from './types';
 import styles from './Ranking.module.scss';
+import { Loading } from 'index';
+import spinner from '../../img/spinner.png';
 
 export const Ranking = ({
   backgroundImage,
   columns,
   isHeader,
+  isLoading = false,
   rows
 }: IRankingProps) => {
   const numOfCols = columns.length;
@@ -48,7 +51,13 @@ export const Ranking = ({
       }}
     >
       {isHeader && renderHeader(columns, 0)}
-      {rows.map((rowColumns, index) => renderHeader(rowColumns, index))}
+      {isLoading && (
+        <div className={styles.loadingContainer}>
+          <Loading image={spinner} />
+        </div>
+      )}
+      {!isLoading &&
+        rows.map((rowColumns, index) => renderHeader(rowColumns, index))}
     </div>
   );
 };

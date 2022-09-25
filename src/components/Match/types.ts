@@ -1,7 +1,7 @@
 import { TClockAmericanFootball, TClockFootball, ITeamProps } from '../types';
 
 export type TSport = 'football' | 'am_football';
-export type TBetStatus = 'full' | 'half' | 'miss' | 'neutral';
+export type TBetStatus = 'full' | 'half' | 'miss' | 'minimun' | 'neutral';
 
 export interface IMatchProps {
   betStatus?: TBetStatus;

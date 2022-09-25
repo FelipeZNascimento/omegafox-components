@@ -27,7 +27,8 @@ export const Clock = ({
   const errorFlagClass = classNames(styles.toggle, {});
   const toggleClass = classNames(styles.toggle, {
     [styles.toggleGreen]: betStatus === 'full',
-    [styles.toggleYellow]: betStatus === 'half',
+    [styles.toggleBlue]: betStatus === 'half',
+    [styles.toggleLightBlue]: betStatus === 'minimun',
     [styles.toggleRed]: betStatus === 'miss',
     [styles.toggleNeutral]: betStatus === 'neutral'
   });

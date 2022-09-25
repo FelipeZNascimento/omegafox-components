@@ -18,5 +18,6 @@ Ranking.args = {
     'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png',
   columns: tableConfig.columns,
   isHeader: tableConfig.isHeader,
+  isLoading: false,
   rows: tableConfig.rows
 };

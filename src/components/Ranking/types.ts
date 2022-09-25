@@ -15,6 +15,7 @@ export type TRankingRow = TRankingRowColumn[];
 export interface IRankingProps {
   backgroundImage?: string;
   isHeader: boolean;
+  isLoading?: boolean;
   columns: TRankingColumn[];
   rows: TRankingRow[];
 }
