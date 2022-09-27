@@ -4,6 +4,8 @@ import { Team } from './Team';
 import { ITeamProps } from './types';
 import { teamLeft } from '../mocks';
 
+jest.mock('components/Tooltip/Tooltip');
+
 describe('TeamComponent', () => {
   const renderComponent = ({
     align,

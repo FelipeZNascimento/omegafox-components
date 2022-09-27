@@ -4,6 +4,8 @@ import { Match } from './Match';
 import { IMatchProps } from './types';
 import { footballClock, matchInfo } from './mocks';
 
+jest.mock('components/Tooltip/Tooltip');
+
 describe('MatchComponent', () => {
   const renderComponent = ({
     clock,
