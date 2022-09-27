@@ -2,17 +2,98 @@
 
 exports[`<Tooltip /> should render 1`] = `
 <div>
-  <div
-    class="tooltip"
+  <span
+    currentitem="false"
+    data-tip="Tooltip text"
   >
     <span>
       Hover to see tooltip
     </span>
-    <span
-      class="tooltipText tooltipTextTop"
+  </span>
+  <div
+    class="__react_component_tooltip t3cc60475-3324-453a-87cf-c0d8b2388476 place-top type-dark"
+    data-id="tooltip"
+    id="t3cc60475-3324-453a-87cf-c0d8b2388476"
+  >
+    <style
+      aria-hidden="true"
     >
-      Tooltip text
-    </span>
+      
+  	.t3cc60475-3324-453a-87cf-c0d8b2388476 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t3cc60475-3324-453a-87cf-c0d8b2388476.place-top {
+        margin-top: -10px;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-bottom {
+        margin-top: 10px;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-left {
+        margin-left: -10px;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-right {
+        margin-left: 10px;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t3cc60475-3324-453a-87cf-c0d8b2388476.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  
+    </style>
   </div>
 </div>
 `;

@@ -1,25 +1,24 @@
+// https://wwayne.github.io/react-tooltip/
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import ReactTooltip from 'react-tooltip';
 
-import classNames from 'classnames';
 import { ITooltipProps } from './types';
-import styles from './Tooltip.module.scss';
 
-export const Tooltip = ({ children, position, text }: ITooltipProps) => {
+export const Tooltip = ({
+  children,
+  position = 'bottom',
+  text,
+  type = 'dark'
+}: ITooltipProps) => {
   if (isMobile) {
     return children;
   }
-  const tooltipTextClass = classNames(styles.tooltipText, {
-    [styles.tooltipTextTop]: position === 'top',
-    [styles.tooltipTextRight]: position === 'right',
-    [styles.tooltipTextBottom]: position === 'bottom',
-    [styles.tooltipTextLeft]: position === 'left'
-  });
 
   return (
-    <div className={styles.tooltip}>
-      {children}
-      <span className={tooltipTextClass}>{text}</span>
-    </div>
+    <>
+      <span data-tip={text}>{children}</span>
+      <ReactTooltip place={position} type={type} />
+    </>
   );
 };
