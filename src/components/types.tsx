@@ -8,7 +8,7 @@ export type {
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
 export type {
-  TBetStatus,
+  TBetValues,
   IMatchProps,
   IMatchStatusProps,
   IScoreId,

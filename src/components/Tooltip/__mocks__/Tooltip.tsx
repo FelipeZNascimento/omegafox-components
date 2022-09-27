@@ -1,9 +1,7 @@
-// https://wwayne.github.io/react-tooltip/
 import React from 'react';
 import { isMobile } from 'react-device-detect';
-import ReactTooltip from 'react-tooltip';
 
-import { ITooltipProps } from './types';
+import { ITooltipProps } from '../types';
 
 export const Tooltip = ({
   children,
@@ -16,9 +14,10 @@ export const Tooltip = ({
   }
 
   return (
-    <>
+    <div>
       <span data-tip={text}>{children}</span>
-      <ReactTooltip place={position} type={type} />
-    </>
+      <p>position: {position}</p>
+      <p>type: {type}</p>
+    </div>
   );
 };

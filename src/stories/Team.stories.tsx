@@ -15,6 +15,8 @@ export const Team = Template.bind({});
 
 Team.args = {
   align: teamLeft.align,
+  bet: 2,
+  betValue: 5,
   colors: teamLeft.colors,
   id: teamLeft.id,
   isEditable: true,

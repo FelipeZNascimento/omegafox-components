@@ -61,7 +61,11 @@ export const MatchStatus = ({
 
   return (
     <div className={isMobile ? matchStatusClassMobile : matchStatusClass}>
-      <Tooltip position="bottom" text={renderTooltipText()}>
+      <Tooltip
+        position="bottom"
+        type={isError ? 'error' : 'dark'}
+        text={renderTooltipText()}
+      >
         <FontAwesomeIcon icon={renderStatusIcon()} />
       </Tooltip>
     </div>

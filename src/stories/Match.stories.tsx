@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import { Match as Component } from '../components';
 import { IMatchProps } from '../components/types';
 import { footballClock, matchInfo } from '../components/mocks';
+import { BET_VALUES } from 'components/Match/constants';
 
 export default {
   title: 'Match',
@@ -14,7 +15,7 @@ const Template: Story<IMatchProps> = (args) => <Component {...args} />;
 export const Match = Template.bind({});
 
 Match.args = {
-  betStatus: 'minimun',
+  betValue: BET_VALUES.MINIMUN,
   clock: footballClock,
   expandableContent: () => {
     return <p>Vila Capanema</p>;
@@ -26,5 +27,6 @@ Match.args = {
   isForceMobile: false,
   isLoading: false,
   timestamp: matchInfo.timestamp,
-  teams: matchInfo.teams
+  teams: matchInfo.teams,
+  onTeamClick: (id: number) => console.log(`onTeamClick (id: ${id})`)
 };

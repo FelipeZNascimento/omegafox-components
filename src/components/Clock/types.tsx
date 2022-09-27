@@ -2,7 +2,7 @@ import {
   FOOTBALL_MATCH_STATUS,
   AMERICAN_FOOTBALL_MATCH_STATUS
 } from './constants';
-import { TBetStatus } from '../types';
+import { TBetValues } from '../types';
 
 type TClock = {
   time: number;
@@ -19,7 +19,7 @@ export type TClockAmericanFootball = TClock & {
 };
 
 export interface IClockProps {
-  betStatus: TBetStatus;
+  betValue: TBetValues | null;
   clock: TClockAmericanFootball | TClockFootball;
   isExpandable: boolean;
   isExpanded: boolean;

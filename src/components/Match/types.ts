@@ -1,10 +1,17 @@
 import { TClockAmericanFootball, TClockFootball, ITeamProps } from '../types';
 
 export type TSport = 'football' | 'am_football';
-export type TBetStatus = 'full' | 'half' | 'miss' | 'minimun' | 'neutral';
+export type TBetValues = 5 | 3 | 2 | 0;
+export type TBET_VALUES = {
+  FULL: TBetValues;
+  HALF: TBetValues;
+  MINIMUN: TBetValues;
+  MISS: TBetValues;
+};
 
 export interface IMatchProps {
-  betStatus?: TBetStatus;
+  bet?: number | null;
+  betValue?: TBetValues | null;
   clock: TClockFootball | TClockAmericanFootball;
   expandableContent?: () => JSX.Element;
   id: number;
@@ -17,6 +24,7 @@ export interface IMatchProps {
   sport?: TSport;
   teams: ITeamProps[];
   timestamp: number;
+  onTeamClick?: ((teamId: number) => void) | null;
   onChange?: ((score: IScoreId[]) => void) | null;
 }
 

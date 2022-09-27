@@ -7,7 +7,7 @@ exports[`ClockComponent should render 1`] = `
     style="background: rgb(236, 239, 241) url();"
   >
     <div
-      class="toggle toggleNeutral"
+      class="toggle toggleGreen"
     >
       +
     </div>
