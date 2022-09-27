@@ -6,7 +6,7 @@ import { footballClock, matchInfo } from '../mocks';
 
 describe('ClockComponent', () => {
   const renderComponent = ({
-    betStatus,
+    betValue,
     clock,
     isExpandable,
     isExpanded,
@@ -17,7 +17,7 @@ describe('ClockComponent', () => {
       <Clock
         isExpandable={isExpandable}
         isMatchEditable={isMatchEditable}
-        betStatus={betStatus}
+        betValue={betValue}
         clock={clock}
         isExpanded={isExpanded}
         timestamp={timestamp}
@@ -28,7 +28,7 @@ describe('ClockComponent', () => {
     const { container } = renderComponent({
       isExpandable: true,
       isMatchEditable: false,
-      betStatus: 'neutral',
+      betValue: 5,
       clock: footballClock,
       isExpanded: false,
       timestamp: matchInfo.timestamp

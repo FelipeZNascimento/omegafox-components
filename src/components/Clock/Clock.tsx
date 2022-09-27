@@ -11,9 +11,10 @@ import {
 } from './constants';
 import styles from './Clock.module.scss';
 import matchLayer from '../../img/match_layer.png';
+import { BET_VALUES } from 'components/Match/constants';
 
 export const Clock = ({
-  betStatus,
+  betValue,
   clock,
   isExpandable = false,
   isExpanded,
@@ -26,11 +27,11 @@ export const Clock = ({
 
   const errorFlagClass = classNames(styles.toggle, {});
   const toggleClass = classNames(styles.toggle, {
-    [styles.toggleGreen]: betStatus === 'full',
-    [styles.toggleBlue]: betStatus === 'half',
-    [styles.toggleLightBlue]: betStatus === 'minimun',
-    [styles.toggleRed]: betStatus === 'miss',
-    [styles.toggleNeutral]: betStatus === 'neutral'
+    [styles.toggleGreen]: betValue === BET_VALUES.FULL,
+    [styles.toggleBlue]: betValue === BET_VALUES.HALF,
+    [styles.toggleLightBlue]: betValue === BET_VALUES.MINIMUN,
+    [styles.toggleRed]: betValue === BET_VALUES.MISS,
+    [styles.toggleNeutral]: betValue === null
   });
 
   const renderCorner = () => {
