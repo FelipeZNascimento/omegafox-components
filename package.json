@@ -1,6 +1,6 @@
 {
   "name": "@omegafox/components",
-  "version": "2.6.0",
+  "version": "2.9.1",
   "description": "Omegafox component library using Rollup, TypeScript, Sass and Storybook",
   "main": "dist/index.js",
   "typings": "dist/src/index",
@@ -103,6 +103,7 @@
     "@storybook/addon-controls": "^6.5.9",
     "lodash": "^4.17.21",
     "luxon": "^3.0.1",
-    "react-device-detect": "^2.2.2"
+    "react-device-detect": "^2.2.2",
+    "react-tooltip": "^4.2.21"
   }
 }

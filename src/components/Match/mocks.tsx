@@ -5,6 +5,7 @@ const matchId = 0;
 export const teamLeft: ITeamProps = {
   id: 0,
   align: 'left',
+  bet: 3,
   colors: ['#FFDC02', '#19AE47'],
   isEditable: false,
   isForceMobile: false,
@@ -18,6 +19,7 @@ export const teamLeft: ITeamProps = {
 export const teamRight: ITeamProps = {
   id: 1,
   align: 'right',
+  bet: 0,
   colors: ['#FFFFFF', '#43A1D5'],
   isEditable: false,
   isForceMobile: false,

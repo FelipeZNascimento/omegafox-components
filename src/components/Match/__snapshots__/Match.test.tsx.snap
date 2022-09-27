@@ -11,8 +11,9 @@ exports[`MatchComponent should render 1`] = `
       <div
         class="matchStatus matchStatusCheck"
       >
-        <div
-          class="tooltip"
+        <span
+          currentitem="false"
+          data-tip="Aposta completa."
         >
           <svg
             aria-hidden="true"
@@ -29,11 +30,91 @@ exports[`MatchComponent should render 1`] = `
               fill="currentColor"
             />
           </svg>
-          <span
-            class="tooltipText tooltipTextBottom"
+        </span>
+        <div
+          class="__react_component_tooltip tef0f0172-e5b5-4775-bb9c-3bb1434250e1 place-bottom type-dark"
+          data-id="tooltip"
+          id="tef0f0172-e5b5-4775-bb9c-3bb1434250e1"
+        >
+          <style
+            aria-hidden="true"
           >
-            Aposta completa.
-          </span>
+            
+  	.tef0f0172-e5b5-4775-bb9c-3bb1434250e1 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-top {
+        margin-top: -10px;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-bottom {
+        margin-top: 10px;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-left {
+        margin-left: -10px;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-right {
+        margin-left: 10px;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tef0f0172-e5b5-4775-bb9c-3bb1434250e1.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  
+          </style>
         </div>
       </div>
       <div

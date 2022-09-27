@@ -10,7 +10,7 @@ import styles from './Match.module.scss';
 import { IScoreId } from './types';
 
 export const Match = ({
-  betStatus = 'neutral',
+  betValue = null,
   clock = footballClock,
   id,
   isBigLogo = false,
@@ -22,6 +22,7 @@ export const Match = ({
   timestamp,
   teams,
   expandableContent,
+  onTeamClick = null,
   onChange = null
 }: IMatchProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -81,7 +82,7 @@ export const Match = ({
 
         {!isMobile && !isForceMobile && (
           <Clock
-            betStatus={betStatus}
+            betValue={betValue}
             clock={clock}
             isMatchEditable={isEditable}
             isExpandable={isExpandable}
@@ -94,8 +95,10 @@ export const Match = ({
 
           return (
             <Team
-              key={team.id}
               align={team.align}
+              key={team.id}
+              bet={team.bet}
+              betValue={betValue}
               colors={team.colors}
               id={team.id}
               isBigLogo={isBigLogo}
@@ -107,6 +110,7 @@ export const Match = ({
               nameShort={team.nameShort}
               score={score === undefined ? null : score}
               onChange={handleScoreChange}
+              onTeamClick={onTeamClick}
             />
           );
         })}

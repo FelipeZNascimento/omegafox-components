@@ -23,7 +23,13 @@ export type {
   TClockFootball
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
-export type { TBetStatus, IMatchProps, TSport, IScoreId } from './Match/types';
+export type {
+  TBetValues,
+  TBET_VALUES,
+  IMatchProps,
+  TSport,
+  IScoreId
+} from './Match/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
 export type {
   IRankingProps,
@@ -44,3 +50,5 @@ export {
   LABELS,
   STOPPED_GAME
 } from './Clock/constants';
+
+export { BET_VALUES } from './Match/constants';
