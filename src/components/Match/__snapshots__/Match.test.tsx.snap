@@ -13,7 +13,7 @@ exports[`MatchComponent should render 1`] = `
       >
         <div>
           <span
-            data-tip="Aposta completa."
+            data-tip="true"
           >
             <svg
               aria-hidden="true"
@@ -32,12 +32,12 @@ exports[`MatchComponent should render 1`] = `
             </svg>
           </span>
           <p>
-            position: 
-            bottom
+            text: 
+            Aposta completa.
           </p>
           <p>
             type: 
-            dark
+            neutral
           </p>
         </div>
       </div>
@@ -92,7 +92,7 @@ exports[`MatchComponent should render 1`] = `
               class="scoreInput"
               id="scoreInputId00"
               type="number"
-              value="4"
+              value="3"
             />
           </form>
         </div>
