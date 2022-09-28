@@ -11,7 +11,7 @@ export type {
   TBetValues,
   IMatchProps,
   IMatchStatusProps,
-  IScoreId,
+  IBetId,
   TSport
 } from './Match/types';
 export type { IModalProps } from './Modal/types';
@@ -24,7 +24,9 @@ export type {
 } from './Ranking/types';
 export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
+export type { IStatusBadgeProps } from './StatusBadge/types';
 export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
+export type { ITitleContainerProps } from './TitleContainer/types';
 export type { ITooltipProps } from './Tooltip/types';
