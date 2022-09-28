@@ -1,0 +1,43 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/global.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.target {
+  display: inline-block;
+}
+
+.tooltip {
+  @include font-sized(s);
+  @include font-colored($color-white);
+  @include padded(all, s);
+
+  border-radius: $border-radius;
+  border-bottom-left-radius: 0;
+  z-index: 10;
+
+  &Neutral {
+    @include bg-rgba-colored($color-grey5, 0.7);
+  }
+
+  &Success {
+    @include bg-rgba-colored($color-mint, 0.7);
+  }
+
+  &Error {
+    @include bg-rgba-colored($color-qatar-red, 0.7);
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent $color-grey4 transparent;
+  }
+}
