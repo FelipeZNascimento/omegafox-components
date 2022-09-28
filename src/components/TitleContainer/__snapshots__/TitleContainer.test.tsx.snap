@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TitleContainer /> should render 1`] = `
+<div>
+  <div
+    class="titleContainer titleContainerBottomLeft"
+  >
+    Click
+  </div>
+</div>
+`;
