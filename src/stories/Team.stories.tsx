@@ -22,6 +22,7 @@ Team.args = {
   isEditable: true,
   isForceMobile: false,
   logo: teamLeft.logo,
+  matchId: 0,
   name: teamLeft.name,
   nameShort: teamLeft.nameShort,
   score: teamLeft.score

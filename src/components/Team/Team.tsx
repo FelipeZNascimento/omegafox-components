@@ -25,15 +25,15 @@ export const Team = ({
   onChange = null,
   onTeamClick = null
 }: ITeamProps) => {
-  const [editedScore, setEditedScore] = useState<number | null>(null);
+  const [editedBet, setEditedBet] = useState<number | null>(null);
 
   useEffect(() => {
-    setEditedScore(score);
-  }, [score]);
+    setEditedBet(bet);
+  }, [bet]);
 
   const renderScore = () => {
     if (!isEditable) {
-      if (betValue !== null) {
+      if (bet !== null) {
         const betContainerClass = classNames(styles.scoreContainerBet, {
           [styles.scoreContainerBetGreen]: betValue === BET_VALUES.FULL,
           [styles.scoreContainerBetBlue]: betValue === BET_VALUES.HALF,
@@ -46,7 +46,7 @@ export const Team = ({
           <div className={styles.scoreContainer}>
             <div className={styles.scoreContainerScore}>{score}</div>
             <div className={betContainerClass}>
-              <Tooltip text="Sua aposta" position="bottom">
+              <Tooltip text="Sua aposta">
                 <span>{bet !== null ? bet : 'x'}</span>
               </Tooltip>
             </div>
@@ -62,7 +62,11 @@ export const Team = ({
         ? null
         : e.target.valueAsNumber;
 
-      setEditedScore(newScore);
+      if (newScore !== null && newScore < 0) {
+        return;
+      }
+
+      setEditedBet(newScore);
       if (onChange) {
         onChange(newScore, id);
       }
@@ -75,9 +79,16 @@ export const Team = ({
     };
 
     const scoreContainerClass = classNames(styles.scoreContainerHoverable, {
-      [styles.scoreContainerNull]: editedScore === null,
-      [styles.scoreContainer]: editedScore !== null
+      [styles.scoreContainerNull]: editedBet === null,
+      [styles.scoreContainer]: editedBet !== null
     });
+
+    let value: string | number = '';
+    if (isEditable && editedBet !== null) {
+      value = editedBet;
+    } else if (!isEditable && score !== null) {
+      value = score;
+    }
 
     return (
       <div
@@ -92,7 +103,7 @@ export const Team = ({
             id={`scoreInputId${matchId}${id}`}
             type="number"
             className={styles.scoreInput}
-            value={score === null ? '' : score}
+            value={value}
             onChange={handleScoreChange}
             onKeyPress={handleKeyPress}
             onWheel={(e) => (e.target as HTMLElement).blur()}

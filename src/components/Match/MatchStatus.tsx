@@ -15,7 +15,8 @@ export const MatchStatus = ({
   isBetEmpty,
   isError = false,
   isLoading,
-  isMobile
+  isMobile,
+  matchId
 }: IMatchStatusProps) => {
   const matchStatusClassMobile = classNames(styles.matchStatusMobile, {
     [styles.matchStatusMobileLoading]: isLoading,
@@ -61,11 +62,7 @@ export const MatchStatus = ({
 
   return (
     <div className={isMobile ? matchStatusClassMobile : matchStatusClass}>
-      <Tooltip
-        position="bottom"
-        type={isError ? 'error' : 'dark'}
-        text={renderTooltipText()}
-      >
+      <Tooltip type={isError ? 'error' : 'neutral'} text={renderTooltipText()}>
         <FontAwesomeIcon icon={renderStatusIcon()} />
       </Tooltip>
     </div>

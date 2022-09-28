@@ -7,7 +7,7 @@ import { footballClock } from './mocks';
 import { IMatchProps } from '../types';
 import classNames from 'classnames';
 import styles from './Match.module.scss';
-import { IScoreId } from './types';
+import { IBetId } from './types';
 
 export const Match = ({
   betValue = null,
@@ -27,14 +27,14 @@ export const Match = ({
 }: IMatchProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isBetEmpty, setIsBetEmpty] = useState<boolean>(false);
-  const [editedScore, setEditedScore] = useState<IScoreId[]>([]);
+  const [editedBets, setEditedBets] = useState<IBetId[]>([]);
 
   useEffect(() => {
     const newScoreArray = teams.map((team) => {
-      return { id: team.id, score: team.score };
+      return { id: team.id, bet: team.bet !== undefined ? team.bet : null };
     });
-    setEditedScore(newScoreArray);
-    setIsBetEmpty(newScoreArray.some((item) => item.score === null));
+    setEditedBets(newScoreArray);
+    setIsBetEmpty(newScoreArray.some((item) => item.bet === null));
   }, [teams]);
 
   const matchContainerClass = classNames(styles.matchContainer, {
@@ -47,21 +47,25 @@ export const Match = ({
     [styles.expandedContainerClosed]: !isExpanded
   });
 
-  const handleScoreChange = (newScore: number | null, teamId: number) => {
-    const newScoreArray = editedScore.map((item) => {
+  const handleScoreChange = (newBet: number | null, teamId: number) => {
+    if (newBet !== null && newBet < 0) {
+      return;
+    }
+
+    const newBetArray = editedBets.map((item) => {
       if (item.id === teamId) {
         return {
           id: item.id,
-          score: newScore
+          bet: newBet
         };
       }
       return item;
     });
 
-    setEditedScore(newScoreArray);
-    setIsBetEmpty(newScoreArray.some((item) => item.score === null));
+    setEditedBets(newBetArray);
+    setIsBetEmpty(newBetArray.some((item) => item.bet === null));
     if (onChange) {
-      onChange(newScoreArray);
+      onChange(newBetArray);
     }
   };
 
@@ -77,6 +81,7 @@ export const Match = ({
             isError={isError}
             isLoading={isLoading}
             isMobile={isMobile || isForceMobile}
+            matchId={id}
           />
         )}
 
@@ -91,13 +96,13 @@ export const Match = ({
           />
         )}
         {teams.map((team) => {
-          const score = editedScore.find((item) => item.id === team.id)?.score;
+          const bet = editedBets.find((item) => item.id === team.id)?.bet;
 
           return (
             <Team
               align={team.align}
               key={team.id}
-              bet={team.bet}
+              bet={bet === undefined ? null : bet}
               betValue={betValue}
               colors={team.colors}
               id={team.id}
@@ -108,7 +113,7 @@ export const Match = ({
               matchId={id}
               name={team.name}
               nameShort={team.nameShort}
-              score={score === undefined ? null : score}
+              score={team.score}
               onChange={handleScoreChange}
               onTeamClick={onTeamClick}
             />

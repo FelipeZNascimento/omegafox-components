@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { ITeamButtonProps } from './types';
 import styles from './TeamButton.module.scss';
 import matchLayer from '../../img/match_layer.png';
+import { Tooltip } from 'index';
 
 export const TeamButton = ({
   colors,
@@ -56,7 +57,13 @@ export const TeamButton = ({
           textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
         }}
       >
-        {isMobile || isForceMobile ? nameShort : name}
+        {isMobile || isForceMobile ? (
+          <Tooltip text={name}>
+            <span>{nameShort}</span>
+          </Tooltip>
+        ) : (
+          name
+        )}
       </div>
     </div>
   );
