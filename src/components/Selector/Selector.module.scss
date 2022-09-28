@@ -31,10 +31,10 @@
 
   &Selected {
     @include bg-rgba-colored($color-grey1, 0.7);
-    @include font-colored($color-grey5);
+    @include font-colored($color-qatar-red);
 
-    -webkit-box-shadow: inset 0px 0px 0px 2px $color-grey3;
-    box-shadow: inset 0px 0px 0px 2px $color-grey3;
+    -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+    box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
   }
 
   &:nth-child(4n + 1) {

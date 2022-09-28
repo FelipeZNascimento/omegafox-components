@@ -9,7 +9,9 @@ export { Navbar } from './Navbar/Navbar';
 export { Ranking } from './Ranking/Ranking';
 export { Selector } from './Selector/Selector';
 export { Sidenav } from './Sidenav/Sidenav';
+export { StatusBadge } from './StatusBadge/StatusBadge';
 export { Team } from './Team/Team';
+export { TitleContainer } from './TitleContainer/TitleContainer';
 export { TeamButton } from './TeamButton/TeamButton';
 export { TextField } from './TextField/TextField';
 export { Tooltip } from './Tooltip/Tooltip';
@@ -28,7 +30,7 @@ export type {
   TBET_VALUES,
   IMatchProps,
   TSport,
-  IScoreId
+  IBetId
 } from './Match/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
 export type {
@@ -39,7 +41,9 @@ export type {
 } from './Ranking/types';
 export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
+export type { IStatusBadgeProps } from './StatusBadge/types';
 export type { ITeamProps } from './Team/types';
+export type { ITitleContainerProps } from './TitleContainer/types';
 export type { ITeamButtonProps } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITooltipProps } from './Tooltip/types';

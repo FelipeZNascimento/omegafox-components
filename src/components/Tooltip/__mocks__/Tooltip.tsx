@@ -5,9 +5,8 @@ import { ITooltipProps } from '../types';
 
 export const Tooltip = ({
   children,
-  position = 'bottom',
   text,
-  type = 'dark'
+  type = 'neutral'
 }: ITooltipProps) => {
   if (isMobile) {
     return children;
@@ -15,8 +14,8 @@ export const Tooltip = ({
 
   return (
     <div>
-      <span data-tip={text}>{children}</span>
-      <p>position: {position}</p>
+      <span data-tip>{children}</span>
+      <p>text: {text}</p>
       <p>type: {type}</p>
     </div>
   );

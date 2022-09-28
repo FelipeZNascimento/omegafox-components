@@ -18,12 +18,6 @@
   height: $match-container-height;
   position: relative;
   width: 100%;
-  transition: filter $transition-time;
-
-  &Hoverable:hover {
-    filter: brightness(90%);
-    transition: filter $transition-time;
-  }
 
   &Expandable {
     cursor: pointer;

@@ -25,7 +25,7 @@ export interface IMatchProps {
   teams: ITeamProps[];
   timestamp: number;
   onTeamClick?: ((teamId: number) => void) | null;
-  onChange?: ((score: IScoreId[]) => void) | null;
+  onChange?: ((bet: IBetId[]) => void) | null;
 }
 
 export interface IMatchStatusProps {
@@ -33,9 +33,10 @@ export interface IMatchStatusProps {
   isError?: boolean;
   isMobile: boolean;
   isLoading: boolean;
+  matchId: number;
 }
 
-export interface IScoreId {
+export interface IBetId {
   id: number;
-  score: number | null;
+  bet: number | null;
 }

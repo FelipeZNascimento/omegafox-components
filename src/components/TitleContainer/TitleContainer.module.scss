@@ -1,0 +1,33 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.titleContainer {
+  @include flex-aligned(center, center);
+  @include font-sized(l3);
+  @include padded(all, l);
+  @include bg-rgba-colored($color-grey1, 0.7);
+  @include font-colored($color-qatar-red);
+
+  -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+  box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+
+  border-radius: $border-radius;
+  display: inline-flex;
+  height: $title-container-height;
+
+  &BottomLeft {
+    border-bottom-left-radius: 0;
+  }
+  &BottomRight {
+    border-bottom-right-radius: 0;
+  }
+  &TopRight {
+    border-top-right-radius: 0;
+  }
+  &TopLeft {
+    border-top-left-radius: 0;
+  }
+}
