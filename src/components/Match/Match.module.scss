@@ -28,7 +28,7 @@
   @include aligned(center);
   @include bg-rgba-colored($color-grey1, 0.9);
   @include flex-aligned(flex-start, center);
-  @include shadowed(0.2);
+  @include shadowed($color-black, 0.2);
 
   border-radius: $border-radius;
   border-top-left-radius: 0;

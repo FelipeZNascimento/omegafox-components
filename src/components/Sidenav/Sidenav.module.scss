@@ -5,7 +5,7 @@
 @import "../../styling/paddings.scss";
 
 .container {
-  @include shadowed(0.2);
+  @include shadowed($color-black, 0.2);
   @include bg-colored($color-grey1);
   @include font-sized(l2);
   @include flex-aligned(center, center);
