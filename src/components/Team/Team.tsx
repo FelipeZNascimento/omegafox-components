@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import classNames from 'classnames';
 
+import { usePrevious } from 'utils/hooks';
+import { Tooltip } from 'components/Tooltip/Tooltip';
 import { ITeamProps } from './types';
+import { BET_VALUES } from '../Match/constants';
 import styles from './Team.module.scss';
 import matchLayer from '../../img/match_layer.png';
-import { Tooltip } from 'components/Tooltip/Tooltip';
-import { BET_VALUES } from '../Match/constants';
 
 export const Team = ({
   id,
@@ -26,12 +27,25 @@ export const Team = ({
   onTeamClick = null
 }: ITeamProps) => {
   const [editedBet, setEditedBet] = useState<number | null>(null);
+  const [scoreChanged, setScoreChanged] = useState<boolean>(false);
+  const prevScore = usePrevious(score);
+
+  useEffect(() => {
+    if (prevScore !== undefined) {
+      setScoreChanged(true);
+      setTimeout(() => setScoreChanged(false), 10000); //20s
+    }
+  }, [prevScore, score]);
 
   useEffect(() => {
     setEditedBet(bet);
   }, [bet]);
 
   const renderScore = () => {
+    const scoreClass = classNames([styles.scoreContainerScore], {
+      [styles.scoreContainerScoreHighlight]: scoreChanged
+    });
+
     if (!isEditable) {
       if (bet !== null) {
         const betContainerClass = classNames(styles.scoreContainerBet, {
@@ -44,7 +58,7 @@ export const Team = ({
         betValue;
         return (
           <div className={styles.scoreContainer}>
-            <div className={styles.scoreContainerScore}>{score}</div>
+            <div className={scoreClass}>{score}</div>
             <div className={betContainerClass}>
               <Tooltip text="Sua aposta">
                 <span>{bet !== null ? bet : 'x'}</span>
@@ -57,18 +71,18 @@ export const Team = ({
       return <div className={styles.scoreContainer}>{score}</div>;
     }
 
-    const handleScoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const newScore = isNaN(e.target.valueAsNumber)
+    const handleBetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newBet = isNaN(e.target.valueAsNumber)
         ? null
         : e.target.valueAsNumber;
 
-      if (newScore !== null && newScore < 0) {
+      if (newBet !== null && newBet < 0) {
         return;
       }
 
-      setEditedBet(newScore);
+      setEditedBet(newBet);
       if (onChange) {
-        onChange(newScore, id);
+        onChange(newBet, id);
       }
     };
 
@@ -104,7 +118,7 @@ export const Team = ({
             type="number"
             className={styles.scoreInput}
             value={value}
-            onChange={handleScoreChange}
+            onChange={handleBetChange}
             onKeyPress={handleKeyPress}
             onWheel={(e) => (e.target as HTMLElement).blur()}
           />

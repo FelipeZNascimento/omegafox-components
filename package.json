@@ -104,6 +104,7 @@
     "@storybook/addon-controls": "^6.5.9",
     "lodash": "^4.17.21",
     "luxon": "^3.0.1",
-    "react-device-detect": "^2.2.2"
+    "react-device-detect": "^2.2.2",
+    "react-search-autocomplete": "^8.0.0"
   }
 }
