@@ -87,6 +87,7 @@ export const Match = ({
 
         {!isMobile && !isForceMobile && (
           <Clock
+            key={id}
             betValue={betValue}
             clock={clock}
             isMatchEditable={isEditable}
