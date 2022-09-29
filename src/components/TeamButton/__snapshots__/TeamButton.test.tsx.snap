@@ -12,7 +12,7 @@ exports[`<TeamButton /> should render 1`] = `
       <img
         alt="logo"
         class="logo"
-        src="https://teamcolorcodes.com/wp-content/uploads/2021/12/Brazil-National-Football-Team-Logo-211x300.png"
+        src="https://assets.omegafox.me/img/countries_crests/bra.png"
       />
     </div>
     <div
