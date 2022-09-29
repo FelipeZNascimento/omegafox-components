@@ -38,10 +38,8 @@ export const Card = ({
   return (
     <div className={cardContainerClass} onClick={handleOnClick}>
       <div className={cardClass}>
-        <p className={titleClass}>
-          {title}
-          {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
-        </p>
+        <p className={titleClass}>{title}</p>
+        {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
       </div>
       <div className={styles.status}>
         {renderingStatusFunction ? renderingStatusFunction() : null}

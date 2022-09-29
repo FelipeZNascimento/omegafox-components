@@ -7,7 +7,7 @@
 .navContainer {
   @include padded(vertical, s);
   @include padded(horizontal, s);
-  @include shadowed(0.2);
+  @include shadowed($color-black, 0.2);
 
   height: 64px;
   overflow: hidden;

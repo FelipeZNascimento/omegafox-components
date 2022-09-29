@@ -16,7 +16,7 @@
 
   border-radius: $border-radius;
   display: inline-flex;
-  height: $title-container-height;
+  min-height: $title-container-height;
 
   &BottomLeft {
     border-bottom-left-radius: 0;

@@ -1,5 +1,6 @@
 // https://www.npmjs.com/package/react-search-autocomplete
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import classNames from 'classnames';
 import { TDropdownItem, IAutocompleteProps } from './types';
@@ -40,7 +41,7 @@ export const Autocomplete = ({
         <span className={styles.name}>{item.name}</span>
         <span className={styles.logo}>
           <img
-            src={`https://assets.omegafox.me/img/countries_crests/${item.abbreviationEn.toLowerCase()}.png`}
+            src={`https://assets.omegafox.me/img/countries_crests/${item.details.nameShort.toLowerCase()}.png`}
           />
         </span>
       </div>
@@ -49,7 +50,7 @@ export const Autocomplete = ({
 
   return (
     <div className={containerClass}>
-      <div style={{ width: 400 }}>
+      <div style={{ width: isMobile ? 340 : 460 }}>
         <ReactSearchAutocomplete
           styling={{
             borderRadius: '16px',

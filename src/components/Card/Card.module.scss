@@ -6,12 +6,11 @@
 
 .cardContainer {
   @include flex-aligned(center, center);
+  @include shadowed($color-black, 0.3);
 
   border-radius: $border-radius;
   border-bottom-left-radius: 0px;
 
-  -webkit-box-shadow: inset 0px 0px 0px 2px $color-grey4;
-  box-shadow: inset 0px 0px 0px 2px $color-grey4;
   cursor: pointer;
   flex-direction: column;
   transition: filter $transition-time, background-color $transition-time, box-shadow $transition-time;
@@ -22,24 +21,20 @@
   }
 
   &:hover {
-    filter: brightness(110%);
-  }
-
-  &Selected {
-    -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
-    box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+    @include shadowed($color-black, 0.5);
   }
 }
 
 .card {
-  @include bg-rgba-colored($color-grey4, 0.6);
-  @include font-colored($color-white);
-
+  @include bg-rgba-colored($color-grey2, 0.6);
+  @include font-colored($color-grey5);
   @include flex-aligned(center, center);
 
   border-radius: $border-radius;
   border-bottom-left-radius: 0px;
-  height: 80px;
+  border-bottom-right-radius: 0px;
+  flex-direction: column;
+  height: 60px;
   transition: filter $transition-time, background-color $transition-time;
   width: 100%;
 
@@ -49,6 +44,7 @@
 
     flex: 1;
     flex-direction: column;
+    font-weight: bold;
 
     &Mobile {
       @include font-sized(l);
@@ -65,21 +61,20 @@
   }
 
   &Selected {
-    @include bg-rgba-colored($color-qatar-red, 1);
-    @include font-colored($color-white);
-
-    .subtitle {
-      @include font-colored($color-grey1);
-    }
+    @include bg-rgba-colored($color-grey3, 0.6);
   }
 }
 
 .status {
+  @include bg-rgba-colored($color-grey1, 0.4);
+
   @include flex-aligned(center, center);
+  @include padded(horizontal, s2);
   @include padded(vertical, s2);
 
   border-bottom-right-radius: $border-radius;
+  box-sizing: border-box;
   flex: 0;
-  min-height: 40px;
+  min-height: 60px;
   width: 100%;
 }

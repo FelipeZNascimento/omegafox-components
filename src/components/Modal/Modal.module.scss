@@ -8,7 +8,7 @@
   @include bg-colored($color-grey1);
   @include padded(horizontal, l2);
   @include padded(vertical, l);
-  @include shadowed(0.2);
+  @include shadowed($color-black, 0.2);
 
   border-radius: $border-radius;
   border-top-right-radius: 0;

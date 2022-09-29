@@ -17,7 +17,7 @@
   transition: filter $transition-time, box-shadow $transition-time;
 
   &Selected {
-    @include shadowed(1);
+    @include shadowed($color-black, 1);
   }
 
   &Hoverable {
@@ -33,7 +33,20 @@
   }
 
   &Small {
-    height: 30px;
+    height: 45px;
+  }
+
+  &BottomLeft {
+    border-bottom-left-radius: 0;
+  }
+  &BottomRight {
+    border-bottom-right-radius: 0;
+  }
+  &TopRight {
+    border-top-right-radius: 0;
+  }
+  &TopLeft {
+    border-top-left-radius: 0;
   }
 }
 
@@ -52,8 +65,19 @@
 }
 
 .nameContainer {
-  @include font-sized(l2);
   @include padded(horizontal, m);
-
   z-index: $absolute-visible;
+}
+
+.name {
+  &Big {
+    @include font-sized(l2);
+  }
+  &Small {
+    @include font-sized(s);
+    @include padded(left, l4);
+
+    font-size: 14px;
+    text-align: right;
+  }
 }
