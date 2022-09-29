@@ -1,3 +1,4 @@
+export { Autocomplete } from './Autocomplete/Autocomplete';
 export { Backdrop } from './Backdrop/Backdrop';
 export { Button } from './Button/Button';
 export { Card } from './Card/Card';
@@ -16,6 +17,7 @@ export { TeamButton } from './TeamButton/TeamButton';
 export { TextField } from './TextField/TextField';
 export { Tooltip } from './Tooltip/Tooltip';
 
+export type { IAutocompleteProps, TDropdownItem } from './Autocomplete/types';
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
 export type { ICardProps } from './Card/types';

@@ -1,0 +1,29 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.resultContainer {
+  @include padded(right, s);
+  @include flex-aligned(center, center);
+  cursor: pointer;
+
+  &:hover .name {
+    font-weight: bold;
+  }
+
+  .name {
+    @include aligned(left);
+    display: "block";
+    flex: 1;
+  }
+
+  .logo {
+    flex: 0;
+
+    img {
+      max-width: 20px;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+export type { IAutocompleteProps, TDropdownItem } from './Autocomplete/types';
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
 export type { ICardProps } from './Card/types';
