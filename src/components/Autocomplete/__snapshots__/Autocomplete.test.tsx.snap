@@ -6,7 +6,7 @@ exports[`<Autocomplete /> should render 1`] = `
     class="container"
   >
     <div
-      style="width: 400px;"
+      style="width: 460px;"
     >
       <div
         class="sc-eDvSVe bxXwXK"

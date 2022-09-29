@@ -3,7 +3,7 @@
 exports[`<TeamButton /> should render 1`] = `
 <div>
   <div
-    class="container containerHoverable containerBig"
+    class="container containerBottomLeft containerHoverable containerBig"
     style="color: rgb(255, 220, 2); background: rgb(25, 174, 71) url();"
   >
     <div
@@ -19,7 +19,11 @@ exports[`<TeamButton /> should render 1`] = `
       class="nameContainer"
       style="text-shadow: -1px 0 #19AE47, 0 1px #19AE47, 1px 0 #19AE47, 0 -1px #19AE47;"
     >
-      Brasil
+      <div
+        class="nameBig"
+      >
+        Brasil
+      </div>
     </div>
   </div>
 </div>

@@ -12,12 +12,12 @@ exports[`<Card /> should render 1`] = `
         class="title titleDesktop"
       >
         Title
-        <span
-          class="subtitle"
-        >
-          Subtitle
-        </span>
       </p>
+      <span
+        class="subtitle"
+      >
+        Subtitle
+      </span>
     </div>
     <div
       class="status"
