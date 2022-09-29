@@ -17,7 +17,11 @@ export { TeamButton } from './TeamButton/TeamButton';
 export { TextField } from './TextField/TextField';
 export { Tooltip } from './Tooltip/Tooltip';
 
-export type { IAutocompleteProps, TDropdownItem } from './Autocomplete/types';
+export type {
+  IAutocompleteProps,
+  TDropdownItem,
+  TDropdownDetails
+} from './Autocomplete/types';
 export type { IBackdropProps } from './Backdrop/types';
 export type { IButtonProps } from './Button/types';
 export type { ICardProps } from './Card/types';
@@ -45,9 +49,9 @@ export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { IStatusBadgeProps } from './StatusBadge/types';
 export type { ITeamProps } from './Team/types';
-export type { ITitleContainerProps } from './TitleContainer/types';
-export type { ITeamButtonProps } from './TeamButton/types';
+export type { ITeamButtonProps, TBorderPosition } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
+export type { ITitleContainerProps } from './TitleContainer/types';
 export type { ITooltipProps } from './Tooltip/types';
 
 export {

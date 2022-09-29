@@ -1,4 +1,6 @@
+import { TBorderPosition } from 'components/types';
+
 export interface ITitleContainerProps {
-  borderPosition?: 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight';
+  borderPosition?: TBorderPosition;
   text: string;
 }

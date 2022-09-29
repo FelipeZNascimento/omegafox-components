@@ -1,29 +1,30 @@
+import { teamLeft, teamRight } from 'components/mocks';
 import { TDropdownItem } from './types';
 
 export const dropdownList: TDropdownItem[] = [
   {
     id: 0,
     name: 'Lionel Messi',
-    abbreviationEn: 'ARG'
+    details: teamRight
   },
   {
     id: 1,
     name: 'Cristiano Ronaldo',
-    abbreviationEn: 'POR'
+    details: teamLeft
   },
   {
     id: 2,
     name: 'Mbappé',
-    abbreviationEn: 'FRA'
+    details: teamRight
   },
   {
     id: 3,
     name: 'Caio Jr.',
-    abbreviationEn: 'BRA'
+    details: teamLeft
   },
   {
     id: 4,
     name: 'Darwin Nuñez',
-    abbreviationEn: 'URU'
+    details: teamRight
   }
 ];

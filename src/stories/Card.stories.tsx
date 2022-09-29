@@ -18,15 +18,15 @@ Card.args = {
   title: 'title',
   subtitle: 'subtitle',
   renderingStatusFunction: () => (
-    <div>
+    <>
       <TeamButton
         isHoverable={false}
         isBig={false}
         colors={teamLeft.colors}
         logo={`https://assets.omegafox.me/img/countries_crests/${teamLeft.nameShort.toLowerCase()}.png`}
-        name={teamLeft.nameShort}
+        name={teamLeft.name}
         nameShort={teamLeft.nameShort}
       />
-    </div>
+    </>
   )
 };
