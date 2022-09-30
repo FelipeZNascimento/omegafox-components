@@ -18,6 +18,7 @@ export const Match = ({
   isError = false,
   isExpandable = false,
   isForceMobile = false,
+  isHideClock = false,
   isLoading = false,
   timestamp,
   teams,
@@ -85,7 +86,7 @@ export const Match = ({
           />
         )}
 
-        {!isMobile && !isForceMobile && (
+        {!isHideClock && (
           <Clock
             key={id}
             betValue={betValue}
@@ -109,11 +110,9 @@ export const Match = ({
               id={team.id}
               isBigLogo={isBigLogo}
               isEditable={isEditable}
-              isForceMobile={isForceMobile}
               logo={team.logo}
               matchId={id}
               name={team.name}
-              nameShort={team.nameShort}
               score={team.score}
               onChange={handleScoreChange}
               onTeamClick={onTeamClick}

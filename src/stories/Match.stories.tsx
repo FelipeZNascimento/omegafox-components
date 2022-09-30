@@ -26,6 +26,7 @@ Match.args = {
   isError: false,
   isExpandable: false,
   isForceMobile: false,
+  isHideClock: false,
   isLoading: false,
   timestamp: matchInfo.timestamp,
   teams: matchInfo.teams,

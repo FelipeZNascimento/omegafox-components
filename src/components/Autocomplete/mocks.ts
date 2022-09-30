@@ -5,26 +5,26 @@ export const dropdownList: TDropdownItem[] = [
   {
     id: 0,
     name: 'Lionel Messi',
-    details: teamRight
+    details: { ...teamRight, nameShort: 'ARG' }
   },
   {
     id: 1,
     name: 'Cristiano Ronaldo',
-    details: teamLeft
+    details: { ...teamLeft, nameShort: 'POR' }
   },
   {
     id: 2,
     name: 'Mbappé',
-    details: teamRight
+    details: { ...teamRight, nameShort: 'FRA' }
   },
   {
     id: 3,
     name: 'Caio Jr.',
-    details: teamLeft
+    details: { ...teamLeft, nameShort: 'BRA' }
   },
   {
     id: 4,
     name: 'Darwin Nuñez',
-    details: teamRight
+    details: { ...teamRight, nameShort: 'URU' }
   }
 ];

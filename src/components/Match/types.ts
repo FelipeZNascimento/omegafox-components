@@ -20,6 +20,7 @@ export interface IMatchProps {
   isError?: boolean;
   isExpandable?: boolean;
   isForceMobile?: boolean;
+  isHideClock?: boolean;
   isLoading?: boolean;
   sport?: TSport;
   teams: ITeamProps[];

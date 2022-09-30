@@ -53,26 +53,26 @@
       @include bg-rgba-colored($color-qatar-red, 1);
     }
   }
-}
 
-h1,
-h2 {
-  @include aligned(center);
+  h1,
+  h2 {
+    @include aligned(center);
 
-  font-weight: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-h1 {
-  @include font-sized(l4);
-  @include padded(all, none);
-  @include marged(all, none);
-}
+  h1 {
+    @include font-sized(l4);
+    @include padded(all, none);
+    @include marged(all, none);
+  }
 
-h2 {
-  @include font-sized(l2);
-  @include padded(all, none);
-  @include marged(all, none);
+  h2 {
+    @include font-sized(l2);
+    @include padded(all, none);
+    @include marged(all, none);
+  }
 }

@@ -15,8 +15,7 @@ export const MatchStatus = ({
   isBetEmpty,
   isError = false,
   isLoading,
-  isMobile,
-  matchId
+  isMobile
 }: IMatchStatusProps) => {
   const matchStatusClassMobile = classNames(styles.matchStatusMobile, {
     [styles.matchStatusMobileLoading]: isLoading,
