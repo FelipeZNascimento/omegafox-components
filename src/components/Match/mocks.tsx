@@ -8,11 +8,9 @@ export const teamLeft: ITeamProps = {
   bet: 3,
   colors: ['#FFDC02', '#19AE47'],
   isEditable: false,
-  isForceMobile: false,
   logo: 'https://assets.omegafox.me/img/countries_crests/bra.png',
   matchId: matchId,
   name: 'Brasil',
-  nameShort: 'BRA',
   score: 4
 };
 
@@ -22,11 +20,9 @@ export const teamRight: ITeamProps = {
   bet: 0,
   colors: ['#FFFFFF', '#43A1D5'],
   isEditable: false,
-  isForceMobile: false,
   logo: 'https://assets.omegafox.me/img/countries_crests/arg.png',
   matchId: matchId,
   name: 'Argentina',
-  nameShort: 'ARG',
   score: 0
 };
 

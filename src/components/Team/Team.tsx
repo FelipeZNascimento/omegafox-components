@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { isMobile } from 'react-device-detect';
 import classNames from 'classnames';
 
 import { usePrevious } from 'utils/hooks';
@@ -17,11 +16,9 @@ export const Team = ({
   colors,
   isBigLogo = false,
   isEditable,
-  isForceMobile,
   logo,
   matchId,
   name,
-  nameShort,
   score,
   onChange = null,
   onTeamClick = null
@@ -31,7 +28,7 @@ export const Team = ({
   const prevScore = usePrevious(score);
 
   useEffect(() => {
-    if (prevScore !== undefined) {
+    if (prevScore !== undefined && prevScore !== score) {
       setScoreChanged(true);
       setTimeout(() => setScoreChanged(false), 10000); //20s
     }
@@ -165,7 +162,7 @@ export const Team = ({
         }}
         onClick={handleTeamClick}
       >
-        {isMobile || isForceMobile ? nameShort : name}
+        {name}
       </div>
     );
   };
