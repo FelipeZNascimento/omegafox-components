@@ -58,7 +58,8 @@ export {
   AMERICAN_FOOTBALL_MATCH_STATUS,
   FOOTBALL_MATCH_STATUS,
   LABELS,
-  STOPPED_GAME
+  STOPPED_GAME,
+  FINISHED_GAME
 } from './Clock/constants';
 
 export { BET_VALUES } from './Match/constants';

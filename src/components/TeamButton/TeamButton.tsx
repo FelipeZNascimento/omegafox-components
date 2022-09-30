@@ -1,5 +1,4 @@
 import React from 'react';
-import { isMobile } from 'react-device-detect';
 
 import classNames from 'classnames';
 import { ITeamButtonProps } from './types';
@@ -11,12 +10,10 @@ export const TeamButton = ({
   colors,
   fontSize = 'big',
   isBig = true,
-  isForceMobile,
   isHoverable = true,
   isSelected = false,
   logo,
   name,
-  nameShort,
   onClick = null
 }: ITeamButtonProps) => {
   const renderLogo = () => {
@@ -66,9 +63,7 @@ export const TeamButton = ({
           textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
         }}
       >
-        <div className={nameClass}>
-          {isMobile || isForceMobile ? nameShort : name}
-        </div>
+        <div className={nameClass}>{name}</div>
       </div>
     </div>
   );

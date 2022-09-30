@@ -15,7 +15,6 @@ describe('TeamComponent', () => {
     logo,
     matchId,
     name,
-    nameShort,
     score
   }: ITeamProps) =>
     render(
@@ -27,7 +26,6 @@ describe('TeamComponent', () => {
         logo={logo}
         matchId={matchId}
         name={name}
-        nameShort={nameShort}
         score={score}
       />
     );
@@ -41,7 +39,6 @@ describe('TeamComponent', () => {
       logo: teamLeft.logo,
       matchId: teamLeft.matchId,
       name: teamLeft.name,
-      nameShort: teamLeft.nameShort,
       score: teamLeft.score
     });
 

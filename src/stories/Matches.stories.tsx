@@ -3,6 +3,7 @@ import { Match } from '../components';
 import { FOOTBALL_MATCH_STATUS } from '../index';
 import { footballClock, matchInfo, matchInfoNoBets } from '../components/mocks';
 import { cloneDeep } from 'lodash';
+import { BET_VALUES } from '../components/Match/constants';
 
 export default {
   title: 'Matches (Examples)',
@@ -25,7 +26,7 @@ export const MatchStartedExpandable = () => (
     isExpandable
     id={matchInfo.id}
     isEditable={false}
-    betStatus="full"
+    betValue={BET_VALUES.FULL}
     clock={footballClock}
     expandableContent={() => {
       return <p>Vila Capanema</p>;
@@ -45,7 +46,7 @@ export const MatchWithInvertedTeams = () => (
     isExpandable
     id={matchInfo.id}
     isEditable={false}
-    betStatus="half"
+    betValue={BET_VALUES.HALF}
     clock={{ time: 39, status: FOOTBALL_MATCH_STATUS.SECOND_EXTRA_TIME }}
     expandableContent={() => {
       return <p>Vila Capanema</p>;
