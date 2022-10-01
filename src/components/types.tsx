@@ -34,4 +34,5 @@ export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps, TBorderPosition } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITitleContainerProps } from './TitleContainer/types';
+export type { IToastProps } from './Toast/types';
 export type { ITooltipProps } from './Tooltip/types';

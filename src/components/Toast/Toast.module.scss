@@ -1,0 +1,52 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.container {
+  @include padded(all, m);
+
+  bottom: 4px;
+  border-radius: $border-radius;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  position: fixed;
+  width: 90vw;
+  z-index: 99999;
+
+  .xButton {
+    @include font-colored($color-grey2);
+    @include font-sized(l2);
+    @include padded(horizontal, s);
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    right: 4px;
+
+    &:hover {
+      @include font-colored($color-white);
+    }
+  }
+}
+
+.red {
+  @include bg-rgba-colored($color-red, 0.9);
+  @include font-colored($color-white);
+}
+
+.green {
+  @include bg-rgba-colored($color-green, 0.9);
+  @include font-colored($color-white);
+}
+
+.grey {
+  @include bg-rgba-colored($color-grey4, 0.9);
+  @include font-colored($color-white);
+}
