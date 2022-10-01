@@ -12,9 +12,10 @@ export { Selector } from './Selector/Selector';
 export { Sidenav } from './Sidenav/Sidenav';
 export { StatusBadge } from './StatusBadge/StatusBadge';
 export { Team } from './Team/Team';
-export { TitleContainer } from './TitleContainer/TitleContainer';
 export { TeamButton } from './TeamButton/TeamButton';
+export { TitleContainer } from './TitleContainer/TitleContainer';
 export { TextField } from './TextField/TextField';
+export { Toast } from './Toast/Toast';
 export { Tooltip } from './Tooltip/Tooltip';
 
 export type {
@@ -52,6 +53,7 @@ export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps, TBorderPosition } from './TeamButton/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITitleContainerProps } from './TitleContainer/types';
+export type { IToastProps } from './Toast/types';
 export type { ITooltipProps } from './Tooltip/types';
 
 export {
