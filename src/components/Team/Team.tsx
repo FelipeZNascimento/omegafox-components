@@ -28,9 +28,9 @@ export const Team = ({
   const prevScore = usePrevious(score);
 
   useEffect(() => {
-    if (prevScore !== undefined && prevScore !== score) {
+    if (prevScore !== undefined && prevScore !== null && prevScore !== score) {
       setScoreChanged(true);
-      setTimeout(() => setScoreChanged(false), 10000); //20s
+      setTimeout(() => setScoreChanged(false), 10000); //10s
     }
   }, [prevScore, score]);
 
@@ -38,34 +38,37 @@ export const Team = ({
     setEditedBet(bet);
   }, [bet]);
 
-  const renderScore = () => {
+  const renderStaticScore = () => {
     const scoreClass = classNames([styles.scoreContainerScore], {
       [styles.scoreContainerScoreHighlight]: scoreChanged
     });
 
-    if (!isEditable) {
-      if (bet !== null) {
-        const betContainerClass = classNames(styles.scoreContainerBet, {
-          [styles.scoreContainerBetGreen]: betValue === BET_VALUES.FULL,
-          [styles.scoreContainerBetBlue]: betValue === BET_VALUES.HALF,
-          [styles.scoreContainerBetLightBlue]: betValue === BET_VALUES.MINIMUN,
-          [styles.scoreContainerBetRed]: betValue === BET_VALUES.MISS
-        });
+    if (betValue !== null) {
+      const betContainerClass = classNames(styles.scoreContainerBet, {
+        [styles.scoreContainerBetGreen]: betValue === BET_VALUES.FULL,
+        [styles.scoreContainerBetBlue]: betValue === BET_VALUES.HALF,
+        [styles.scoreContainerBetLightBlue]: betValue === BET_VALUES.MINIMUN,
+        [styles.scoreContainerBetRed]: betValue === BET_VALUES.MISS
+      });
 
-        betValue;
-        return (
-          <div className={styles.scoreContainer}>
-            <div className={scoreClass}>{score}</div>
-            <div className={betContainerClass}>
-              <Tooltip text="Sua aposta">
-                <span>{bet !== null ? bet : 'x'}</span>
-              </Tooltip>
-            </div>
+      return (
+        <div className={styles.scoreContainer}>
+          <div className={scoreClass}>{score}</div>
+          <div className={betContainerClass}>
+            <Tooltip text="Sua aposta">
+              <span>{bet !== null ? bet : 'x'}</span>
+            </Tooltip>
           </div>
-        );
-      }
+        </div>
+      );
+    }
 
-      return <div className={styles.scoreContainer}>{score}</div>;
+    return <div className={styles.scoreContainer}>{score}</div>;
+  };
+
+  const renderScore = () => {
+    if (!isEditable) {
+      return renderStaticScore();
     }
 
     const handleBetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,7 +76,7 @@ export const Team = ({
         ? null
         : e.target.valueAsNumber;
 
-      if (newBet !== null && newBet < 0) {
+      if (newBet !== null && (newBet < 0 || newBet > 99)) {
         return;
       }
 
