@@ -2,7 +2,7 @@ import { BET_VALUES } from '../Match/constants';
 
 export interface ITeamProps {
   id: number;
-  align: 'left' | 'right';
+  align: 'right' | 'left';
   bet?: number | null;
   betValue?: typeof BET_VALUES[keyof typeof BET_VALUES] | null;
   colors: string[];
