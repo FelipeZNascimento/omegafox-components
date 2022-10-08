@@ -35,7 +35,7 @@
 
     &Clickable {
       cursor: pointer;
-      transition: all $transition-time;
+      transition: transform $transition-time;
 
       &Left:hover {
         @extend .logoClickable;
@@ -167,7 +167,7 @@
   &Clickable {
     text-decoration: underline dotted transparent;
     cursor: pointer;
-    transition: all $transition-time;
+    transition: text-decoration $transition-time;
 
     &:hover {
       text-decoration: underline dotted;

@@ -64,7 +64,7 @@
 
     border-radius: 16px;
     font: inherit;
-    transition: all $transition-time;
+    transition: background-color $transition-time, color $transition-time;
     width: 100%;
 
     &Selected {
@@ -74,7 +74,7 @@
     &:hover {
       @include bg-colored($color-grey2);
 
-      transition: all $transition-time;
+      transition: background-color $transition-time, color $transition-time;
     }
   }
 }

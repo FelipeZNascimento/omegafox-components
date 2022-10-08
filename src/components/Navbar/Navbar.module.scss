@@ -51,16 +51,6 @@
   display: flex;
   flex: 1;
 
-  // button {
-  //   @include padded(horizontal, m);
-  //   @include marged(horizontal, s3);
-  //   // @include bg-colored($color-grey1);
-
-  //   border-radius: 16px;
-  //   height: 100%;
-  //   transition: all $transition-time;
-  // }
-
   button,
   input[type="submit"],
   input[type="reset"] {
@@ -89,7 +79,7 @@
       font: inherit;
       border-radius: 16px;
       height: 100%;
-      transition: all $transition-time;
+      transition: background-color $transition-time, color $transition-time;
 
       &Selected {
         @include font-colored($color-qatar-red);
@@ -98,7 +88,7 @@
       &:hover {
         @include bg-colored($color-grey2);
 
-        transition: all $transition-time;
+        transition: background-color $transition-time, color $transition-time;
       }
     }
   }
