@@ -47,7 +47,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    transition: all $transition-time;
+    transition: background-color $transition-time;
 
     &:hover {
       @include bg-rgba-colored($color-qatar-red, 1);
