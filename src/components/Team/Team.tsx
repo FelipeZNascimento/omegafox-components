@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
+
 import classNames from 'classnames';
 
 import { usePrevious } from 'utils/hooks';
@@ -153,6 +155,19 @@ export const Team = ({
   };
 
   const renderName = () => {
+    if (isMobile) {
+      return (
+        <div
+          className={styles.nameContainer}
+          style={{
+            textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
+          }}
+        >
+          {name}
+        </div>
+      );
+    }
+
     const nameClass = classNames(styles.nameContainer, {
       [styles.nameContainerClickable]: onTeamClick !== null
     });

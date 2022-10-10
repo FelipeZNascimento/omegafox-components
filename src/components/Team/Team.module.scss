@@ -74,7 +74,6 @@
   @include flex-aligned(center, center);
   @include font-sized(l3);
 
-  cursor: pointer;
   flex-direction: column;
   height: 100%;
   transition: background-color $transition-time;
