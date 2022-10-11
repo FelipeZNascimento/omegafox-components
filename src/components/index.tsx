@@ -7,6 +7,7 @@ export { Loading } from './Loading/Loading';
 export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
+export { NewsCard } from './NewsCard/NewsCard';
 export { Ranking } from './Ranking/Ranking';
 export { Selector } from './Selector/Selector';
 export { Sidenav } from './Sidenav/Sidenav';
@@ -40,6 +41,7 @@ export type {
   IBetId
 } from './Match/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
+export type { INewsCardProps } from './NewsCard/types';
 export type {
   IRankingProps,
   TRankingColumn,

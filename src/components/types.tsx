@@ -21,6 +21,7 @@ export type {
 } from './Match/types';
 export type { IModalProps } from './Modal/types';
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
+export type { INewsCardProps } from './NewsCard/types';
 export type {
   IRankingProps,
   TRankingColumn,
