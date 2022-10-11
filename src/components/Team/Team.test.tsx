@@ -9,6 +9,7 @@ jest.mock('components/Tooltip/Tooltip');
 describe('TeamComponent', () => {
   const renderComponent = ({
     align,
+    abbreviationEn,
     colors,
     id,
     isEditable,
@@ -20,6 +21,7 @@ describe('TeamComponent', () => {
     render(
       <Team
         align={align}
+        abbreviationEn={abbreviationEn}
         colors={colors}
         id={id}
         isEditable={isEditable}
@@ -33,6 +35,7 @@ describe('TeamComponent', () => {
   it('should render', () => {
     const { container } = renderComponent({
       align: teamLeft.align,
+      abbreviationEn: teamLeft.abbreviationEn,
       colors: teamLeft.colors,
       id: teamLeft.id,
       isEditable: false,

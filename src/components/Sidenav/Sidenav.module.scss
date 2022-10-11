@@ -10,11 +10,12 @@
   @include font-sized(l2);
   @include flex-aligned(center, center);
 
-  flex: 1 0 auto;
   flex-direction: column;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
+  left: 0;
+  position: sticky;
   top: 0;
+  max-width: 60vw;
   z-index: $always-on-top + 1;
 
   &Open {
