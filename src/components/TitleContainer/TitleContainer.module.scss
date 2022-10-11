@@ -8,7 +8,7 @@
   @include flex-aligned(center, center);
   @include font-sized(l3);
   @include padded(all, l);
-  @include bg-rgba-colored($color-grey1, 0.7);
+  @include bg-colored($color-grey1);
   @include font-colored($color-qatar-red);
 
   -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
