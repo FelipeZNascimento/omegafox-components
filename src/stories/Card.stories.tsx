@@ -23,9 +23,8 @@ Card.args = {
         isHoverable={false}
         isBig={false}
         colors={teamLeft.colors}
-        logo={`https://assets.omegafox.me/img/countries_crests/${teamLeft.nameShort.toLowerCase()}.png`}
+        logo={`https://assets.omegafox.me/img/countries_crests/${teamLeft.abbreviationEn.toLowerCase()}.png`}
         name={teamLeft.name}
-        nameShort={teamLeft.nameShort}
       />
     </>
   )

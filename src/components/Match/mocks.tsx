@@ -4,6 +4,7 @@ import { FOOTBALL_MATCH_STATUS } from '../Clock/constants';
 const matchId = 0;
 export const teamLeft: ITeamProps = {
   id: 0,
+  abbreviationEn: 'Bra',
   align: 'left',
   bet: 3,
   colors: ['#FFDC02', '#19AE47'],
@@ -16,6 +17,7 @@ export const teamLeft: ITeamProps = {
 
 export const teamRight: ITeamProps = {
   id: 1,
+  abbreviationEn: 'Arg',
   align: 'right',
   bet: 0,
   colors: ['#FFFFFF', '#43A1D5'],

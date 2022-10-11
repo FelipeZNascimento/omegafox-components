@@ -103,6 +103,7 @@ export const Match = ({
           return (
             <Team
               align={team.align}
+              abbreviationEn={team.abbreviationEn}
               key={team.id}
               bet={bet === undefined ? null : bet}
               betValue={betValue}
