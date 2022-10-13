@@ -14,7 +14,6 @@ export const Card = ({
   renderingStatusFunction = null
 }: ICardProps) => {
   const cardContainerClass = classNames(styles.cardContainer, {
-    [styles.cardContainerMobile]: isMobile || isForceMobile,
     [styles.cardContainerSelected]: isSelected
   });
 

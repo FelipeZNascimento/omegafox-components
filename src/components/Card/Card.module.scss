@@ -10,15 +10,10 @@
 
   border-radius: $border-radius;
   border-bottom-left-radius: 0px;
-
   cursor: pointer;
   flex-direction: column;
   transition: filter $transition-time, background-color $transition-time, box-shadow $transition-time;
-  width: $card-width;
-
-  &Mobile {
-    width: $card-width-mobile;
-  }
+  width: 100%;
 
   &:hover {
     @include shadowed($color-black, 0.5);
@@ -39,12 +34,17 @@
   width: 100%;
 
   .title {
-    @include flex-aligned(center, center);
     @include marged(all, none);
+    @include padded(horizontal, s);
+    @include aligned(center);
 
-    flex: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
     flex-direction: column;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &Mobile {
       @include font-sized(l);
