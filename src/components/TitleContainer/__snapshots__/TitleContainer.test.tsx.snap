@@ -3,7 +3,7 @@
 exports[`<TitleContainer /> should render 1`] = `
 <div>
   <div
-    class="titleContainer titleContainerBottomLeft"
+    class="titleContainer titleContainerBottomLeft titleContainerBig"
   >
     Click
   </div>
