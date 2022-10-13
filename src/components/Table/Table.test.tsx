@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Ranking } from './Ranking';
-import { IRankingProps } from './types';
+import { Table } from './Table';
+import { ITableProps } from './types';
 import { tableConfig } from './mocks';
 
-describe('<Ranking />', () => {
-  const renderComponent = ({ isHeader, columns, rows }: IRankingProps) =>
-    render(<Ranking isHeader={isHeader} columns={columns} rows={rows} />);
+describe('<Table />', () => {
+  const renderComponent = ({ isHeader, columns, rows }: ITableProps) =>
+    render(<Table isHeader={isHeader} columns={columns} rows={rows} />);
 
   it('should render', () => {
     const { container } = renderComponent({

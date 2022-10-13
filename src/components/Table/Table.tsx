@@ -1,24 +1,23 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { IRankingProps, TRankingRowColumn } from './types';
-import styles from './Ranking.module.scss';
+import { ITableProps, TTableRowColumn } from './types';
+import styles from './Table.module.scss';
 import { Loading } from 'index';
 import spinner from '../../img/spinner.png';
 
-export const Ranking = ({
-  backgroundImage,
+export const Table = ({
   columns,
   isHeader,
   isLoading = false,
   rows
-}: IRankingProps) => {
+}: ITableProps) => {
   const numOfCols = columns.length;
 
-  const renderHeader = (rowColumns: TRankingRowColumn[], index: number) => {
+  const renderHeader = (rowColumns: TTableRowColumn[], index: number) => {
     return (
       <div key={index} className={styles.tableHeader}>
-        {rowColumns.map((item: TRankingRowColumn, index: number) => {
+        {rowColumns.map((item: TTableRowColumn, index: number) => {
           //Avoid breaking table by rendering more columns than it should
           if (index >= numOfCols) {
             return null;
@@ -44,12 +43,7 @@ export const Ranking = ({
   };
 
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundImage: `url(${backgroundImage})`
-      }}
-    >
+    <>
       {isHeader && renderHeader(columns, 0)}
       {isLoading && (
         <div className={styles.loadingContainer}>
@@ -58,6 +52,6 @@ export const Ranking = ({
       )}
       {!isLoading &&
         rows.map((rowColumns, index) => renderHeader(rowColumns, index))}
-    </div>
+    </>
   );
 };

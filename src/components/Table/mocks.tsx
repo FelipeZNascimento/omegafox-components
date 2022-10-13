@@ -1,5 +1,5 @@
-import { IRankingProps, TRankingRow } from './types';
-const singleRow: TRankingRow = [
+import { ITableProps, TTableRow } from './types';
+const singleRow: TTableRow = [
   { id: 0, renderingFunction: () => <div>01.</div> },
   {
     id: 1,
@@ -8,7 +8,7 @@ const singleRow: TRankingRow = [
   { id: 2, renderingFunction: () => <div>999</div> }
 ];
 
-export const tableConfig: IRankingProps = {
+export const tableConfig: ITableProps = {
   isHeader: true,
   columns: [
     {
