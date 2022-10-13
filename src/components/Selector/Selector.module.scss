@@ -7,21 +7,32 @@
 .container {
   @include flex-aligned(center, center);
   @include padded(bottom, m);
+
+  flex-wrap: wrap;
 }
 
 .selectorItem {
+  @include aligned(center);
   @include bg-rgba-colored($color-grey1, 0.5);
   @include flex-aligned(center, center);
   @include font-colored($color-grey4);
-  @include marged(horizontal, s2);
+  @include marged(all, s2);
   @include padded(horizontal, s2);
 
   border-radius: $border-radius;
   cursor: pointer;
   font-weight: bold;
-  height: $selector-height;
   transition: background-color $transition-time, color $transition-time, box-shadow $transition-time;
-  width: $selector-width;
+
+  &Small {
+    height: $selector-height;
+    width: $selector-width;
+  }
+
+  &Big {
+    height: calc($selector-height + 10px);
+    width: calc($selector-width + 20px);
+  }
 
   &:hover {
     @include bg-rgba-colored($color-grey1, 0.6);

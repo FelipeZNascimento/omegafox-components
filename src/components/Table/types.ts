@@ -1,21 +1,20 @@
-export type TRankingColumn = {
+export type TTableColumn = {
   id: number;
   align: 'left' | 'center' | 'right';
   flex: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   renderingFunction: () => JSX.Element;
 };
 
-export type TRankingRowColumn = {
+export type TTableRowColumn = {
   id: number;
   renderingFunction: () => JSX.Element;
 };
 
-export type TRankingRow = TRankingRowColumn[];
+export type TTableRow = TTableRowColumn[];
 
-export interface IRankingProps {
-  backgroundImage?: string;
+export interface ITableProps {
   isHeader: boolean;
   isLoading?: boolean;
-  columns: TRankingColumn[];
-  rows: TRankingRow[];
+  columns: TTableColumn[];
+  rows: TTableRow[];
 }

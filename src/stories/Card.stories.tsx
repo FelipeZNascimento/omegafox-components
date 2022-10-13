@@ -15,7 +15,7 @@ export const Card = Template.bind({});
 
 Card.args = {
   isSelected: true,
-  title: 'title',
+  title: 'Very long title with many words and various differents letters wow',
   subtitle: 'subtitle',
   renderingStatusFunction: () => (
     <>

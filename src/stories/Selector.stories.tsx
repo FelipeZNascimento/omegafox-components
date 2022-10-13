@@ -16,5 +16,6 @@ export const Selector = Template.bind({});
 Selector.args = {
   items: selectorItems,
   selectedItem: 1,
+  size: 'small',
   onClick: () => alert('Click!')
 };

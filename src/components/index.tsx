@@ -8,14 +8,15 @@ export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
 export { NewsCard } from './NewsCard/NewsCard';
-export { Ranking } from './Ranking/Ranking';
+export { Table } from './Table/Table';
 export { Selector } from './Selector/Selector';
 export { Sidenav } from './Sidenav/Sidenav';
 export { StatusBadge } from './StatusBadge/StatusBadge';
 export { Team } from './Team/Team';
 export { TeamButton } from './TeamButton/TeamButton';
-export { TitleContainer } from './TitleContainer/TitleContainer';
+export { TextContainer } from './TextContainer/TextContainer';
 export { TextField } from './TextField/TextField';
+export { TitleContainer } from './TitleContainer/TitleContainer';
 export { Toast } from './Toast/Toast';
 export { Tooltip } from './Tooltip/Tooltip';
 
@@ -43,16 +44,17 @@ export type {
 export type { INavbarProps, TNavbarButton } from './Navbar/types';
 export type { INewsCardProps } from './NewsCard/types';
 export type {
-  IRankingProps,
-  TRankingColumn,
-  TRankingRow,
-  TRankingRowColumn
-} from './Ranking/types';
+  ITableProps,
+  TTableColumn,
+  TTableRow,
+  TTableRowColumn
+} from './Table/types';
 export type { ISelectorProps } from './Selector/types';
 export type { ISidenavProps, TSidenavButton } from './Sidenav/types';
 export type { IStatusBadgeProps } from './StatusBadge/types';
 export type { ITeamProps } from './Team/types';
 export type { ITeamButtonProps, TBorderPosition } from './TeamButton/types';
+export type { ITextContainerProps } from './TextContainer/types';
 export type { ITextFieldProps } from './TextField/types';
 export type { ITitleContainerProps } from './TitleContainer/types';
 export type { IToastProps } from './Toast/types';

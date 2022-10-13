@@ -7,5 +7,6 @@ export type TSelectorItem = {
 export interface ISelectorProps {
   items: TSelectorItem[];
   selectedItem?: number | null;
+  size?: 'small' | 'big';
   onClick: (itemId: number) => void;
 }
