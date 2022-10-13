@@ -6,7 +6,7 @@ exports[`<Selector /> should render 1`] = `
     class="container"
   >
     <div
-      class="selectorItem"
+      class="selectorItem selectorItemSmall"
     >
       text
     </div>

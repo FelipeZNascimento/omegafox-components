@@ -7,13 +7,16 @@ import styles from './Selector.module.scss';
 export const Selector = ({
   items,
   selectedItem = 0,
+  size = 'small',
   onClick
 }: ISelectorProps) => {
   return (
     <div className={styles.container}>
       {items.map((item) => {
         const itemClass = classNames(styles.selectorItem, {
-          [styles.selectorItemSelected]: selectedItem === item.value
+          [styles.selectorItemSelected]: selectedItem === item.value,
+          [styles.selectorItemSmall]: size === 'small',
+          [styles.selectorItemBig]: size === 'big'
         });
 
         return (
