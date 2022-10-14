@@ -14,9 +14,9 @@ export const Table = ({
 }: ITableProps) => {
   const numOfCols = columns.length;
 
-  const renderHeader = (rowColumns: TTableRowColumn[], index: number) => {
+  const renderRow = (rowColumns: TTableRowColumn[], index: number) => {
     return (
-      <div key={index} className={styles.tableHeader}>
+      <div key={index} className={styles.tableRow}>
         {rowColumns.map((item: TTableRowColumn, index: number) => {
           //Avoid breaking table by rendering more columns than it should
           if (index >= numOfCols) {
@@ -44,14 +44,14 @@ export const Table = ({
 
   return (
     <>
-      {isHeader && renderHeader(columns, 0)}
+      {isHeader && renderRow(columns, 0)}
       {isLoading && (
         <div className={styles.loadingContainer}>
           <Loading image={spinner} />
         </div>
       )}
       {!isLoading &&
-        rows.map((rowColumns, index) => renderHeader(rowColumns, index))}
+        rows.map((rowColumns, index) => renderRow(rowColumns, index))}
     </>
   );
 };

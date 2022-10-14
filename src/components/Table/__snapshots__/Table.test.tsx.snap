@@ -3,7 +3,7 @@
 exports[`<Table /> should render 1`] = `
 <div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -28,7 +28,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -53,7 +53,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -78,7 +78,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -103,7 +103,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -128,7 +128,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
@@ -153,7 +153,7 @@ exports[`<Table /> should render 1`] = `
     </div>
   </div>
   <div
-    class="tableHeader"
+    class="tableRow"
   >
     <div
       class="flexed1 alignedLeft"
