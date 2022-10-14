@@ -6,7 +6,7 @@
 
 .container {
   @include shadowed($color-black, 0.3);
-  @include padded(all, l);
+  @include padded(all, m);
   @include flex-aligned(flex-start, flex-start);
   @include bg-rgba-colored($color-grey1, 0.5);
 

@@ -19,18 +19,29 @@
   flex-direction: column;
   flex: 1;
   overflow-y: auto;
-
 }
 .table,
 h1 {
   width: 100%;
 }
 
-.table {
-  &Header {
-    @extend .table;
-    @include flex-aligned(center, center);
-    @include padded(vertical, s);
+.tableRow {
+  @extend .table;
+  @include flex-aligned(center, center);
+  @include padded(all, s);
+
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  transition: background-color $transition-time;
+
+  &:nth-child(even) {
+    border-radius: $border-radius;
+    @include bg-rgba-colored($color-grey3, 0.3);
+  }
+
+  &:hover {
+    border-radius: $border-radius;
+    @include bg-rgba-colored($color-grey3, 0.5);
   }
 }
 
