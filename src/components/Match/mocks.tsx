@@ -7,7 +7,7 @@ export const teamLeft: ITeamProps = {
   id: 0,
   abbreviationEn: 'Bra',
   align: 'left',
-  bet: 3,
+  bet: 2,
   colors: ['#193375', '#FFDC02'],
   isEditable: false,
   logo: 'https://assets.omegafox.me/img/countries_crests/bra.png',
