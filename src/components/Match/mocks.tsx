@@ -1,5 +1,6 @@
 import { IMatchProps, ITeamProps, TClockFootball } from '../types';
 import { FOOTBALL_MATCH_STATUS } from '../Clock/constants';
+import { isMobile } from 'react-device-detect';
 
 const matchId = 0;
 export const teamLeft: ITeamProps = {
@@ -11,7 +12,7 @@ export const teamLeft: ITeamProps = {
   isEditable: false,
   logo: 'https://assets.omegafox.me/img/countries_crests/bra.png',
   matchId: matchId,
-  name: 'Brasil',
+  name: isMobile ? 'BRA' : 'Brasil',
   score: 4
 };
 
@@ -24,7 +25,7 @@ export const teamRight: ITeamProps = {
   isEditable: false,
   logo: 'https://assets.omegafox.me/img/countries_crests/arg.png',
   matchId: matchId,
-  name: 'Argentina',
+  name: isMobile ? 'ARG' : 'Argentina',
   score: 0
 };
 

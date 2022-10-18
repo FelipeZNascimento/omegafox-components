@@ -3,6 +3,7 @@ export { Backdrop } from './Backdrop/Backdrop';
 export { Button } from './Button/Button';
 export { Card } from './Card/Card';
 export { Clock } from './Clock/Clock';
+export { ClockMobile } from './Clock/ClockMobile';
 export { Loading } from './Loading/Loading';
 export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
@@ -31,7 +32,8 @@ export type { ICardProps } from './Card/types';
 export type {
   IClockProps,
   TClockAmericanFootball,
-  TClockFootball
+  TClockFootball,
+  IClockMobileProps
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
 export type {

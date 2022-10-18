@@ -9,6 +9,10 @@
   flex: 1;
   flex-direction: column;
   width: 100%;
+
+  &Marged {
+    @include marged(top, l);
+  }
 }
 
 .matchContainer {
