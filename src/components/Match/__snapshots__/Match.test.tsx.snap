@@ -92,7 +92,7 @@ exports[`MatchComponent should render 1`] = `
               class="scoreInput"
               id="scoreInputId00"
               type="number"
-              value="3"
+              value="2"
             />
           </form>
         </div>
