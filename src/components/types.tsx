@@ -9,7 +9,8 @@ export type { ICardProps } from './Card/types';
 export type {
   IClockProps,
   TClockAmericanFootball,
-  TClockFootball
+  TClockFootball,
+  IClockMobileProps
 } from './Clock/types';
 export type { ILoadingProps } from './Loading/types';
 export type {

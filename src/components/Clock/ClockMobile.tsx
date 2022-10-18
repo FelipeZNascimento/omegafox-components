@@ -1,8 +1,7 @@
-import { isMobile } from 'react-device-detect';
 import { DateTime } from 'luxon';
 import classNames from 'classnames';
 
-import { IClockProps } from './types';
+import { IClockMobileProps } from './types';
 
 import {
   LABELS,
@@ -12,45 +11,15 @@ import {
 } from './constants';
 import styles from './Clock.module.scss';
 import matchLayer from '../../img/match_layer.png';
-import { BET_VALUES } from 'components/Match/constants';
-import { ClockMobile } from './ClockMobile';
 
-export const Clock = ({
-  betValue,
-  clock,
-  isExpandable = false,
-  isExpanded,
-  isMatchEditable = false,
-  timestamp
-}: IClockProps) => {
+export const ClockMobile = ({ clock, timestamp }: IClockMobileProps) => {
   const formattedDate = DateTime.fromSeconds(timestamp)
     .setLocale('pt-Br')
     .toFormat("HH'h'mm");
 
-  const errorFlagClass = classNames(styles.toggle, {});
-  const toggleClass = classNames(styles.toggle, {
-    [styles.toggleGreen]: betValue === BET_VALUES.FULL,
-    [styles.toggleBlue]: betValue === BET_VALUES.HALF,
-    [styles.toggleLightBlue]: betValue === BET_VALUES.MINIMUN,
-    [styles.toggleRed]: betValue === BET_VALUES.MISS,
-    [styles.toggleNeutral]: betValue === null
-  });
-
-  const renderCorner = () => {
-    if (isMatchEditable) {
-      return <div className={errorFlagClass} />;
-    }
-
-    if (isExpandable) {
-      return <div className={toggleClass}>{isExpanded ? '-' : '+'}</div>;
-    }
-
-    return <div className={toggleClass} />;
-  };
-
-  const dateClass = classNames(styles.infoDesktop, {
+  const dateClass = classNames(styles.infoMobile, {
     [styles.infoDate]: clock.status === MATCH_STATUS.NOT_STARTED,
-    [styles.infoClockDesktop]: clock.status !== MATCH_STATUS.NOT_STARTED
+    [styles.infoClockMobile]: clock.status !== MATCH_STATUS.NOT_STARTED
   });
 
   const clockClass = classNames({
@@ -82,18 +51,13 @@ export const Clock = ({
     }
   };
 
-  if (isMobile) {
-    return <ClockMobile clock={clock} timestamp={timestamp} />;
-  }
-
   return (
     <div
-      className={styles.dateContainerDesktop}
+      className={styles.dateContainerMobile}
       style={{
         background: `url(${matchLayer}) #eceff1`
       }}
     >
-      {renderCorner()}
       <div className={dateClass}>{renderDate()}</div>
     </div>
   );

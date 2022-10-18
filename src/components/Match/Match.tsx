@@ -38,8 +38,11 @@ export const Match = ({
     setIsBetEmpty(newScoreArray.some((item) => item.bet === null));
   }, [teams]);
 
+  const containerClass = classNames(styles.container, {
+    [styles.containerMarged]: !isHideClock && isMobile
+  });
+
   const matchContainerClass = classNames(styles.matchContainer, {
-    [styles.matchContainerHoverable]: !isEditable,
     [styles.matchContainerExpandable]: isExpandable
   });
 
@@ -71,7 +74,7 @@ export const Match = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={containerClass}>
       <div
         className={matchContainerClass}
         onClick={() => setIsExpanded(!isExpanded)}
@@ -97,6 +100,7 @@ export const Match = ({
             timestamp={timestamp}
           />
         )}
+
         {teams.map((team) => {
           const bet = editedBets.find((item) => item.id === team.id)?.bet;
 

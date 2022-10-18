@@ -3,7 +3,7 @@
 exports[`ClockComponent should render 1`] = `
 <div>
   <div
-    class="dateContainer"
+    class="dateContainerDesktop"
     style="background: rgb(236, 239, 241) url();"
   >
     <div
@@ -12,7 +12,7 @@ exports[`ClockComponent should render 1`] = `
       +
     </div>
     <div
-      class="info infoClock"
+      class="infoDesktop infoClockDesktop"
     >
       <span
         class="infoClockStatus"

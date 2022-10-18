@@ -8,24 +8,55 @@
   @include padded(horizontal, s2);
   @include marged(right, s3);
 
-  height: $match-container-height;
-  border-radius: $border-radius;
-  border-bottom-left-radius: 0;
-  position: relative;
-  width: $clock-width;
+  &Desktop {
+    @extend .dateContainer;
+
+    height: $match-container-height;
+    border-radius: $border-radius;
+    border-bottom-left-radius: 0;
+    position: relative;
+    width: $clock-width;
+  }
+
+  &Mobile {
+    @extend .dateContainer;
+
+    border-radius: $border-radius;
+    left: 10px;
+    position: absolute;
+    top: -16px;
+    width: 100px;
+  }
 
   .info {
-    @include flex-aligned(center, center);
-    height: 36px; //Without grey area
+    &Desktop {
+      height: 36px; //Without grey area
+      @include flex-aligned(center, center);
+    }
+
+    &Mobile {
+      @include flex-aligned(space-evenly, flex-start);
+      height: 36px;
+    }
 
     &Date {
       @include font-colored($color-grey5);
       @include font-sized(m);
+      font-weight: bold;
     }
 
     &Clock {
       @include font-sized(m);
-      flex-direction: column;
+
+      &Desktop {
+        @include font-sized(l);
+        flex-direction: column;
+      }
+
+      &Mobile {
+        @include font-sized(s);
+        flex-direction: row;
+      }
 
       &Status {
         @include font-sized(s);
@@ -33,7 +64,6 @@
 
       &Animated {
         @include font-colored($color-qatar-red);
-        @include font-sized(l);
         animation: pulse 2s ease-in-out infinite;
       }
     }

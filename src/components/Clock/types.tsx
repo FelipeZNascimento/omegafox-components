@@ -26,3 +26,8 @@ export interface IClockProps {
   isMatchEditable: boolean;
   timestamp: number;
 }
+
+export interface IClockMobileProps {
+  clock: TClockAmericanFootball | TClockFootball;
+  timestamp: number;
+}
