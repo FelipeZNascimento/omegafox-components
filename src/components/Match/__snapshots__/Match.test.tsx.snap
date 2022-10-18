@@ -42,14 +42,14 @@ exports[`MatchComponent should render 1`] = `
         </div>
       </div>
       <div
-        class="dateContainer"
+        class="dateContainerDesktop"
         style="background: rgb(236, 239, 241) url();"
       >
         <div
           class="toggle"
         />
         <div
-          class="info infoClock"
+          class="infoDesktop infoClockDesktop"
         >
           <span
             class="infoClockStatus"
