@@ -74,7 +74,7 @@ export const Navbar = ({
   return (
     <div className={navContainerClass}>
       <nav className={styles.container}>
-        <img className={styles.logo} src={logo} />
+        <img alt="Logo" className={styles.logo} src={logo} />
         {renderLeftSide()}
         {renderRightSide()}
       </nav>

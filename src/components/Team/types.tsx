@@ -9,6 +9,7 @@ export interface ITeamProps {
   colors: string[];
   isBigLogo?: boolean;
   isEditable: boolean;
+  isMatchStarted?: boolean;
   logo: string;
   matchId: number;
   name: string;

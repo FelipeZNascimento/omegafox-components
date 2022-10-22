@@ -29,6 +29,21 @@ export const Match = ({
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isBetEmpty, setIsBetEmpty] = useState<boolean>(false);
   const [editedBets, setEditedBets] = useState<IBetId[]>([]);
+  const [currentTimestamp, setCurrentTimestamp] = useState(
+    parseInt((new Date().getTime() / 1000).toFixed(0))
+  );
+
+  const isMatchStarted = timestamp < currentTimestamp;
+
+  useEffect(() => {
+    const interval = setInterval(function () {
+      const timestamp = parseInt((new Date().getTime() / 1000).toFixed(0));
+
+      setCurrentTimestamp(timestamp);
+    }, 1000); // 60 * 1000 milsec
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const newScoreArray = teams.map((team) => {
@@ -95,6 +110,7 @@ export const Match = ({
             betValue={betValue}
             clock={clock}
             isMatchEditable={isEditable}
+            isMatchStarted={isMatchStarted}
             isExpandable={isExpandable}
             isExpanded={isExpanded}
             timestamp={timestamp}
@@ -115,6 +131,7 @@ export const Match = ({
               id={team.id}
               isBigLogo={isBigLogo}
               isEditable={isEditable}
+              isMatchStarted={isMatchStarted}
               logo={team.logo}
               matchId={id}
               name={team.name}

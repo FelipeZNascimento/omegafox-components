@@ -17,7 +17,7 @@ export const NewsCard = ({
   return (
     <a href={link} target="_blank" rel="noreferrer">
       <div className={styles.container}>
-        <img src={image} />
+        <img src={image} alt={resume} />
         <div className={styles.titleContainer}>
           <p className={styles.title}>{title}</p>
           <p className={styles.resume}>{resume}</p>

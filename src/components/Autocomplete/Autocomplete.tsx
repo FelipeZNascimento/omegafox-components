@@ -15,25 +15,9 @@ export const Autocomplete = ({
     [styles.container]: true
   });
 
-  // const handleOnSearch = (string: string, results: TDropdownItem[]) => {
-  //   // onSearch will have as the first callback parameter
-  //   // the string searched and for the second the results.
-  //   console.log(string, results);
-  // };
-
-  // const handleOnHover = (result: TDropdownItem) => {
-  //   // the item hovered
-  //   console.log(result);
-  // };
-
   const handleOnSelect = (item: TDropdownItem) => {
-    // the item selected
     onSelect(item);
   };
-
-  // const handleOnFocus = () => {
-  //   console.log('Focused');
-  // };
 
   const formatResult = (item: TDropdownItem) => {
     return (
@@ -41,6 +25,7 @@ export const Autocomplete = ({
         <span className={styles.name}>{item.name}</span>
         <span className={styles.logo}>
           <img
+            alt={`${item.details.name} crest`}
             src={`https://assets.omegafox.me/img/countries_crests/${item.details.nameShort.toLowerCase()}.png`}
           />
         </span>
@@ -52,17 +37,14 @@ export const Autocomplete = ({
     <div className={containerClass}>
       <div style={{ width: isMobile ? 340 : 460 }}>
         <ReactSearchAutocomplete
+          autoFocus
           styling={{
             borderRadius: '16px',
             boxShadow: '0px 0px 0px 1px #9da4a7',
             border: '1px solid #9da4a7'
           }}
           items={dropdownList}
-          // onSearch={handleOnSearch}
-          // onHover={handleOnHover}
           onSelect={handleOnSelect}
-          // onFocus={handleOnFocus}
-          autoFocus
           formatResult={formatResult}
         />
       </div>

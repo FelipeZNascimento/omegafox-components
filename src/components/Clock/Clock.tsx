@@ -18,6 +18,7 @@ import { ClockMobile } from './ClockMobile';
 export const Clock = ({
   betValue,
   clock,
+  isMatchStarted = false,
   isExpandable = false,
   isExpanded,
   isMatchEditable = false,
@@ -29,11 +30,11 @@ export const Clock = ({
 
   const errorFlagClass = classNames(styles.toggle, {});
   const toggleClass = classNames(styles.toggle, {
-    [styles.toggleGreen]: betValue === BET_VALUES.FULL,
-    [styles.toggleBlue]: betValue === BET_VALUES.HALF,
-    [styles.toggleLightBlue]: betValue === BET_VALUES.MINIMUN,
-    [styles.toggleRed]: betValue === BET_VALUES.MISS,
-    [styles.toggleNeutral]: betValue === null
+    [styles.toggleGreen]: isMatchStarted && betValue === BET_VALUES.FULL,
+    [styles.toggleBlue]: isMatchStarted && betValue === BET_VALUES.HALF,
+    [styles.toggleLightBlue]: isMatchStarted && betValue === BET_VALUES.MINIMUN,
+    [styles.toggleRed]: isMatchStarted && betValue === BET_VALUES.MISS,
+    [styles.toggleNeutral]: betValue === null || !isMatchStarted
   });
 
   const renderCorner = () => {

@@ -18,6 +18,7 @@ export const Team = ({
   colors,
   isBigLogo = false,
   isEditable,
+  isMatchStarted = false,
   logo,
   matchId,
   name,
@@ -47,10 +48,14 @@ export const Team = ({
 
     if (betValue !== null) {
       const betContainerClass = classNames(styles.scoreContainerBet, {
-        [styles.scoreContainerBetGreen]: betValue === BET_VALUES.FULL,
-        [styles.scoreContainerBetBlue]: betValue === BET_VALUES.HALF,
-        [styles.scoreContainerBetLightBlue]: betValue === BET_VALUES.MINIMUN,
-        [styles.scoreContainerBetRed]: betValue === BET_VALUES.MISS
+        [styles.scoreContainerBetGreen]:
+          isMatchStarted && betValue === BET_VALUES.FULL,
+        [styles.scoreContainerBetBlue]:
+          isMatchStarted && betValue === BET_VALUES.HALF,
+        [styles.scoreContainerBetLightBlue]:
+          isMatchStarted && betValue === BET_VALUES.MINIMUN,
+        [styles.scoreContainerBetRed]:
+          isMatchStarted && betValue === BET_VALUES.MISS
       });
 
       return (
@@ -58,7 +63,7 @@ export const Team = ({
           <div className={scoreClass}>{score}</div>
           <div className={betContainerClass}>
             <Tooltip text="Sua aposta">
-              <span>{bet !== null ? bet : 'x'}</span>
+              <span>{bet === null && isMatchStarted ? 'x' : bet}</span>
             </Tooltip>
           </div>
         </div>
@@ -149,7 +154,7 @@ export const Team = ({
 
     return (
       <div className={styles.logoContainer} onClick={handleTeamClick}>
-        <img className={logoClass} alt="logo" src={logo} />
+        <img className={logoClass} alt={`${name} logo`} src={logo} />
       </div>
     );
   };

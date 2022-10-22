@@ -9,6 +9,7 @@ exports[`NavbarComponent should render 1`] = `
       class="container"
     >
       <img
+        alt="Logo"
         class="logo"
         src="any"
       />
