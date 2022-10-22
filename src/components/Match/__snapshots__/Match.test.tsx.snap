@@ -71,7 +71,7 @@ exports[`MatchComponent should render 1`] = `
           class="logoContainer"
         >
           <img
-            alt="logo"
+            alt="Brasil logo"
             class="logo logoLeft logoSmall"
             src="https://assets.omegafox.me/img/countries_crests/bra.png"
           />
@@ -125,7 +125,7 @@ exports[`MatchComponent should render 1`] = `
           class="logoContainer"
         >
           <img
-            alt="logo"
+            alt="Argentina logo"
             class="logo logoRight logoSmall"
             src="https://assets.omegafox.me/img/countries_crests/arg.png"
           />
