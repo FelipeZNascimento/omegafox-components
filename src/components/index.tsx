@@ -45,7 +45,7 @@ export type {
   IBetId
 } from './Match/types';
 export type { INavbarProps } from './Navbar/types';
-export type { TNavbarButton, TNavbarButtonProps } from './NavbarButton/types';
+export type { TNavbarButtonProps, TNavbarButton } from './NavbarButton/types';
 export type { INewsCardProps } from './NewsCard/types';
 export type {
   ITableProps,

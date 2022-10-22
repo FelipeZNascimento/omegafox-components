@@ -17,32 +17,32 @@ exports[`NavbarComponent should render 1`] = `
         class="buttonContainerLeft buttonContainerCopa"
       >
         <button
-          class="navButton navButtonSelected"
+          class="navButton navButtonEnabled navButtonEnabledSelected"
         >
           Início
         </button>
         <button
-          class="navButton"
+          class="navButton navButtonEnabled"
         >
           Resultados
         </button>
         <button
-          class="navButton"
+          class="navButton navButtonEnabled"
         >
           Apostar
         </button>
         <button
-          class="navButton"
+          class="navButton navButtonEnabled"
         >
           Regras
         </button>
         <button
-          class="navButton"
+          class="navButton navButtonEnabled"
         >
           Prêmios
         </button>
         <button
-          class="navButton"
+          class="navButton navButtonEnabled"
         >
           Extras
         </button>

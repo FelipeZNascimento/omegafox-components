@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { NavbarButton } from './NavbarButton';
-import { INavbarButtonProps } from './types';
+import { TNavbarButtonProps } from './types';
 import { navbarButtonsLeft } from 'components/mocks';
 
 describe('<NavbarButton />', () => {
-  const renderComponent = ({ button, isSelected }: INavbarButtonProps) =>
+  const renderComponent = ({ button, isSelected }: TNavbarButtonProps) =>
     render(
       <NavbarButton button={button} isSelected={isSelected} onClick={jest.fn} />
     );

@@ -1,11 +1,4 @@
-export type TNavbarButton = {
-  id: number;
-  isDisabled?: boolean;
-  text: string;
-  url: string;
-  withCredentials?: boolean;
-  renderingFunction?: () => JSX.Element;
-};
+import { TNavbarButton } from '../types';
 
 export interface INavbarProps {
   isSticky?: boolean;

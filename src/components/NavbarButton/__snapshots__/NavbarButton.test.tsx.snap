@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavbarButton /> should render 1`] = `
+<div>
+  <button
+    class="navButton navButtonEnabled navButtonEnabledSelected"
+  >
+    Início
+  </button>
+</div>
+`;

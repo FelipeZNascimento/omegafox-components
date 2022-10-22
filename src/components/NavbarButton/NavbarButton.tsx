@@ -7,6 +7,7 @@ import styles from './NavbarButton.module.scss';
 export const NavbarButton = ({
   button,
   isSelected,
+  isShadowed = false,
   onClick
 }: TNavbarButtonProps) => {
   if (button.renderingFunction) {
@@ -18,8 +19,10 @@ export const NavbarButton = ({
   }
 
   const buttonClass = classNames(styles.navButton, {
+    [styles.navButtonEnabled]: !button.isDisabled,
     [styles.navButtonDisabled]: button.isDisabled,
-    [styles.navButtonSelected]: isSelected
+    [styles.navButtonEnabledSelected]: isSelected,
+    [styles.navButtonShadowed]: isShadowed
   });
 
   return (

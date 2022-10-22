@@ -1,4 +1,4 @@
-import { INavbarProps, TNavbarButton } from './types';
+import { INavbarProps, TNavbarButton } from '../types';
 import { NavbarButton } from '../index';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
