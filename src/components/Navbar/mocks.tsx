@@ -1,4 +1,4 @@
-import { TNavbarButton } from './types';
+import { TNavbarButton } from '../types';
 import { Button } from '../index';
 
 export const navbarButtonsLeft: TNavbarButton[] = [

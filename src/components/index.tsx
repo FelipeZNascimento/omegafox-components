@@ -8,6 +8,7 @@ export { Loading } from './Loading/Loading';
 export { Modal } from './Modal/Modal';
 export { Match } from './Match/Match';
 export { Navbar } from './Navbar/Navbar';
+export { NavbarButton } from './NavbarButton/NavbarButton';
 export { NewsCard } from './NewsCard/NewsCard';
 export { Table } from './Table/Table';
 export { Selector } from './Selector/Selector';
@@ -43,7 +44,8 @@ export type {
   TSport,
   IBetId
 } from './Match/types';
-export type { INavbarProps, TNavbarButton } from './Navbar/types';
+export type { INavbarProps } from './Navbar/types';
+export type { TNavbarButtonProps, TNavbarButton } from './NavbarButton/types';
 export type { INewsCardProps } from './NewsCard/types';
 export type {
   ITableProps,

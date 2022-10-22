@@ -21,7 +21,8 @@ export type {
   TSport
 } from './Match/types';
 export type { IModalProps } from './Modal/types';
-export type { INavbarProps, TNavbarButton } from './Navbar/types';
+export type { INavbarProps } from './Navbar/types';
+export type { TNavbarButton, TNavbarButtonProps } from './NavbarButton/types';
 export type { INewsCardProps } from './NewsCard/types';
 export type {
   ITableProps,

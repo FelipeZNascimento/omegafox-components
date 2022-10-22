@@ -1,4 +1,5 @@
-import { INavbarProps, TNavbarButton } from './types';
+import { INavbarProps, TNavbarButton } from '../types';
+import { NavbarButton } from '../index';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
 
@@ -18,29 +19,14 @@ export const Navbar = ({
   });
 
   const renderButtons = (navbarButtons: TNavbarButton[]) => {
-    return navbarButtons.map((item) => {
-      if (item.renderingFunction) {
-        return (
-          <button key={item.id} onClick={() => onClick(item)}>
-            {item.renderingFunction()}
-          </button>
-        );
-      }
-
-      const buttonClass = classNames(styles.navButton, {
-        [styles.navButtonSelected]: selectedId === item.id
-      });
-
-      return (
-        <button
-          key={item.id}
-          className={buttonClass}
-          onClick={() => onClick(item)}
-        >
-          {item.text}
-        </button>
-      );
-    });
+    return navbarButtons.map((item) => (
+      <NavbarButton
+        key={item.id}
+        button={item}
+        isSelected={selectedId === item.id}
+        onClick={onClick}
+      />
+    ));
   };
 
   const renderLeftSide = () => {

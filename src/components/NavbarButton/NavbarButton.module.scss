@@ -1,0 +1,42 @@
+@import "../../styling/alignments.scss";
+@import "../../styling/colors.scss";
+@import "../../styling/font-sizes.scss";
+@import "../../styling/margins.scss";
+@import "../../styling/paddings.scss";
+
+.navButton {
+  @include font-sized(navbar-button);
+  @include padded(all, s);
+  @include marged(horizontal, s3);
+
+  border-radius: 16px;
+  height: 100%;
+
+  &Shadowed {
+    @include shadowed($color-grey3, 0.2);
+  }
+
+  &Enabled {
+    @include font-colored($color-grey4);
+
+    transition: background-color $transition-time, color $transition-time;
+    cursor: pointer;
+
+    &Selected {
+      @include font-colored($color-qatar-red);
+    }
+
+    &:hover {
+      @include bg-colored($color-grey2);
+
+      transition: background-color $transition-time, color $transition-time;
+    }
+  }
+
+  &Disabled {
+    @include font-colored($color-grey3);
+
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+}
