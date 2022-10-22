@@ -62,6 +62,7 @@ export const Match = ({
   });
 
   const expandedContainerClass = classNames(styles.expandedContainer, {
+    [styles.expandedContainerNoDisplay]: isMobile,
     [styles.expandedContainerOpen]: isExpanded,
     [styles.expandedContainerClosed]: !isExpanded
   });
