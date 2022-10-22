@@ -1,6 +1,6 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 input {
@@ -14,4 +14,13 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   // For the little snow flake of a Firefox
   -moz-appearance: textfield;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  // color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
 }

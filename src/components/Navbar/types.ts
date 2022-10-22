@@ -1,5 +1,6 @@
 export type TNavbarButton = {
   id: number;
+  isDisabled?: boolean;
   text: string;
   url: string;
   withCredentials?: boolean;
