@@ -5,7 +5,7 @@ import {
 import { TBetValues } from '../types';
 
 type TClock = {
-  time: number;
+  time: string;
 };
 
 type FootballKeys = keyof typeof FOOTBALL_MATCH_STATUS;
