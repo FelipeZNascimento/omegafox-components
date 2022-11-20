@@ -73,7 +73,7 @@ export const Clock = ({
             </span>
             <span className={clockClass}>
               {clock.status !== FOOTBALL_MATCH_STATUS.PENALTIES &&
-                `${clock.time}'`}
+                `${clock.time}`}
               {clock.status === FOOTBALL_MATCH_STATUS.PENALTIES &&
                 LABELS[clock.status]}
             </span>
