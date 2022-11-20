@@ -167,6 +167,7 @@ export const Team = ({
           style={{
             textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
           }}
+          translate="no"
         >
           {name}
         </div>
@@ -183,6 +184,7 @@ export const Team = ({
         style={{
           textShadow: `-1px 0 ${colors[1]}, 0 1px ${colors[1]}, 1px 0 ${colors[1]}, 0 -1px ${colors[1]}`
         }}
+        translate="no"
         onClick={handleTeamClick}
       >
         {name}
