@@ -18,6 +18,7 @@ exports[`TeamComponent should render 1`] = `
     <div
       class="nameContainer"
       style="text-shadow: -1px 0 #FFDC02, 0 1px #FFDC02, 1px 0 #FFDC02, 0 -1px #FFDC02;"
+      translate="no"
     >
       Brasil
     </div>

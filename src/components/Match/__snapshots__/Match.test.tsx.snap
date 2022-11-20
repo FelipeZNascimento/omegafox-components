@@ -79,6 +79,7 @@ exports[`MatchComponent should render 1`] = `
         <div
           class="nameContainer"
           style="text-shadow: -1px 0 #FFDC02, 0 1px #FFDC02, 1px 0 #FFDC02, 0 -1px #FFDC02;"
+          translate="no"
         >
           Brasil
         </div>
@@ -118,6 +119,7 @@ exports[`MatchComponent should render 1`] = `
         <div
           class="nameContainer"
           style="text-shadow: -1px 0 #43A1D5, 0 1px #43A1D5, 1px 0 #43A1D5, 0 -1px #43A1D5;"
+          translate="no"
         >
           Argentina
         </div>
