@@ -22,7 +22,7 @@ exports[`ClockComponent should render 1`] = `
       <span
         class="infoClockAnimated"
       >
-        45'
+        45
       </span>
     </div>
   </div>
