@@ -2,7 +2,7 @@ import { TNavbarButton } from '../types';
 
 export interface INavbarProps {
   isSticky?: boolean;
-  logo: string;
+  logo?: string | null;
   navbarLeft?: TNavbarButton[];
   navbarRight?: TNavbarButton[];
   platform: 'copa' | 'nfl';

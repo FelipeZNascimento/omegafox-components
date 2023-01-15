@@ -9,7 +9,7 @@ export const Navbar = ({
   navbarRight = [],
   platform,
   selectedId,
-  logo,
+  logo = null,
   onClick
 }: INavbarProps) => {
   const navContainerClass = classNames(styles.navContainer, {
@@ -60,7 +60,7 @@ export const Navbar = ({
   return (
     <div className={navContainerClass}>
       <nav className={styles.container}>
-        <img alt="Logo" className={styles.logo} src={logo} />
+        {logo && <img alt="Logo" className={styles.logo} src={logo} />}
         {renderLeftSide()}
         {renderRightSide()}
       </nav>
