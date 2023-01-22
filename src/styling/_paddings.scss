@@ -1,43 +1,30 @@
-$paddings: (
-  "none": 0px,
-  "zero": 0px,
-  "s3": 2px,
-  "s2": 4px,
-  "s1": 8px,
-  "s": 8px,
-  "m": 12px,
-  "l": 16px,
-  "l1": 16px,
-  "l2": 20px,
-  "l3": 24px,
-  "l4": 50px,
-);
+@use "./spacings" as spacing;
 
-@each $name, $pixels in $paddings {
+@each $name, $pixels in spacing.$spacings {
   .top-padding-#{$name} {
     padding-top: #{$pixels};
   }
 }
 
-@each $name, $pixels in $paddings {
+@each $name, $pixels in spacing.$spacings {
   .left-padding-#{$name} {
     padding-left: #{$pixels};
   }
 }
 
-@each $name, $pixels in $paddings {
+@each $name, $pixels in spacing.$spacings {
   .right-padding-#{$name} {
     padding-right: #{$pixels};
   }
 }
 
-@each $name, $pixels in $paddings {
+@each $name, $pixels in spacing.$spacings {
   .bottom-padding-#{$name} {
     padding-bottom: #{$pixels};
   }
 }
 
-@each $name, $pixels in $paddings {
+@each $name, $pixels in spacing.$spacings {
   .all-padding-#{$name} {
     padding: #{$pixels};
   }

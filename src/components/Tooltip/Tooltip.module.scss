@@ -1,5 +1,8 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/global.scss";
 @import "../../styling/margins.scss";
@@ -11,33 +14,33 @@
 
 .tooltip {
   @include font-sized(s);
-  @include font-colored($color-white);
   @include padded(all, s);
 
   border-radius: $border-radius;
   border-bottom-left-radius: 0;
+  color: colors.$white;
   z-index: 10;
 
   &Neutral {
-    @include bg-rgba-colored($color-grey5, 0.7);
+    background-color: rgba(colors.$grey5, 0.7);
   }
 
   &Success {
-    @include bg-rgba-colored($color-mint, 0.7);
+    background-color: rgba(colors.$mint, 0.7);
   }
 
   &Error {
-    @include bg-rgba-colored($color-qatar-red, 0.7);
+    background-color: rgba(colors_fifa.$qatar-red, 0.7);
   }
 
   &::after {
-    content: " ";
-    position: absolute;
     bottom: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent $color-grey4 transparent;
+    border-color: transparent transparent colors.$grey4 transparent;
+    content: " ";
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
   }
 }

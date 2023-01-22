@@ -11,7 +11,7 @@ describe('NavbarComponent', () => {
     logo,
     navbarLeft,
     navbarRight,
-    platform,
+    theme,
     selectedId
   }: INavbarProps) =>
     render(
@@ -20,7 +20,7 @@ describe('NavbarComponent', () => {
         logo={logo}
         navbarLeft={navbarLeft}
         navbarRight={navbarRight}
-        platform={platform}
+        theme={theme}
         selectedId={selectedId}
         onClick={jest.fn}
       />
@@ -30,7 +30,7 @@ describe('NavbarComponent', () => {
     const { container } = renderComponent({
       logo: 'any',
       navbarLeft: navbarButtonsLeft,
-      platform: 'copa',
+      theme: 'copa',
       selectedId: navbarButtonsLeft[0].id,
       onClick: jest.fn
     });

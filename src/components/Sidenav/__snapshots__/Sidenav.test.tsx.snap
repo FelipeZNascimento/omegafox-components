@@ -9,45 +9,36 @@ exports[`SidebarComponent should render 1`] = `
       class="container containerOpen"
       data-testid="test-sidenav__container"
     >
-      <div
-        class="logoContainer"
-      >
-        <img
-          alt="World Cup logo"
-          class="logo"
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png"
-        />
-      </div>
       <nav
         class="nav"
       >
         <button
-          class="navButton navButtonSelected"
+          class="navButtonCopa navButtonCopaSelected"
         >
           Início
         </button>
         <button
-          class="navButton"
+          class="navButtonCopa"
         >
           Resultados
         </button>
         <button
-          class="navButton"
+          class="navButtonCopa"
         >
           Apostar
         </button>
         <button
-          class="navButton"
+          class="navButtonCopa"
         >
           Regras
         </button>
         <button
-          class="navButton"
+          class="navButtonCopa"
         >
           Prêmios
         </button>
         <button
-          class="navButton"
+          class="navButtonCopa"
         >
           Extras
         </button>

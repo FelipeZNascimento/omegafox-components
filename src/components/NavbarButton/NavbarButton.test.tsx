@@ -7,13 +7,19 @@ import { navbarButtonsLeft } from 'components/mocks';
 describe('<NavbarButton />', () => {
   const renderComponent = ({ button, isSelected }: TNavbarButtonProps) =>
     render(
-      <NavbarButton button={button} isSelected={isSelected} onClick={jest.fn} />
+      <NavbarButton
+        button={button}
+        isSelected={isSelected}
+        theme="copa"
+        onClick={jest.fn}
+      />
     );
 
   it('should render', () => {
     const { container } = renderComponent({
       button: navbarButtonsLeft[0],
       isSelected: true,
+      theme: 'copa',
       onClick: () => console.log('Clicked')
     });
 

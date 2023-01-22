@@ -1,15 +1,19 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/colors_valeo.scss" as colors_valeo;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
 .container {
-  @include shadowed($color-black, 0.2);
-  @include bg-colored($color-grey1);
+  @include color_utils.shadowed(colors.$black, 0.2);
   @include font-sized(l2);
   @include flex-aligned(center, center);
 
+  background-color: colors.$grey1;
   flex-direction: column;
   height: 100vh;
   left: 0;
@@ -57,26 +61,55 @@
     cursor: pointer;
     outline: inherit;
   }
+}
 
-  .navButton {
-    @include bg-colored($color-grey1);
-    @include font-colored($color-grey4);
-    @include padded(all, m);
+.navButton {
+  @include padded(all, m);
 
-    border-radius: 16px;
-    font: inherit;
+  background-color: colors.$grey1;
+  border-radius: 16px;
+  color: colors.$grey4;
+  font: inherit;
+  transition: background-color $transition-time, color $transition-time;
+  width: 100%;
+}
+
+.navButtonCopa {
+  @extend .navButton;
+
+  &Selected {
+    color: colors_fifa.$qatar-red;
+  }
+
+  &:hover {
+    background-color: colors.$grey2;
     transition: background-color $transition-time, color $transition-time;
-    width: 100%;
+  }
+}
 
-    &Selected {
-      @include font-colored($color-qatar-red);
-    }
+.navButtonNfl {
+  @extend .navButton;
 
-    &:hover {
-      @include bg-colored($color-grey2);
+  &Selected {
+    color: colors.$navy;
+  }
 
-      transition: background-color $transition-time, color $transition-time;
-    }
+  &:hover {
+    background-color: colors.$grey2;
+    transition: background-color $transition-time, color $transition-time;
+  }
+}
+
+.navButtonValeo {
+  @extend .navButton;
+
+  &Selected {
+    color: colors_valeo.$tiffany;
+  }
+
+  &:hover {
+    color: colors.$grey4;
+    transition: color $transition-time;
   }
 }
 

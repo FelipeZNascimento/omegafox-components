@@ -6,23 +6,34 @@ import styles from './NavbarButton.module.scss';
 
 export const NavbarButton = ({
   button,
+  isFlexed = false,
   isSelected,
   isShadowed = false,
+  theme,
   onClick
 }: TNavbarButtonProps) => {
+  const titleCase = (string: string) => {
+    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+  };
+
   if (button.renderingFunction) {
     return (
-      <button key={button.id} onClick={() => onClick(button)}>
+      <button
+        style={{ backgroundColor: 'transparent' }}
+        key={button.id}
+        onClick={() => onClick(button)}
+      >
         {button.renderingFunction()}
       </button>
     );
   }
-
+  const classTheme = `navButton${titleCase(theme)}`;
   const buttonClass = classNames(styles.navButton, {
-    [styles.navButtonEnabled]: !button.isDisabled,
+    [styles[`${classTheme}Enabled`]]: !button.isDisabled,
     [styles.navButtonDisabled]: button.isDisabled,
-    [styles.navButtonEnabledSelected]: isSelected,
-    [styles.navButtonShadowed]: isShadowed
+    [styles[`${classTheme}EnabledSelected`]]: isSelected,
+    [styles[`${classTheme}Shadowed`]]: isShadowed,
+    [styles.navButtonFlexed]: isFlexed
   });
 
   return (

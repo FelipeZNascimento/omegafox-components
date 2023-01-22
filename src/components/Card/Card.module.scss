@@ -1,12 +1,14 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
 .cardContainer {
+  @include color_utils.shadowed(colors.$black, 0.3);
   @include flex-aligned(center, center);
-  @include shadowed($color-black, 0.3);
 
   border-radius: $border-radius;
   border-bottom-left-radius: 0px;
@@ -16,18 +18,18 @@
   width: 100%;
 
   &:hover {
-    @include shadowed($color-black, 0.5);
+    @include color_utils.shadowed(colors.$black, 0.5);
   }
 }
 
 .card {
-  @include bg-rgba-colored($color-grey2, 0.6);
-  @include font-colored($color-grey5);
   @include flex-aligned(center, center);
 
+  background-color: rgba(colors.$grey2, 0.6);
   border-radius: $border-radius;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  color: colors.$grey5;
   flex-direction: column;
   height: 60px;
   transition: filter $transition-time, background-color $transition-time;
@@ -61,17 +63,16 @@
   }
 
   &Selected {
-    @include bg-rgba-colored($color-grey3, 0.6);
+    background-color: rgba(colors.$grey3, 0.6);
   }
 }
 
 .status {
-  @include bg-rgba-colored($color-grey1, 0.4);
-
   @include flex-aligned(center, center);
   @include padded(horizontal, s2);
   @include padded(vertical, s2);
 
+  background-color: rgba(colors.$grey1, 0.4);
   border-bottom-right-radius: $border-radius;
   box-sizing: border-box;
   flex: 0;

@@ -3,7 +3,7 @@
 exports[`NavbarComponent should render 1`] = `
 <div>
   <div
-    class="navContainer navContainerSticky navContainerCopa"
+    class="navContainer navContainerTall navContainerSticky navContainerBlackShadow navContainerCopa"
   >
     <nav
       class="container"
@@ -14,35 +14,35 @@ exports[`NavbarComponent should render 1`] = `
         src="any"
       />
       <div
-        class="buttonContainerLeft buttonContainerCopa"
+        class="buttonContainerLeft"
       >
         <button
-          class="navButton navButtonEnabled navButtonEnabledSelected"
+          class="navButton navButtonCopaEnabled navButtonCopaEnabledSelected"
         >
           Início
         </button>
         <button
-          class="navButton navButtonEnabled"
+          class="navButton navButtonCopaEnabled"
         >
           Resultados
         </button>
         <button
-          class="navButton navButtonEnabled"
+          class="navButton navButtonCopaEnabled"
         >
           Apostar
         </button>
         <button
-          class="navButton navButtonEnabled"
+          class="navButton navButtonCopaEnabled"
         >
           Regras
         </button>
         <button
-          class="navButton navButtonEnabled"
+          class="navButton navButtonCopaEnabled"
         >
           Prêmios
         </button>
         <button
-          class="navButton navButtonEnabled"
+          class="navButton navButtonCopaEnabled"
         >
           Extras
         </button>

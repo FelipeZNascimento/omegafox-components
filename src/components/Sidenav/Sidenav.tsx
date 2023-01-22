@@ -7,12 +7,19 @@ import styles from './Sidenav.module.scss';
 
 export const Sidenav = ({
   isOpen,
+  logo,
   renderBottom,
   selectedId,
   sidenavButtons,
+  theme = 'copa',
   onClick,
   onClose
 }: ISidenavProps) => {
+  const titleCase = (string: string) => {
+    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+  };
+
+  const classTheme = `navButton${titleCase(theme)}`;
   const containerClass = classNames(styles.container, {
     [styles.containerOpen]: isOpen,
     [styles.containerClosed]: !isOpen
@@ -40,14 +47,18 @@ export const Sidenav = ({
     return sidenavButtons.map((item) => {
       if (item.renderingFunction) {
         return (
-          <button key={item.id} className={styles.navButton}>
+          <button
+            key={item.id}
+            className={styles[classTheme]}
+            onClick={() => onClick(item)}
+          >
             {item.renderingFunction()}
           </button>
         );
       }
 
-      const buttonClass = classNames(styles.navButton, {
-        [styles.navButtonSelected]: selectedId === item.id
+      const buttonClass = classNames(styles[classTheme], {
+        [styles[`${classTheme}Selected`]]: selectedId === item.id
       });
 
       const onButtonClick = () => {
@@ -72,13 +83,11 @@ export const Sidenav = ({
         ref={wrapperRef}
         data-testid="test-sidenav__container"
       >
-        <div className={styles.logoContainer}>
-          <img
-            alt="World Cup logo"
-            className={styles.logo}
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png"
-          />
-        </div>
+        {logo && (
+          <div className={styles.logoContainer}>
+            <img alt="Logo" className={styles.logo} src={logo} />
+          </div>
+        )}
         <nav className={styles.nav}>{renderButtons()}</nav>
         {renderBottom && <div className={styles.bottom}>{renderBottom()}</div>}
       </div>

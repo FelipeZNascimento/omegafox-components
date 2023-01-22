@@ -4,18 +4,28 @@ import classNames from 'classnames';
 import styles from './Navbar.module.scss';
 
 export const Navbar = ({
+  isRounded = false,
+  isSlim = false,
   isSticky = true,
+  sameSizeButtons = false,
   navbarLeft = [],
   navbarRight = [],
-  platform,
+  theme,
   selectedId,
-  logo,
+  shadow = 'black',
+  logo = null,
   onClick
 }: INavbarProps) => {
   const navContainerClass = classNames(styles.navContainer, {
+    [styles.navContainerSlim]: isSlim,
+    [styles.navContainerTall]: !isSlim,
     [styles.navContainerSticky]: isSticky,
-    [styles.navContainerCopa]: platform === 'copa'
-    // [styles.navContainerNfl]: platform === 'Nfl'
+    [styles.navContainerRounded]: isRounded,
+    [styles.navContainerBlackShadow]: shadow === 'black',
+    [styles.navContainerWhiteShadow]: shadow === 'white',
+    [styles.navContainerCopa]: theme === 'copa',
+    [styles.navContainerValeo]: theme === 'valeo'
+    // [styles.navContainerNfl]: theme === 'Nfl'
   });
 
   const renderButtons = (navbarButtons: TNavbarButton[]) => {
@@ -23,7 +33,9 @@ export const Navbar = ({
       <NavbarButton
         key={item.id}
         button={item}
+        isFlexed={sameSizeButtons}
         isSelected={selectedId === item.id}
+        theme={theme}
         onClick={onClick}
       />
     ));
@@ -34,12 +46,10 @@ export const Navbar = ({
       return null;
     }
 
-    const buttonContainerClass = classNames(styles.buttonContainerLeft, {
-      [styles.buttonContainerCopa]: platform === 'copa'
-    });
-
     return (
-      <div className={buttonContainerClass}>{renderButtons(navbarLeft)}</div>
+      <div className={styles.buttonContainerLeft}>
+        {renderButtons(navbarLeft)}
+      </div>
     );
   };
 
@@ -48,19 +58,17 @@ export const Navbar = ({
       return null;
     }
 
-    const buttonContainerClass = classNames(styles.buttonContainerRight, {
-      [styles.buttonContainerCopa]: platform === 'copa'
-    });
-
     return (
-      <div className={buttonContainerClass}>{renderButtons(navbarRight)}</div>
+      <div className={styles.buttonContainerRight}>
+        {renderButtons(navbarRight)}
+      </div>
     );
   };
 
   return (
     <div className={navContainerClass}>
       <nav className={styles.container}>
-        <img alt="Logo" className={styles.logo} src={logo} />
+        {logo && <img alt="Logo" className={styles.logo} src={logo} />}
         {renderLeftSide()}
         {renderRightSide()}
       </nav>

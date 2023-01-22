@@ -3,7 +3,7 @@
 exports[`<NavbarButton /> should render 1`] = `
 <div>
   <button
-    class="navButton navButtonEnabled navButtonEnabledSelected"
+    class="navButton navButtonCopaEnabled navButtonCopaEnabledSelected"
   >
     Início
   </button>

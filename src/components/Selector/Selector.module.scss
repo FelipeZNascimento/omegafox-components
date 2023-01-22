@@ -1,5 +1,8 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -13,13 +16,13 @@
 
 .selectorItem {
   @include aligned(center);
-  @include bg-rgba-colored($color-grey1, 0.5);
   @include flex-aligned(center, center);
-  @include font-colored($color-grey4);
   @include marged(all, s2);
   @include padded(horizontal, s2);
 
+  background-color: colors.$grey1;
   border-radius: $border-radius;
+  color: colors.$grey4;
   cursor: pointer;
   font-weight: bold;
   transition: background-color $transition-time, color $transition-time, box-shadow $transition-time;
@@ -35,17 +38,16 @@
   }
 
   &:hover {
-    @include bg-rgba-colored($color-grey1, 0.6);
-    -webkit-box-shadow: inset 0px 0px 0px 2px $color-grey3;
-    box-shadow: inset 0px 0px 0px 2px $color-grey3;
+    -webkit-box-shadow: inset 0px 0px 0px 2px colors.$grey3;
+    box-shadow: inset 0px 0px 0px 2px colors.$grey3;
+    background-color: rgba(colors.$grey1, 0.6);
   }
 
   &Selected {
-    @include bg-rgba-colored($color-grey1, 0.7);
-    @include font-colored($color-qatar-red);
-
-    -webkit-box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
-    box-shadow: inset 0px 0px 0px 2px $color-qatar-red;
+    -webkit-box-shadow: inset 0px 0px 0px 2px colors_fifa.$qatar-red;
+    box-shadow: inset 0px 0px 0px 2px colors_fifa.$qatar-red;
+    background-color: rgba(colors_fifa.$qatar-red, 0.6);
+    color: colors.$grey1;
   }
 
   &:nth-child(4n + 1) {

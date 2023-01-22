@@ -1,5 +1,7 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -49,11 +51,11 @@
     height: 100%;
     opacity: 0;
     transition: filter 0.5s;
-    box-shadow: 0 0 10px 10px black;
+    box-shadow: 0 0 10px 10px colors.$black;
   }
 
   &:active:after {
-    box-shadow: 0 0 0 0 black;
+    box-shadow: 0 0 0 0 colors.$black;
     position: absolute;
     left: 0;
     top: 0;
@@ -64,20 +66,20 @@
   &Dark {
     @extend .enabled;
     &:after {
-      box-shadow: 0 0 10px 10px $color-grey2;
+      box-shadow: 0 0 10px 10px colors.$grey2;
     }
     &:active:after {
-      box-shadow: 0 0 0 0 $color-grey2;
+      box-shadow: 0 0 0 0 colors.$grey2;
     }
   }
 
   &Light {
     @extend .enabled;
     &:after {
-      box-shadow: 0 0 10px 10px $color-grey5;
+      box-shadow: 0 0 10px 10px colors.$grey5;
     }
     &:active:after {
-      box-shadow: 0 0 0 0 $color-grey5;
+      box-shadow: 0 0 0 0 colors.$grey5;
     }
   }
 }
@@ -123,51 +125,31 @@
 }
 
 .primary {
-  @include bg-colored($color-blue);
-  @include font-colored($color-white);
-
+  background-color: colors.$blue;
   border: none;
-  // &:hover {
-  //   background-color: $color-blue;
-  // }
+  color: colors.$white;
 }
 
 .danger {
-  @include bg-colored($color-red);
-  @include font-colored($color-white);
-
+  background-color: colors.$red;
   border: none;
-  // &:hover {
-  //   background-color: $color-red;
-  // }
+  color: colors.$white;
 }
 
 .warning {
-  @include bg-colored($color-orange);
-  @include font-colored($color-white);
-
+  background-color: colors.$orange;
   border: none;
-  // &:hover {
-  //   background-color: $color-orange;
-  // }
+  color: colors.$white;
 }
 
 .confirm {
-  @include bg-colored($color-green);
-  @include font-colored($color-white);
-
+  background-color: colors.$green;
   border: none;
-  // &:hover {
-  //   @include bg-colored($color-green);
-  // }
+  color: colors.$white;
 }
 
 .neutral {
-  @include bg-colored($color-grey3);
-  @include font-colored($color-white);
+  background-color: colors.$grey3;
   border: none;
-
-  // &:hover {
-  //   @include bg-colored($color-grey3);
-  // }
+  color: colors.$white;
 }

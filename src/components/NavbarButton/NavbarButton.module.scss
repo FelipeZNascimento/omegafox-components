@@ -1,5 +1,9 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/colors_valeo.scss" as colors_valeo;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -12,31 +16,61 @@
   border-radius: 16px;
   height: 100%;
 
+  &Flexed {
+    flex: 1;
+  }
+
+  &Disabled {
+    color: colors.$color-grey3;
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+}
+
+.navButtonCopa {
+  @extend .navButton;
+
   &Shadowed {
-    @include shadowed($color-grey3, 0.2);
+    @include color_utils.shadowed(colors.$grey3, 0.2);
   }
 
   &Enabled {
-    @include font-colored($color-grey4);
-
+    color: colors.$color-grey4;
     transition: background-color $transition-time, color $transition-time;
     cursor: pointer;
 
     &Selected {
-      @include font-colored($color-qatar-red);
+      color: colors_fifa.$qatar-red;
     }
 
     &:hover {
-      @include bg-colored($color-grey2);
-
+      background-color: colors.$color-grey2;
       transition: background-color $transition-time, color $transition-time;
     }
   }
+}
 
-  &Disabled {
-    @include font-colored($color-grey3);
+.navButtonValeo {
+  @extend .navButton;
 
-    cursor: not-allowed;
-    pointer-events: all !important;
+  &Shadowed {
+    @include color_utils.shadowed(colors.$grey3, 0.2);
+  }
+
+  &Enabled {
+    background-color: transparent;
+    color: colors.$grey3;
+
+    transition: color $transition-time;
+    cursor: pointer;
+
+    &Selected {
+      color: colors_valeo.$tiffany;
+    }
+
+    &:hover {
+      color: colors.$grey4;
+      transition: color $transition-time;
+    }
   }
 }

@@ -13,5 +13,7 @@ const Template: Story<ITitleContainerProps> = (args) => <Component {...args} />;
 export const TitleContainer = Template.bind({});
 
 TitleContainer.args = {
+  borderPosition: 'bottomLeft',
+  size: 'big',
   text: 'Title Container'
 };
