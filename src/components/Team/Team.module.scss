@@ -1,5 +1,8 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/global.scss";
 @import "../../styling/margins.scss";
@@ -70,10 +73,10 @@
 }
 
 .scoreContainer {
-  @include bg-rgba-colored($color-black, 0.2);
   @include flex-aligned(center, center);
   @include font-sized(l3);
 
+  background-color: rgba(colors.$black, 0.2);
   flex-direction: column;
   height: 100%;
   transition: background-color $transition-time;
@@ -81,12 +84,12 @@
 
   &Null {
     @extend .scoreContainer;
-    @include bg-rgba-colored($color-black, 0.5);
+    background-color: rgba(colors.$black, 0.5);
     transition: background-color $transition-time;
   }
 
   &Hoverable:hover {
-    @include bg-rgba-colored($color-black, 0.3);
+    background-color: rgba(colors.$black, 0.3);
     transition: background-color $transition-time;
   }
 
@@ -130,29 +133,29 @@
   &Bet {
     @include font-sized(m);
     @include flex-aligned(center, center);
-    @include font-colored($color-white);
 
+    color: colors.$white;
     height: 24px;
     width: 100%;
 
     &Green {
-      @include bg-colored($color-mint);
+      background-color: colors.$mint;
     }
 
     &Blue {
-      @include bg-colored($color-qatar-blue);
+      background-color: colors_fifa.$qatar-blue;
     }
 
     &LightBlue {
-      @include bg-colored($color-qatar-lightblue);
+      background-color: colors_fifa.$qatar-lightblue;
     }
 
     &Yellow {
-      @include bg-colored($color-gold);
+      background-color: colors.$gold;
     }
 
     &Red {
-      @include bg-colored($color-qatar-red);
+      background-color: colors_fifa.$qatar-red;
     }
   }
 }
@@ -181,6 +184,6 @@
 .scoreInput {
   @include aligned(center);
 
-  border-bottom: 2px solid $color-white;
+  border-bottom: 2px solid colors.$white;
   width: 36px;
 }

@@ -1,56 +1,135 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
 
 .modal {
-  @include bg-colored($color-grey1);
-  @include padded(horizontal, l2);
-  @include padded(vertical, l);
-  @include shadowed($color-black, 0.2);
+  @include color_utils.shadowed(colors.$black, 0.2);
+  @include padded(all, none);
 
-  border-radius: $border-radius;
-  border-top-right-radius: 0;
   position: relative;
+  background-color: colors.$grey1;
+
+  &PaddedContent {
+    @include padded(horizontal, l2);
+    @include padded(vertical, l);
+  }
+
+  &Rounded {
+    border-radius: $border-radius;
+    border-top-right-radius: 0;
+  }
 
   &Content {
-    @include padded(top, l);
+    position: relative;
     overflow-y: auto;
 
-    &Big {
-      height: auto;
-      max-height: 700px;
-      width: 700px;
-    }
-
     &Small {
-      height: auto;
-      max-height: 600px;
-      width: 500px;
+      height: 60vh;
+      max-width: 60vw;
     }
 
-    &Mobile {
-      height: auto;
-      max-height: 80vh;
-      width: 80vw;
+    &Medium {
+      height: 70vh;
+      max-width: 70vw;
+    }
+
+    &Big,
+    &MobileSmall {
+      height: 80vh;
+      max-width: 80vw;
+    }
+
+    &MobileMedium {
+      height: 90vh;
+      max-width: 90vw;
+    }
+
+    &MobileBig {
+      height: 96vh;
+      max-width: 95vw;
     }
   }
 
-  .closeIcon {
-    @include bg-rgba-colored($color-black, 0.5);
-    @include font-colored($color-grey1);
-    @include padded(all, m);
-
-    border-bottom-left-radius: $border-radius;
+  .interactiveIcon {
     cursor: pointer;
     position: absolute;
-    right: 0;
-    top: 0;
-    transition: background-color $transition-time;
 
-    &:hover {
-      @include bg-rgba-colored($color-qatar-red, 1);
+    &Close {
+      @extend .interactiveIcon;
+      @include padded(all, m);
+
+      background-color: rgba(colors.$black, 0.5);
+      border-bottom-left-radius: $border-radius;
+      color: colors.$grey1;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+      transition: background-color $transition-time;
+
+      &:hover {
+        background-color: rgba(colors_fifa.$qatar-red, 1);
+      }
+    }
+
+    &Previous {
+      @extend .interactiveIcon;
+
+      // Positioning
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      bottom: 0;
+      top: 0;
+      left: 0;
+
+      background-image: linear-gradient(to left, transparent, rgba(colors.$black, 0.5));
+      color: colors.$grey2;
+      width: 30px;
+      transition: background-image $transition-time, color $transition-time;
+
+      &:hover {
+        background-image: linear-gradient(to left, transparent, rgba(colors.$black, 0.6));
+        color: colors.$white;
+      }
+
+      &Padded {
+        bottom: 16px;
+        top: 16px;
+        left: 20px;
+      }
+    }
+
+    &Next {
+      @extend .interactiveIcon;
+
+      // Positioning
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      bottom: 0;
+      top: 0;
+      right: 0;
+
+      background-image: linear-gradient(to right, transparent, rgba(colors.$black, 0.5));
+      color: colors.$grey2;
+      width: 30px;
+      transition: background-image $transition-time;
+
+      &Padded {
+        bottom: 16px;
+        top: 16px;
+        right: 20px;
+      }
+
+      &:hover {
+        background-image: linear-gradient(to right, transparent, rgba(colors.$black, 0.6));
+        color: colors.$white;
+      }
     }
   }
 
@@ -74,5 +153,10 @@
     @include font-sized(l2);
     @include padded(all, none);
     @include marged(all, none);
+  }
+
+  img {
+    object-fit: cover;
+    vertical-align: middle;
   }
 }

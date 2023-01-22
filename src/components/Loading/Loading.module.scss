@@ -1,5 +1,7 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -32,7 +34,7 @@
   width: auto;
 
   &Shadowed {
-    @extend .drop-shadowed;
+    @include color_utils.drop-shadowed;
   }
 
   &Regular {
@@ -55,13 +57,14 @@
 }
 
 .text {
-  @include font-colored($color-grey2);
   @include font-sized(l3);
   @include padded(all, none);
   @include marged(all, none);
 
+  color: colors.$grey2;
+
   &Shadowed {
-    @extend .drop-shadowed;
+    @include color_utils.drop-shadowed;
   }
 
   &Headbutt {

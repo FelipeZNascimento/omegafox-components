@@ -1,5 +1,8 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/global.scss";
 @import "../../styling/margins.scss";
@@ -28,8 +31,8 @@
 
   label {
     @include padded(all, none);
-    @include font-colored($color-grey4);
 
+    color: colors.$grey4;
     display: block;
     left: 0;
     position: absolute;
@@ -42,10 +45,10 @@
   }
 
   .filled {
-    @include font-colored($color-grey3);
     @include font-sized(m);
 
     background-color: inherit;
+    color: colors.$grey3;
     max-width: 3000px;
     transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     transform: translate(18px, -8px);
@@ -62,7 +65,7 @@
   width: 100%;
 
   &Disabled {
-    @include bg-rgba-colored($color-grey2, 0.5);
+    background-color: rgba(colors.$grey2, 0.5);
   }
 
   &:hover fieldset {
@@ -74,11 +77,11 @@
     @include padded(vertical, l);
     @include padded(horizontal, l2);
 
-    width: 100%;
+    box-sizing: content-box;
     border: 0;
     display: block;
     min-width: 0;
-    box-sizing: content-box;
+    width: 100%;
   }
 
   fieldset {
@@ -86,7 +89,7 @@
     @include padded(vertical, none);
     @include padded(horizontal, s);
 
-    border: 1px solid $color-grey3;
+    border: 1px solid colors.$grey3;
     border-radius: $border-radius;
     top: -5px;
     left: 0;
@@ -118,13 +121,14 @@
   }
 
   .error {
-    border: 2px solid $color-qatar-red;
+    border: 2px solid colors_fifa.$qatar-red;
   }
 }
 
 .description {
-  @include font-colored($color-grey4);
   @include font-sized(s);
   @include padded(top, s3);
   @include padded(horizontal, l2);
+
+  color: colors.$grey4;
 }

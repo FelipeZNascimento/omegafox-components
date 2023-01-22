@@ -1,5 +1,8 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -30,10 +33,10 @@
 
 .expandedContainer {
   @include aligned(center);
-  @include bg-rgba-colored($color-grey1, 0.9);
   @include flex-aligned(flex-start, center);
-  @include shadowed($color-black, 0.2);
+  @include color_utils.shadowed(colors.$black, 0.2);
 
+  background-color: rgba(colors.$grey1, 0.9);
   border-radius: $border-radius;
   border-top-left-radius: 0;
   flex-direction: column;
@@ -70,20 +73,20 @@
   z-index: $absolute-visible;
 
   &Loading {
-    @include font-colored($color-grey5);
     animation: rotateMobile 1s ease-in-out infinite;
+    color: colors.$grey5;
   }
 
   &Empty {
-    @include font-colored($color-orange);
+    color: colors.$orange;
   }
 
   &Error {
-    @include font-colored($color-qatar-red);
+    color: colors_fifa.$qatar-red;
   }
 
   &Check {
-    @include font-colored($color-mint);
+    color: colors.$mint;
   }
 
   @keyframes rotateMobile {
@@ -105,20 +108,20 @@
   z-index: $absolute-visible;
 
   &Loading {
-    @include font-colored($color-grey5);
+    color: colors.$grey5;
     animation: rotateDesktop 1s ease-in-out infinite;
   }
 
   &Empty {
-    @include font-colored($color-orange);
+    color: colors.$orange;
   }
 
   &Error {
-    @include font-colored($color-qatar-red);
+    color: colors_fifa.$qatar-red;
   }
 
   &Check {
-    @include font-colored($color-mint);
+    color: colors.$mint;
   }
 
   @keyframes rotateDesktop {

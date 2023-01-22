@@ -5,20 +5,47 @@ import classNames from 'classnames';
 
 import { Backdrop } from '../index';
 import { IModalProps } from './types';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
+
 import styles from './Modal.module.scss';
 
 export const Modal = ({
   children,
   isOpen,
+  isRounded = true,
+  isPaddedContent = false,
   title,
   size = 'small',
   subtitle,
+  onClickNext,
+  onClickPrevious,
   onClose
 }: IModalProps) => {
+  const modalClass = classNames(styles.modal, {
+    [styles.modalRounded]: isRounded
+  });
+
   const modalContentClass = classNames(styles.modalContent, {
-    [styles.modalContentMobile]: isMobile,
+    [styles.modalPaddedContent]: isPaddedContent,
+    [styles.modalContentMobileSmall]: isMobile && size === 'small',
+    [styles.modalContentMobileMedium]: isMobile && size === 'medium',
+    [styles.modalContentMobileBig]: isMobile && size === 'big',
     [styles.modalContentSmall]: !isMobile && size === 'small',
+    [styles.modalContentMedium]: !isMobile && size === 'medium',
     [styles.modalContentBig]: !isMobile && size === 'big'
+  });
+
+  const iconPreviousClass = classNames(styles.interactiveIconPrevious, {
+    [styles.interactiveIconPreviousPadded]: isPaddedContent
+  });
+
+  const iconNextClass = classNames(styles.interactiveIconNext, {
+    [styles.interactiveIconNextPadded]: isPaddedContent
   });
 
   function useOutsideAlerter(ref: React.RefObject<HTMLDivElement>) {
@@ -43,13 +70,25 @@ export const Modal = ({
 
   return (
     <Backdrop isOpen={isOpen}>
-      <div className={styles.modal} ref={wrapperRef}>
-        <div className={styles.closeIcon} onClick={onClose}>
+      <div className={modalClass} ref={wrapperRef}>
+        <div className={styles.interactiveIconClose} onClick={onClose}>
           X
         </div>
         {title && <h1>{title}</h1>}
         {subtitle && <h2>{subtitle}</h2>}
-        <div className={modalContentClass}>{children}</div>
+        <div className={modalContentClass}>
+          {onClickPrevious && (
+            <div className={iconPreviousClass} onClick={onClickPrevious}>
+              <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+            </div>
+          )}
+          {onClickNext && (
+            <div className={iconNextClass} onClick={onClickNext}>
+              <FontAwesomeIcon icon={faChevronRight} size="lg" />
+            </div>
+          )}
+          {children}
+        </div>
       </div>
     </Backdrop>
   );

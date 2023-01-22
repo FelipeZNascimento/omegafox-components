@@ -1,5 +1,9 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/colors_fifa.scss" as colors_fifa;
+@use "../../styling/colors_valeo.scss" as colors_valeo;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/margins.scss";
 @import "../../styling/paddings.scss";
@@ -7,11 +11,30 @@
 .navContainer {
   @include padded(vertical, s);
   @include padded(horizontal, s);
-  @include shadowed($color-black, 0.2);
 
-  height: 64px;
   overflow: hidden;
   z-index: $always-on-top;
+
+  &Tall {
+    height: 64px;
+  }
+
+  &Slim {
+    height: 32px;
+  }
+
+  &BlackShadow {
+    @include color_utils.shadowed(colors.$black, 0.2);
+  }
+
+  &WhiteShadow {
+    @include color_utils.shadowed(colors.$white, 0.2);
+  }
+
+  &Rounded {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
   &Sticky {
     align-self: flex-start;
@@ -21,11 +44,15 @@
   }
 
   &Copa {
-    @include bg-colored($color-grey1);
+    background-color: colors.$grey1;
   }
 
   &NFL {
-    @include bg-colored($color-navy);
+    background-color: colors.$navy;
+  }
+
+  &Valeo {
+    background-color: rgba(colors.$white, 0.95);
   }
 }
 
@@ -46,50 +73,12 @@
 }
 
 .buttonContainer {
-  @include padded(horizontal, s);
-
-  display: flex;
-  flex: 1;
-
-  button,
-  input[type="submit"],
-  input[type="reset"] {
-    // color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-  }
-
   &Left {
     @include flex-aligned(flex-start, center);
+    flex: 1;
   }
 
   &Right {
     @include flex-aligned(flex-end, center);
-  }
-
-  &Copa {
-    @extend .buttonContainer;
-
-    .navButton {
-      @include font-colored($color-grey4);
-      @include padded(horizontal, m);
-      @include marged(horizontal, s3);
-
-      font: inherit;
-      border-radius: 16px;
-      height: 100%;
-      transition: background-color $transition-time, color $transition-time;
-
-      &Selected {
-        @include font-colored($color-qatar-red);
-      }
-
-      &:hover {
-        @include bg-colored($color-grey2);
-
-        transition: background-color $transition-time, color $transition-time;
-      }
-    }
   }
 }

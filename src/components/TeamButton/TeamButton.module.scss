@@ -1,5 +1,7 @@
+@use "../../styling/colors.scss" as colors;
+@use "../../styling/color_utils.scss" as color_utils;
+
 @import "../../styling/alignments.scss";
-@import "../../styling/colors.scss";
 @import "../../styling/font-sizes.scss";
 @import "../../styling/global.scss";
 @import "../../styling/margins.scss";
@@ -17,7 +19,7 @@
   transition: filter $transition-time, box-shadow $transition-time;
 
   &Selected {
-    @include shadowed($color-black, 1);
+    @include color_utils.shadowed(colors.$black, 1);
   }
 
   &Hoverable {
