@@ -14,9 +14,10 @@ const Template: Story<IClockProps> = (args) => <Component {...args} />;
 export const Clock = Template.bind({});
 
 Clock.args = {
-  betStatus: 'neutral',
+  betValue: 5,
   clock: footballClock,
   isMatchEditable: false,
+  isMatchStarted: false,
   isExpandable: false,
   isExpanded: false,
   timestamp: matchInfo.timestamp

@@ -15,6 +15,9 @@ export const NavbarButton = Template.bind({});
 
 NavbarButton.args = {
   button: { ...navbarButtonsLeft[0], isDisabled: true },
+  isFlexed: false,
   isSelected: true,
+  isShadowed: false,
+  theme: 'copa',
   onClick: () => console.log('Clicked')
 };

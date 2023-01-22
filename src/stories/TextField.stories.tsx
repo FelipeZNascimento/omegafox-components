@@ -13,10 +13,12 @@ const Template: Story<ITextFieldProps> = (args) => <Component {...args} />;
 export const TextField = Template.bind({});
 
 TextField.args = {
-  defaultValue: '',
+  defaultValue: 'default value',
+  description: 'description',
   isDisabled: false,
   isError: false,
   inputName: 'inputName',
   placeholder: 'Placeholder',
+  type: 'text',
   onChange: () => null
 };

@@ -16,9 +16,8 @@ export const TeamButton = Template.bind({});
 TeamButton.args = {
   colors: teamLeft.colors,
   isBig: true,
-  isForceMobile: false,
   isSelected: true,
+  isHoverable: true,
   logo: teamLeft.logo,
-  name: teamLeft.name,
-  nameShort: teamLeft.nameShort
+  name: teamLeft.name
 };

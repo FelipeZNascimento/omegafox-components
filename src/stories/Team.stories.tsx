@@ -14,16 +14,17 @@ const Template: Story<ITeamProps> = (args) => <Component {...args} />;
 export const Team = Template.bind({});
 
 Team.args = {
+  abbreviationEn: teamLeft.abbreviationEn,
   align: teamLeft.align,
   bet: 2,
   betValue: 5,
   colors: teamLeft.colors,
   id: teamLeft.id,
+  isBigLogo: false,
   isEditable: true,
-  isForceMobile: false,
+  isMatchStarted: false,
   logo: teamLeft.logo,
   matchId: 0,
   name: teamLeft.name,
-  nameShort: teamLeft.nameShort,
   score: teamLeft.score
 };
