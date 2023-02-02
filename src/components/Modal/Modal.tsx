@@ -26,6 +26,13 @@ export const Modal = ({
   onClickPrevious,
   onClose
 }: IModalProps) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (wrapperRef && wrapperRef.current) {
+      wrapperRef.current.focus();
+    }
+  }, []);
+
   const modalClass = classNames(styles.modal, {
     [styles.modalRounded]: isRounded
   });
@@ -65,12 +72,28 @@ export const Modal = ({
     }, [ref]);
   }
 
-  const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
+
+  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const { code } = event;
+
+    if (code === 'ArrowLeft' && onClickPrevious) {
+      onClickPrevious();
+    } else if (code === 'ArrowRight' && onClickNext) {
+      onClickNext();
+    } else if (code === 'Escape') {
+      onClose();
+    }
+  };
 
   return (
     <Backdrop isOpen={isOpen}>
-      <div className={modalClass} ref={wrapperRef}>
+      <div
+        className={modalClass}
+        ref={wrapperRef}
+        tabIndex={0}
+        onKeyUp={handleKeyUp}
+      >
         <div className={styles.interactiveIconClose} onClick={onClose}>
           X
         </div>

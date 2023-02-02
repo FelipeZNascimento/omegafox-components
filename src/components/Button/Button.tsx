@@ -24,6 +24,7 @@ export const Button = ({
     [styles.warning]: variant === 'warning',
     [styles.neutral]: variant === 'neutral',
     [styles.confirm]: variant === 'confirm',
+    [styles.white]: variant === 'white',
     [styles.containerSmall]: size === 'small',
     [styles.containerMedium]: size === 'medium',
     [styles.containerLarge]: size === 'large',
