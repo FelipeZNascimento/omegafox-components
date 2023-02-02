@@ -70,6 +70,7 @@
       right: 0;
       top: 0;
       transition: background-color $transition-time;
+      z-index: 1;
 
       &:hover {
         background-color: rgba(colors_fifa.$qatar-red, 1);
