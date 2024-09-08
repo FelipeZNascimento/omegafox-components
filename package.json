@@ -101,7 +101,7 @@
     "webpack": "5.68.0"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^1.0.0",
+    "@floating-ui/react-dom": "^2.1.1",
     "@rollup/plugin-image": "^2.1.1",
     "lodash": "^4.17.21",
     "luxon": "^3.0.1",
